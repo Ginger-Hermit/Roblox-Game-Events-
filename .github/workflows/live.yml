@@ -1,0 +1,34 @@
+# Patch note: weekly live-site check (Mondays); silent when fine, red cross and a log line when broken.
+name: Live site
+on:
+  schedule:
+    - cron: "23 6 * * 1"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check roblox-game-events.pages.dev
+        run: |
+          SITE=https://roblox-game-events.pages.dev
+          WANT=$(tr -d '[:space:]' < site/version.txt)
+          R=""
+          if curl -fsS -m 30 -D head.txt -o page.html "$SITE/?t=$(date +%s)"; then
+            GOT=$(curl -fsS -m 30 "$SITE/version.txt?t=$(date +%s)" | tr -d '[:space:]')
+            [ "$GOT" = "$WANT" ] || R="$R live version is $GOT, repo has $WANT;"
+            grep -qi "^content-security-policy:" head.txt || R="$R security header missing;"
+            grep -qi "^x-content-type-options: nosniff" head.txt || R="$R nosniff header missing;"
+          else
+            R=" page does not load;"
+          fi
+          [ -n "$R" ] || { echo "OK"; exit 0; }
+          F=LIVE_CHECK_LOG.md
+          [ -f $F ] || printf '# Live site checks\nWritten by GitHub every Monday when something is wrong. Newest at the bottom.\n\n' > $F
+          echo "- $(date -u +%Y-%m-%d) version $WANT:$R" >> $F
+          git add $F
+          git -c user.name="github-actions" -c user.email="noreply@github.com" commit -qm "Live site check [skip ci]"
+          git push -q || echo "could not save the log"
+          echo "FAIL live site:$R"; exit 1

@@ -1,7 +1,26 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'">
-<title>Game Events</title><link rel="stylesheet" href="style.css"></head><body><main>
-<h1 id="name">Game events</h1><p class="sub">Checked daily</p>
-<a id="game" class="ev" href="#"><div><b>Game page</b><span>Open on Roblox</span></div></a>
-<h2>Events</h2><div id="list"><p class="sub">Loading…</p></div>
-</main><script src="app.js"></script></body></html>
+<!doctype html>
+<!-- Patch note: Safety, privacy and legal info, like Fishing Cat Data. --><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://discord.com">
+<title>Roblox Game Events</title><link rel="stylesheet" href="home.css"><script src="prefs.js"></script></head><body><div class="card">
+<h1>Roblox Game Events</h1><div id="newver" class="newver" role="status" hidden>New version ready. <a href="#" id="reloadnow">Refresh now</a></div><nav class="tabs main"><a class="tab on" href="./">Home</a><a class="tab" href="github.html">GitHub</a><a class="tab" href="settings.html">Settings</a></nav>
+<h2>Game events, straight to Discord</h2>
+<p>Pick any Roblox game. New events post to your Discord channel automatically.</p>
+<label class="label" for="game">1. Roblox game</label>
+<input id="game" placeholder="Paste the game link" autocomplete="off">
+<p id="gameMsg" class="msg"></p>
+<label class="label" for="hook">2. Discord webhook</label>
+<div class="row"><input id="hook" type="password" placeholder="discord.com/api/webhooks/..." autocomplete="off"><button class="btn" id="test">Test</button></div>
+<p id="hookMsg" class="msg"></p>
+<details class="help"><summary>How do I get a webhook?</summary>
+<ol class="steps"><li>In Discord, open your server and long-press (or right-click) the channel you want.</li><li>Tap <b>Edit Channel</b>, then <b>Integrations</b>, then <b>Webhooks</b>.</li><li>Tap <b>New Webhook</b>, then <b>Copy Webhook URL</b>.</li><li>Paste it above and tap <b>Test</b>. A test post should show in your channel.</li></ol>
+<p class="msg">You need Manage Webhooks permission on the server. Keep the link private: anyone with it can post in your channel.</p></details>
+<p class="label">3. How it auto posts</p>
+<ol class="steps"><li>Once a day, it checks your game for new events.</li><li>Each new event posts to your channel with its start and end time.</li><li>Tap the post to open the event on Roblox. Old events never repost.</li></ol>
+<p class="label">To switch it on</p>
+<ol class="steps"><li>Tap Copy settings and paste them into <b>events/settings.json</b> on GitHub.</li><li>Add your webhook as a GitHub secret called <b>DISCORD_WEBHOOK</b>.</li></ol>
+<div class="tabs"><button class="btn main" id="copy">Copy settings</button><a class="btn" href="https://github.com/Ginger-Hermit/Roblox-Game-Events-#readme" target="_blank" rel="noopener">Full steps</a></div>
+<p id="copyMsg" class="msg"></p>
+<p class="msg">Nothing you type here is saved. The Test button sends one message straight to Discord.</p>
+<p class="foot"><a href="safety.html#safe">Stay safe</a> &middot; <a href="safety.html#privacy">Privacy</a> &middot; <a href="safety.html#legal">Legal</a> &middot; <a href="https://github.com/Ginger-Hermit/Roblox-Game-Events-" target="_blank" rel="noopener">GitHub</a></p>
+<p class="small">Built by Claude, an AI &middot; Personal use only &middot; Not an official Roblox or Discord product &middot; No guarantees</p>
+</div><script src="setup.js"></script><script src="update.js"></script></body></html>

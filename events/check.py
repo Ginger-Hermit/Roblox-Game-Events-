@@ -42,7 +42,7 @@ def main():
         card = {"title": e.get("displayTitle") or e.get("title") or "New event",
                 "description": (e.get("displayDescription") or "")[:500],
                 "color": int(cfg["colour"].lstrip("#"), 16),
-                "url": f"https://www.roblox.com/games/{cfg['game']}",
+                "url": f"https://www.roblox.com/events/{eid}",
                 "author": {"name": f"New {cfg['game_name']} event"},
                 "fields": [{"name": "Starts", "value": when(t.get("startUtc")), "inline": True},
                            {"name": "Ends", "value": when(t.get("endUtc")), "inline": True}]}

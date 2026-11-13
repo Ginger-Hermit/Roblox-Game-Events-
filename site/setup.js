@@ -10,7 +10,7 @@ function readGame() {
 $("game").addEventListener("input", () => {
   const g = readGame();
   if (!$("game").value.trim()) return say("gameMsg", "", true);
-  g ? say("gameMsg", "✓ " + g.name + " · number " + g.id, true) : say("gameMsg", "That doesn't look like a Roblox game link.", false);
+  g ? say("gameMsg", "" + g.name + " · number " + g.id, true) : say("gameMsg", "That doesn't look like a Roblox game link.", false);
 });
 $("test").addEventListener("click", async () => {
   const url = $("hook").value.trim();
@@ -19,13 +19,13 @@ $("test").addEventListener("click", async () => {
   try {
     const r = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ content: "Test from Roblox Game Events. It works!", allowed_mentions: { parse: [] } }) });
-    r.ok ? say("hookMsg", "✓ Test post sent. Check your channel.", true) : say("hookMsg", "Discord said no (" + r.status + "). Make a new webhook and try again.", false);
+    r.ok ? say("hookMsg", "Test post sent. Check your channel.", true) : say("hookMsg", "Discord said no (" + r.status + "). Make a new webhook and try again.", false);
   } catch (e) { say("hookMsg", "Couldn't reach Discord. Check your internet.", false); }
 });
 $("copy").addEventListener("click", async () => {
   const g = readGame();
   if (!g) return say("copyMsg", "Add the game link first.", false);
   const text = JSON.stringify({ game: g.id, game_name: g.name, colour: "#F28C28", max_posts_a_day: 3 }, null, 2) + "\n";
-  try { await navigator.clipboard.writeText(text); say("copyMsg", "✓ Copied. Paste it into settings.json.", true); }
+  try { await navigator.clipboard.writeText(text); say("copyMsg", "Copied. Paste it into settings.json.", true); }
   catch (e) { say("copyMsg", "Couldn't copy. Long-press to copy:\n" + text, false); }
 });
