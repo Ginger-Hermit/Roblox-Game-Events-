@@ -3,15 +3,33 @@
 Researched 13 Nov 2026 (three web searches). Facts about other tools come from their own pages or forum posts; anything we couldn't check says **Not recorded**.
 
 ## In plain words
-- **What it does:** puts a Roblox game's events in your Discord.
-- **Others:** most only work for games you made. One bot, Noti, also works for any game.
-- **Why pick ours:** nothing to install. Paste a link, tap one button, done. Works on a phone.
-- **Why pick Noti:** it also posts game updates and can ping people.
+> [!TIP]
+> **What it does**
+> - Puts a Roblox game's events in your Discord.
+>
+> **Others**
+> - Most only work for games you made.
+> - One bot, **Noti**, also works for any game.
+>
+> **Why pick ours**
+> - Nothing to install.
+> - Paste a link, tap one button. Works on a phone.
+>
+> **Why pick Noti**
+> - Also posts game updates.
+> - Can ping people.
 
 ## Short answer
-Roblox Game Events is **not the only tool** that posts any game's events to Discord. **Noti** (noti.bot) says it does the same. Every other tool found only works for games or groups **you own**, or needs **code inside the game**.
-
-What makes ours different from Noti: no bot to install, no Discord permissions to grant, and it works from a phone in two minutes with just a webhook.
+> [!IMPORTANT]
+> - Roblox Game Events is **not the only** tool for any game's events.
+>   - **Noti** (noti.bot) says it does the same.
+> - Every other tool found:
+>   - only works for games or groups **you own**, or
+>   - needs **code inside the game**.
+> - Our edge over Noti:
+>   - no bot to install
+>   - no Discord permissions to grant
+>   - two minutes on a phone, just a webhook
 
 ## Side by side
 | | Roblox Game Events | Noti | Roblox webhooks | Series Webhooks | DiscoLink | Quark |
@@ -53,7 +71,11 @@ How Roblox Game Events works (from the code in this repo):
 Trade-off: once-a-day polling is cheap and needs no permissions, but an event announced and started on the same day may post late.
 
 ## Security and safety
-**Plain words:** ours can't touch your Roblox or Discord account. The worst case is someone spamming one channel if your webhook leaks, and you can fix that in a minute by deleting the webhook.
+> [!NOTE]
+> **Plain words**
+> - Ours can't touch your Roblox or Discord account.
+> - Worst case: someone spams **one** channel if your webhook leaks.
+>   - Fix in a minute: delete the webhook in Discord.
 
 ### What each tool can reach
 | | Ours | Noti | Roblox webhooks | Bots (Quark, Series) | In-game scripts (DiscoLink) |
@@ -78,11 +100,19 @@ A webhook can only **post** to the one channel it was made for. A bot is a membe
 - Reads only Roblox's **public** event data; never logs in, so no Roblox or Discord rules about automated logins are broken.
 
 ### Risks we can't remove
-- **Webhook leak** (low): anyone with it can post in that channel. Fix: delete it in Discord and make a new one.
-- **Fake copies** of the site could steal webhooks. Only use `roblox-game-events.pages.dev`.
-- **Roblox changes its public data:** posts stop or go wrong; nothing else is affected.
-- **Free hosting:** if Cloudflare or GitHub limits change, posts stop.
-- **Trust in the operator:** the helper holds your webhook. The code is public here, but you can't see what's actually running.
+> [!WARNING]
+> - **Webhook leak** (low)
+>   - Anyone with it can post in that channel.
+>   - Fix: delete it in Discord, make a new one.
+> - **Fake copies** of the site
+>   - Could steal webhooks. Only use `roblox-game-events.pages.dev`.
+> - **Roblox changes its public data**
+>   - Posts stop or go wrong. Nothing else is affected.
+> - **Free hosting**
+>   - If Cloudflare or GitHub limits change, posts stop.
+> - **Trust in the operator**
+>   - The helper holds your webhook.
+>   - Code is public here, but you can't see what's actually running.
 
 Full user-facing version: <https://roblox-game-events.pages.dev/safety.html>
 
@@ -112,9 +142,15 @@ Discord bot for developers. Watches experiences you connect: server and player a
 Built for a single game. This one copies another Discord server using a "selfbot", which breaks Discord's rules. Not a fair comparison.
 
 ## Where we're weaker
-- No game update posts, no role ping (Noti has both).
-- 3 posts a day, 5 games per channel.
-- Depends on Roblox's public events list staying the same.
+> [!CAUTION]
+> - **Missing features** (Noti has both)
+>   - No game update posts
+>   - No role ping
+> - **Limits**
+>   - 3 posts a day per game
+>   - 5 games per channel
+> - **Depends on Roblox**
+>   - Public events list must stay the same
 
 ## Ideas this suggests (not approved)
 - Optional role ping.
