@@ -3,7 +3,7 @@
 > [!IMPORTANT]
 > Read this and the status at the start of every chat. Never ask Ginger for a handoff. Ginger's personal rules (short and blunt, mockup first, bug report first) apply too; not repeated here.
 
-Don't check GitHub Actions on your own. Ginger sees a red cross and will say.
+A failed Check opens an issue called "Check failed". Only look when Ginger says, or one open issue by that name exists. Fix it, then close it.
 
 @STATUS.md
 
