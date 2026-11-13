@@ -1,6 +1,6 @@
-// Patch note: first numbered version, with a "New version ready" banner.
+// Patch note: Safety, privacy and legal info, like Fishing Cat Data.
 // Update check: compares this page's BUILD with version.txt on the same site (nothing about you is sent).
-const BUILD = "1.0.0";
+const BUILD = "1.0.1";
 (async () => {
   try {
     const r = await fetch("version.txt?t=" + Date.now(), { cache: "no-store" });

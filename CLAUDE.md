@@ -6,7 +6,7 @@ Also at the start: check the latest GitHub Actions results on `main` (Check, Liv
 @STATUS.md
 
 Site: `site/` (Home = setup, GitHub, Settings). Bot: `events/check.py`, run daily by `.github/workflows/events.yml`. Live: roblox-game-events.pages.dev.
-Pushing to `main` goes live only after Check passes: `golive.yml` moves the `live` branch, which Cloudflare publishes. Red cross = not live.
+Pushing to `main` goes live straight away (Cloudflare publishes `main`). Check still runs: red cross = something broke.
 
 ## Every change to the site
 1. `git pull` first. grep the exact spot, read only those lines. All edits in one script.

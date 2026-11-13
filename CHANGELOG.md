@@ -2,9 +2,22 @@
 
 Newest first. Each update says what it does and what to look for.
 
+## Stay safe, Privacy and Legal
+
+13 Nov 2026 (02:36 UTC) · New
+
+Safety, privacy and legal info, like Fishing Cat Data.
+
+> [!TIP]
+> **What you'll see:** Links at the bottom of every page.
+
+- Stay safe, Privacy and Legal page
+- Footer links on every page
+- Site goes live straight from main again
+
 ## First numbered version
 
-13 Nov 2026 (16:00 UTC) · New
+13 Nov 2026 (16:00 UTC) · New · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/1731e37)
 
 The site now has a version number, and tells you when a newer one is ready.
 
