@@ -20,3 +20,26 @@ export async function body(request) {
   try { const b = await request.json(); return { game: Number(b.game), name: String(b.name || "Roblox game").slice(0, 60), hook: String(b.hook || "").trim() }; }
   catch (e) { return {}; }
 }
+export async function icon(uni) {
+  try { return (await get(`https://thumbnails.roblox.com/v1/games/icons?universeIds=${uni}&size=150x150&format=Png`)).data[0].imageUrl; } catch (x) { return null; }
+}
+async function interested(id) {
+  try { return (await get(`https://apis.roblox.com/virtual-events/v1/virtual-events/${id}/rsvps/counters`)).counters.going; } catch (x) { return null; }
+}
+const ts = (s, f) => s ? `<t:${Math.floor(Date.parse(s) / 1000)}:${f}>` : "not recorded";
+// The Discord card for one new event: text, then a tidy bullet list.
+export async function card(e, s, logo) {
+  const t = e.eventTime || {}, going = await interested(e.id);
+  const cats = (e.eventCategories || []).map(c => c.category).filter(Boolean);
+  const l = ["- **Starts:** " + ts(t.startUtc, "f"), "- **Ends:** " + ts(t.endUtc, "f")];
+  if (t.startUtc && Date.parse(t.startUtc) > Date.now()) l.push("- **Starts in:** " + ts(t.startUtc, "R"));
+  if (cats.length) l.push("- **Type:** " + cats.map(c => { const w = c.replace(/(?!^)([A-Z])/g, " $1").toLowerCase(); return w[0].toUpperCase() + w.slice(1); }).join(", "));
+  if (going != null) l.push("- **Interested:** " + going.toLocaleString("en-US") + " players");
+  l.push(`- [Play now](https://www.roblox.com/games/${s.game})`);
+  const text = (e.displayDescription || "").slice(0, 400);
+  const c = { title: e.displayTitle || e.title || "New event", description: (text ? text + "\n\n" : "") + l.join("\n"),
+    url: "https://www.roblox.com/events/" + e.id, color: 0xF28C28, author: { name: "New " + s.name + " event" } };
+  if (logo) c.thumbnail = { url: logo };
+  const pic = await picture(e); if (pic) c.image = { url: pic };
+  return c;
+}

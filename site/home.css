@@ -50,3 +50,5 @@ a.gl b{color:var(--link)}.gl .ar{color:var(--muted)}.g1{font-size:.8125rem;color
 .sw input:checked+.k{background:var(--accent)}.sw input:checked+.k:after{left:21px}.sw input:focus-visible+.k{outline:2px solid var(--link)}
 #nameRow input{margin-top:8px}
 .sv a.ch{border-left-color:var(--c-example)}
+.pv{border:1px solid var(--line);border-left:5px solid #F28C28;border-radius:10px;background:var(--field);padding:12px 14px;font-size:0.875rem}
+.pv p{margin:0 0 6px}.pv ul{margin:6px 0;padding-left:18px;line-height:1.6}.pv-by{font-size:0.8125rem;color:var(--muted)}.pv-t,.pv-l{color:var(--link);font-weight:600}

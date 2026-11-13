@@ -11,6 +11,7 @@ $("game").addEventListener("input", () => {
   const g = readGame();
   if (!$("game").value.trim()) return say("gameMsg", "", true);
   g ? say("gameMsg", "" + g.name + " · number " + g.id, true) : say("gameMsg", "That doesn't look like a Roblox game link.", false);
+  $("pvGame").textContent = g ? g.name : "your game";
 });
 const HOOK = /^https:\/\/(?:ptb\.|canary\.)?discord(?:app)?\.com\/api\/webhooks\/\d+\/[\w-]+$/;
 $("post").addEventListener("click", async () => {

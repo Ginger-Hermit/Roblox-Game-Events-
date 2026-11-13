@@ -2,9 +2,20 @@
 
 Newest first. Each update says what it does and what to look for.
 
+## Tidier posts
+
+13 Nov 2026 (03:32 UTC) · Changed
+
+Posts now list start, end, countdown, type, interested players and a Play link, with the game icon
+
+> [!NOTE]
+> **What you'll see:** Home, What it posts
+
+- Bullet list in Discord posts, plus a preview on the page
+
 ## Full disclaimer back
 
-13 Nov 2026 (03:22 UTC) · Changed
+13 Nov 2026 (03:22 UTC) · Changed · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/9743c75)
 
 Restored the full professional disclaimer.
 

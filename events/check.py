@@ -1,7 +1,7 @@
 """Posts new Roblox game events to Discord. Run daily by .github/workflows/events.yml.
 Reads events/settings.json, remembers posted events in events/seen.json.
 First run only records existing events, so old ones never post."""
-import json, os, sys, urllib.request
+import json, os, re, sys, urllib.request
 from datetime import datetime, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -20,6 +20,29 @@ def picture(e):
         return d[0].get("imageUrl") if d and d[0].get("state") == "Completed" else None
     except Exception:
         return None
+
+def icon(uni):
+    try: return get(f"https://thumbnails.roblox.com/v1/games/icons?universeIds={uni}&size=150x150&format=Png")["data"][0]["imageUrl"]
+    except Exception: return None
+
+def interested(eid):
+    try: return get(f"https://apis.roblox.com/virtual-events/v1/virtual-events/{eid}/rsvps/counters")["counters"]["going"]
+    except Exception: return None
+
+def ts(s, f):
+    return f"<t:{int(datetime.fromisoformat(s).timestamp())}:{f}>" if s else "not recorded"
+
+def details(e, game, going, now):
+    """Event text, then a tidy bullet list."""
+    t = e.get("eventTime") or {}
+    cats = [c.get("category") for c in e.get("eventCategories") or [] if c.get("category")]
+    lines = [f"- **Starts:** {ts(t.get('startUtc'), 'f')}", f"- **Ends:** {ts(t.get('endUtc'), 'f')}"]
+    if t.get("startUtc") and datetime.fromisoformat(t["startUtc"]) > now: lines.append(f"- **Starts in:** {ts(t['startUtc'], 'R')}")
+    if cats: lines.append("- **Type:** " + ", ".join(re.sub(r"(?<!^)([A-Z])", r" \1", c).capitalize() for c in cats))
+    if going is not None: lines.append(f"- **Interested:** {going:,} players")
+    lines.append(f"- [Play now](https://www.roblox.com/games/{game})")
+    text = (e.get("displayDescription") or "")[:400]
+    return (text + "\n\n" if text else "") + "\n".join(lines)
 
 def when(s):
     return datetime.fromisoformat(s).strftime("%a %d %b, %H:%M UTC") if s else "not recorded"
@@ -40,6 +63,7 @@ def main():
     if not first_run and not hook.startswith("https://discord.com/api/webhooks/"):
         sys.exit("No Discord link saved. Add the DISCORD_WEBHOOK secret.")
     posted = 0
+    logo = icon(uni) if not first_run else None
     for e in events:
         eid = str(e.get("id"))
         if eid in seen:
@@ -48,14 +72,12 @@ def main():
         end = (e.get("eventTime") or {}).get("endUtc")
         if first_run or (end and datetime.fromisoformat(end) < now) or posted >= cfg["max_posts_a_day"]:
             continue
-        t = e.get("eventTime") or {}
         card = {"title": e.get("displayTitle") or e.get("title") or "New event",
-                "description": (e.get("displayDescription") or "")[:500],
+                "description": details(e, cfg["game"], interested(eid), now),
                 "color": int(cfg["colour"].lstrip("#"), 16),
                 "url": f"https://www.roblox.com/events/{eid}",
-                "author": {"name": f"New {cfg['game_name']} event"},
-                "fields": [{"name": "Starts", "value": when(t.get("startUtc")), "inline": True},
-                           {"name": "Ends", "value": when(t.get("endUtc")), "inline": True}]}
+                "author": {"name": f"New {cfg['game_name']} event"}}
+        if logo: card["thumbnail"] = {"url": logo}
         pic = picture(e)
         if pic: card["image"] = {"url": pic}
         body = json.dumps({"embeds": [card], "allowed_mentions": {"parse": []}}).encode()
