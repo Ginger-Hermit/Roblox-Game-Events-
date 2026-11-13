@@ -8,4 +8,3 @@ a.ev{display:flex;align-items:center;gap:8px;background:var(--field);border:1px 
 a.ev b{display:block;color:var(--link)}a.ev span{color:var(--muted);font-size:14px}
 a.ev:after{content:"\203A";margin-left:auto;font-size:1.3em;color:var(--link)}
 .now{background:var(--noteBg);color:var(--noteText);border-radius:6px;padding:0 6px;font-size:13px;font-weight:600;margin-right:4px}
-.steps{padding-left:22px;margin:0 0 20px}.steps li{margin-bottom:6px}
