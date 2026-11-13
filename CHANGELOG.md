@@ -2,9 +2,20 @@
 
 Newest first. Each update says what it does and what to look for.
 
+## Safety page wording
+
+13 Nov 2026 (08:53 UTC) · Changed
+
+Safety page no longer names the host.
+
+> [!NOTE]
+> **What you'll see:** Stay safe
+
+- Removed host name from safety page
+
 ## Safer Turn off
 
-13 Nov 2026 (04:17 UTC) · Changed
+13 Nov 2026 (04:17 UTC) · Changed · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/202d2f1)
 
 Only the person with the full webhook can turn off or repost alerts.
 
