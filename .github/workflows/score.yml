@@ -1,0 +1,21 @@
+# Patch note: grades the live site (speed, accessibility, good practice) after each site change. Report is under the run's Artifacts.
+name: Site score
+on:
+  push:
+    branches: [main]
+    paths: ["site/**"]
+  workflow_dispatch:
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for Cloudflare to publish
+        run: sleep 120
+      - uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: |
+            https://roblox-game-events.pages.dev/
+            https://roblox-game-events.pages.dev/github.html
+            https://roblox-game-events.pages.dev/settings.html
+            https://roblox-game-events.pages.dev/safety.html
+          uploadArtifacts: true
