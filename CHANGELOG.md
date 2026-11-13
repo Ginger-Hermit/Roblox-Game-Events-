@@ -2,9 +2,20 @@
 
 Newest first. Each update says what it does and what to look for.
 
+## Real risks
+
+13 Nov 2026 (03:32 UTC) · New
+
+Plain list of the actual risks of using it
+
+> [!TIP]
+> **What you'll see:** Footer, Risks
+
+- Added a Real risks section to the safety page
+
 ## Tidier posts
 
-13 Nov 2026 (03:32 UTC) · Changed
+13 Nov 2026 (03:32 UTC) · Changed · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/2cf7989)
 
 Posts now list start, end, countdown, type, interested players and a Play link, with the game icon
 

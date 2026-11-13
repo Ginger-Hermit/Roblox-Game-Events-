@@ -1,6 +1,6 @@
-// Patch note: Posts now list start, end, countdown, type, interested players and a Play link, with the game icon
+// Patch note: Plain list of the actual risks of using it
 // Update check: compares this page's BUILD with version.txt on the same site (nothing about you is sent).
-const BUILD = "1.0.9";
+const BUILD = "1.0.10";
 (async () => {
   try {
     const r = await fetch("version.txt?t=" + Date.now(), { cache: "no-store" });
