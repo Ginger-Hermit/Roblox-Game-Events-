@@ -1,6 +1,6 @@
-// Patch note: Disclaimer cut to short lines.
+// Patch note: Restored the full professional disclaimer.
 // Update check: compares this page's BUILD with version.txt on the same site (nothing about you is sent).
-const BUILD = "1.0.7";
+const BUILD = "1.0.8";
 (async () => {
   try {
     const r = await fetch("version.txt?t=" + Date.now(), { cache: "no-store" });

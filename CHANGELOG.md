@@ -2,9 +2,20 @@
 
 Newest first. Each update says what it does and what to look for.
 
-## Shorter disclaimer
+## Full disclaimer back
 
 13 Nov 2026 (03:22 UTC) · Changed
+
+Restored the full professional disclaimer.
+
+> [!NOTE]
+> **What you'll see:** Legal link at the bottom.
+
+- Full disclaimer restored
+
+## Shorter disclaimer
+
+13 Nov 2026 (03:22 UTC) · Changed · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/a83c605)
 
 Disclaimer cut to short lines.
 
