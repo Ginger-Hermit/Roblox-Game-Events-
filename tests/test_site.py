@@ -1,5 +1,5 @@
 """Quick checks run by GitHub on every push."""
-import json, os, re, subprocess, sys, py_compile
+import json, os, re, subprocess, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(ROOT, "site")
 bad = []
