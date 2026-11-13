@@ -11,6 +11,16 @@ def get(url):
     with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=30) as r:
         return json.load(r)
 
+def picture(e):
+    """The event's own picture from Roblox, or None if there isn't one."""
+    ids = [t.get("mediaId") for t in sorted(e.get("thumbnails") or [], key=lambda t: t.get("rank", 0)) if t.get("mediaId")]
+    if not ids: return None
+    try:
+        d = get(f"https://thumbnails.roblox.com/v1/assets?assetIds={ids[0]}&returnPolicy=PlaceHolder&size=768x432&format=Png").get("data") or []
+        return d[0].get("imageUrl") if d and d[0].get("state") == "Completed" else None
+    except Exception:
+        return None
+
 def when(s):
     return datetime.fromisoformat(s).strftime("%a %d %b, %H:%M UTC") if s else "not recorded"
 
@@ -46,6 +56,8 @@ def main():
                 "author": {"name": f"New {cfg['game_name']} event"},
                 "fields": [{"name": "Starts", "value": when(t.get("startUtc")), "inline": True},
                            {"name": "Ends", "value": when(t.get("endUtc")), "inline": True}]}
+        pic = picture(e)
+        if pic: card["image"] = {"url": pic}
         body = json.dumps({"embeds": [card], "allowed_mentions": {"parse": []}}).encode()
         urllib.request.urlopen(urllib.request.Request(hook, body, UA), timeout=30)
         posted += 1
