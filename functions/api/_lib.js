@@ -43,3 +43,19 @@ export async function card(e, s, logo) {
   const pic = await picture(e); if (pic) c.image = { url: pic };
   return c;
 }
+// Webhooks are scrambled (AES-GCM) in storage when the HOOK_KEY secret is set in Cloudflare.
+async function aes(env) {
+  const raw = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(env.HOOK_KEY));
+  return crypto.subtle.importKey("raw", raw, "AES-GCM", false, ["encrypt", "decrypt"]);
+}
+export async function lock(hook, env) {
+  if (!env.HOOK_KEY || hook.startsWith("enc:")) return hook;
+  const iv = crypto.getRandomValues(new Uint8Array(12));
+  const ct = new Uint8Array(await crypto.subtle.encrypt({ name: "AES-GCM", iv }, await aes(env), new TextEncoder().encode(hook)));
+  return "enc:" + btoa(String.fromCharCode(...iv, ...ct));
+}
+export async function unlock(hook, env) {
+  if (!hook.startsWith("enc:")) return hook;
+  const b = Uint8Array.from(atob(hook.slice(4)), c => c.charCodeAt(0));
+  return new TextDecoder().decode(await crypto.subtle.decrypt({ name: "AES-GCM", iv: b.slice(0, 12) }, await aes(env), b.slice(12)));
+}

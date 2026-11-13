@@ -1,5 +1,5 @@
 // Daily check, called by .github/workflows/events.yml in parts: POST /api/run?cursor=... until done is true.
-import { PER_RUN, POSTS_A_DAY, json, universe, events, post, card, icon } from "./_lib.js";
+import { PER_RUN, POSTS_A_DAY, json, universe, events, post, card, icon, lock, unlock } from "./_lib.js";
 export async function onRequestPost({ request, env }) {
   if (!env.SUBS) return json({ msg: "Not set up" }, 503);
   const cursor = new URL(request.url).searchParams.get("cursor") || undefined;
@@ -14,6 +14,7 @@ export async function onRequestPost({ request, env }) {
     const s = JSON.parse(await env.SUBS.get(k.name) || "null"); if (!s) continue;
     try {
       s.uni = s.uni || await universe(s.game);
+      const hook = await unlock(s.hook, env); s.hook = await lock(hook, env);
       const now = Date.now(); let n = 0, logo;
       for (const e of await events(s.uni)) {
         const id = String(e.id); if (s.seen.includes(id)) continue;
@@ -22,7 +23,7 @@ export async function onRequestPost({ request, env }) {
         if ((t.endUtc && Date.parse(t.endUtc) < now) || n >= POSTS_A_DAY) continue;
         if (logo === undefined) logo = await icon(s.uni);
         const c = await card(e, s, logo);
-        const r = await post(s.hook, c);
+        const r = await post(hook, c);
         if (r.status === 404 || r.status === 401) { await env.SUBS.delete(k.name); removed++; s.gone = true; break; }
         n++; posted++;
       }

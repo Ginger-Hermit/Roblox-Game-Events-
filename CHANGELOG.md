@@ -2,9 +2,20 @@
 
 Newest first. Each update says what it does and what to look for.
 
+## Scrambled webhooks
+
+13 Nov 2026 (03:37 UTC) · Changed
+
+Webhooks are scrambled in storage
+
+> [!NOTE]
+> **What you'll see:** Nothing on screen
+
+- Webhooks saved by Turn on are now scrambled once HOOK_KEY is set
+
 ## Discord-style preview
 
-13 Nov 2026 (03:34 UTC) · Changed
+13 Nov 2026 (03:34 UTC) · Changed · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/3c5073d)
 
 Preview now looks like a real Discord post
 
