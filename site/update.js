@@ -1,7 +1,7 @@
-// Patch note: After an update, the top of the page says what changed
+// Patch note: The GitHub guide now matches the website setup
 // Update check: compares this page's BUILD with version.txt on the same site (nothing about you is sent).
-const BUILD = "1.0.20";
-const NOTE = "After an update, the top of the page says what changed";
+const BUILD = "1.0.21";
+const NOTE = "The GitHub guide now matches the website setup";
 (() => {
   let last = null; try { last = localStorage.getItem("seenver"); localStorage.setItem("seenver", BUILD); } catch (e) { return; }
   if (last && last !== BUILD) { const nv = document.getElementById("newver"); nv.textContent = "Updated: " + NOTE + "."; nv.hidden = false; }

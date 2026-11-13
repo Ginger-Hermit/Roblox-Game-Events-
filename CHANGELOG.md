@@ -2,9 +2,20 @@
 
 Newest first. Each update says what it does and what to look for.
 
+## Guide updated
+
+13 Nov 2026 (03:52 UTC) · Changed
+
+The GitHub guide now matches the website setup
+
+> [!NOTE]
+> **What you'll see:** GitHub tab, The guide
+
+- README rewritten for Turn on, Turn off and Post again
+
 ## What's new line
 
-13 Nov 2026 (03:50 UTC) · New
+13 Nov 2026 (03:50 UTC) · New · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/ad048f8)
 
 After an update, the top of the page says what changed
 
