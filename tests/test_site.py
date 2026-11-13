@@ -16,7 +16,10 @@ for f in os.listdir(SITE):
         s = open(p).read()
         if 'style="' in s: bad.append(f"{f}: inline style is blocked by the page's security rule")
         for ref in re.findall(r'(?:href|src)="([^"#:]+)"', s):
-            if ref not in ("./",) and not os.path.exists(os.path.join(SITE, ref)):
+            if ref not in ("./", "#") and not os.path.exists(os.path.join(SITE, ref)):
                 bad.append(f"{f}: broken link {ref}")
+v = open(os.path.join(SITE, "version.txt")).read().strip()
+if f'const BUILD = "{v}";' not in open(os.path.join(SITE, "update.js")).read(): bad.append("update.js BUILD does not match version.txt")
+if "Page version " + v not in open(os.path.join(ROOT, "STATUS.md")).read(): bad.append("STATUS.md version does not match")
 for e in bad: print("FAIL", e)
 sys.exit(1 if bad else print("all good"))
