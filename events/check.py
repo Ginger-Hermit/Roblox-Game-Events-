@@ -22,6 +22,10 @@ def main():
     uni = get(f"https://apis.roblox.com/universes/v1/places/{cfg['game']}/universe")["universeId"]
     events = get(f"https://apis.roblox.com/virtual-events/v1/universes/{uni}/virtual-events?limit=25").get("data", [])
     now = datetime.now(timezone.utc)
+    site = os.path.join(HERE, "..", "site", "events.json")
+    rows = [{"id": str(e.get("id")), "title": e.get("displayTitle") or e.get("title") or "Event",
+             "start": (e.get("eventTime") or {}).get("startUtc"), "end": (e.get("eventTime") or {}).get("endUtc")} for e in events]
+    json.dump({"game": cfg["game"], "game_name": cfg["game_name"], "events": rows}, open(site, "w"), indent=1)
     hook = os.environ.get("DISCORD_WEBHOOK", "")
     if not first_run and not hook.startswith("https://discord.com/api/webhooks/"):
         sys.exit("No Discord link saved. Add the DISCORD_WEBHOOK secret.")
