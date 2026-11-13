@@ -46,8 +46,8 @@ Researched 13 Nov 2026 (three web searches). Facts about other tools come from t
 ## For the technical crowd
 How Roblox Game Events works (from the code in this repo):
 
-- **Hosting:** Cloudflare Pages. Static site in `site/`, serverless endpoints in `functions/api/` (`turn-on`, `turn-off`, `turn-again`, `run`).
-- **Storage:** Cloudflare KV (binding `SUBS`). One record per follow: game, webhook, posted event IDs.
+- **Hosting:** Static site in `site/`, serverless endpoints in `functions/api/` (`turn-on`, `turn-off`, `turn-again`, `run`).
+- **Storage:** A key-value store (binding `SUBS`). One record per follow: game, webhook, posted event IDs.
 - **Webhook at rest:** encrypted with AES-GCM; key is SHA-256 of the `HOOK_KEY` secret. Never stored in plain text when the secret is set.
 - **Schedule:** GitHub Actions (`.github/workflows/events.yml`) calls `/api/run` daily at 17:07 UTC (plus a weekly run Mondays 06:23 UTC), paging through follows with a `cursor`. Protected by an `X-Run-Key` header (`RUN_KEY` secret).
 - **Data source:** Roblox's public, unauthenticated web APIs:
@@ -62,7 +62,7 @@ How Roblox Game Events works (from the code in this repo):
 ### Technical difference from the others
 | | Ours | Noti | Roblox webhooks | Bots (Quark, Series) | In-game scripts (DiscoLink) |
 |---|---|---|---|---|---|
-| Runs where | Cloudflare edge + GitHub cron | Hosted bot | Roblox | Hosted bot | Inside the game server (`HttpService`) |
+| Runs where | Serverless helper + GitHub cron | Hosted bot | Roblox | Hosted bot | Inside the game server (`HttpService`) |
 | Discord link | Incoming webhook | Bot account | Incoming webhook | Bot account | Incoming webhook (often via proxy) |
 | Roblox access | Public web APIs | Not recorded | Open Cloud, owner only | Open Cloud / group API, owner | Game's own code |
 | Needs game ownership | No | No | Yes | Yes | Yes |
@@ -96,7 +96,7 @@ A webhook can only **post** to the one channel it was made for. A bot is a membe
 - The daily run endpoint needs a secret header (`X-Run-Key`); outsiders can't trigger posts.
 - At most 3 posts a day per game; old events never repost, so a bug can't flood a channel.
 - Test and Post go straight from the browser to Discord; no other site is contacted.
-- No ads, no tracking, no accounts. The host (Cloudflare) keeps normal visit logs.
+- No ads, no tracking, no accounts. The host keeps normal visit logs.
 - Reads only Roblox's **public** event data; never logs in, so no Roblox or Discord rules about automated logins are broken.
 
 ### Risks we can't remove
@@ -109,7 +109,7 @@ A webhook can only **post** to the one channel it was made for. A bot is a membe
 > - **Roblox changes its public data**
 >   - Posts stop or go wrong. Nothing else is affected.
 > - **Free hosting**
->   - If Cloudflare or GitHub limits change, posts stop.
+>   - If free hosting limits change, posts stop.
 > - **Trust in the operator**
 >   - The helper holds your webhook.
 >   - Code is public here, but you can't see what's actually running.
