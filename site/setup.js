@@ -43,3 +43,35 @@ $("copy").addEventListener("click", async () => {
   try { await navigator.clipboard.writeText(text); say("copyMsg", "Copied. Paste it into settings.json.", true); }
   catch (e) { say("copyMsg", "Couldn't copy. Long-press to copy:\n" + text, false); }
 });
+
+// Saved games: kept on this phone only (localStorage), only when Remember is on.
+const load = () => { try { return JSON.parse(localStorage.getItem("saved") || "[]"); } catch (e) { return []; } };
+const store = list => { try { localStorage.setItem("saved", JSON.stringify(list)); } catch (e) {} };
+function draw() {
+  const list = load(), sv = $("sv");
+  $("savedBox").hidden = !list.length; $("savedN").textContent = list.length; sv.textContent = "";
+  list.forEach((s, i) => {
+    const a = document.createElement("a"), b = document.createElement("b"), sp = document.createElement("span"), x = document.createElement("button");
+    a.href = "#"; b.textContent = s.name; sp.textContent = s.label || "Discord"; x.textContent = "\u00d7"; x.className = "x"; x.title = "Forget";
+    a.onclick = e => { e.preventDefault(); $("game").value = s.link; $("hook").value = s.hook; $("label").value = s.label || "";
+      $("remember").checked = true; $("nameRow").hidden = false; $("game").dispatchEvent(new Event("input"));
+      for (const o of sv.children) o.classList.toggle("on", o === a); };
+    x.onclick = e => { e.preventDefault(); e.stopPropagation(); const l = load(); l.splice(i, 1); store(l); draw(); };
+    a.append(b, sp, x); sv.append(a);
+  });
+  const add = document.createElement("a"); add.href = "#"; add.className = "add"; add.textContent = "+ Add a game";
+  add.onclick = e => { e.preventDefault(); for (const id of ["game", "hook", "label"]) $(id).value = ""; $("remember").checked = false; $("nameRow").hidden = true; say("gameMsg", "", true); };
+  sv.append(add);
+}
+function remember() {
+  if (!$("remember").checked) return;
+  const g = readGame(), hook = $("hook").value.trim();
+  if (!g || !HOOK.test(hook)) return say("hookMsg", "Add a game and a webhook to remember them.", false);
+  const l = load().filter(s => !(s.id === g.id && s.hook === hook));
+  l.unshift({ id: g.id, name: g.name, link: $("game").value.trim(), hook, label: $("label").value.trim().slice(0, 30) });
+  store(l.slice(0, 20)); draw();
+}
+$("remember").addEventListener("change", () => { $("nameRow").hidden = !$("remember").checked; remember(); });
+$("label").addEventListener("change", remember);
+$("test").addEventListener("click", remember); $("post").addEventListener("click", remember);
+draw();

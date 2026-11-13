@@ -13,3 +13,7 @@ document.getElementById("copybug").onclick=async()=>{
     "Screen: "+innerWidth+"x"+innerHeight,"Theme: "+(root.dataset.theme||"auto")+", text: "+(root.dataset.size||"normal"),"Events: "+ev,"What went wrong: "].join("\n");
   try{await navigator.clipboard.writeText(txt);msg.textContent="Copied. Paste it with a short note."}catch(e){msg.textContent="Couldn't copy. Take a screenshot instead."}
 };
+
+const sm=document.getElementById("savedmsg");
+const cnt=()=>{let n=0;try{n=JSON.parse(localStorage.getItem("saved")||"[]").length}catch(e){}sm.textContent=n?n+" saved on this phone.":"Nothing saved.";};cnt();
+document.getElementById("forgetall").onclick=()=>{try{localStorage.removeItem("saved")}catch(e){}cnt();};

@@ -2,9 +2,22 @@
 
 Newest first. Each update says what it does and what to look for.
 
+## Remember your games
+
+13 Nov 2026 (03:17 UTC) · New
+
+Save games and webhooks on your phone and pick them from a list.
+
+> [!TIP]
+> **What you'll see:** Turn on Remember on Home; saved games show under Your games.
+
+- Your games: collapsible list of saved cards, tap to fill, x to forget
+- Remember on this phone switch, with an optional name
+- Settings: Forget all; Privacy updated
+
 ## Post button
 
-13 Nov 2026 (03:13 UTC) · New
+13 Nov 2026 (03:13 UTC) · New · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/53492f3)
 
 Post a card for your game to Discord straight from the page.
 
