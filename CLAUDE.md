@@ -3,7 +3,7 @@
 > [!IMPORTANT]
 > Read this and the status at the start of every chat. Never ask Ginger for a handoff. Ginger's personal rules (short and blunt, mockup first, bug report first) apply too; not repeated here.
 
-At the start: check the latest GitHub Actions on `main` (Check, Live site). Mention a problem in one line; say nothing if fine.
+Don't check GitHub Actions on your own. Ginger sees a red cross and will say.
 
 @STATUS.md
 
