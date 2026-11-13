@@ -1,7 +1,7 @@
-// Patch note: Safety page no longer names the host.
+// Patch note: A webhook with no posts for 30 days is deleted by itself.
 // Update check: compares this page's BUILD with version.txt on the same site (nothing about you is sent).
-const BUILD = "1.0.24";
-const NOTE = "Safety page no longer names the host.";
+const BUILD = "1.0.25";
+const NOTE = "A webhook with no posts for 30 days is deleted by itself.";
 (() => {
   let last = null; try { last = localStorage.getItem("seenver"); localStorage.setItem("seenver", BUILD); } catch (e) { return; }
   if (last && last !== BUILD) { const nv = document.getElementById("newver"); nv.textContent = "Updated: " + NOTE + "."; nv.hidden = false; }

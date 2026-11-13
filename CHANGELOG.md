@@ -9,9 +9,20 @@
 
 </div>
 
+## Auto-delete quiet webhooks
+
+13 Nov 2026 (10:08 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
+
+A webhook with no posts for 30 days is deleted by itself.
+
+> [!NOTE]
+> **What you'll see:** Nothing changes on the page.
+
+- functions/api/run.js: delete subs idle 30 days
+
 ## Safety page wording
 
-13 Nov 2026 (08:53 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
+13 Nov 2026 (08:53 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/98f51d1)
 
 Safety page no longer names the host.
 

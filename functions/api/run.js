@@ -26,8 +26,11 @@ export async function onRequestPost({ request, env }) {
         const c = await card(e, s, logo);
         const r = await post(hook, c);
         if (r.status === 404 || r.status === 401) { await env.SUBS.delete(k.name); removed++; s.gone = true; break; }
-        n++; posted++;
+        n++; posted++; s.last = new Date().toISOString();
       }
+      // Auto-delete: nothing posted for 30 days (counts from turn on / post again).
+      const quiet = Math.max(...[s.last, s.on, s.again].map(d => Date.parse(d || 0) || 0));
+      if (!s.gone && now - quiet > 30 * 864e5) { await env.SUBS.delete(k.name); removed++; s.gone = true; }
       if (!s.gone) { s.seen = s.seen.slice(-200); await env.SUBS.put(k.name, JSON.stringify(s)); }
     } catch (e) { /* skip this one today */ }
   }
