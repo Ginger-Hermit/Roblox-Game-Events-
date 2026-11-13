@@ -3,6 +3,8 @@
 Posts new events from any Roblox game to your Discord channel, once a day. Free, runs on GitHub. No Roblox login, no account needed.
 
 ## Set up (5 minutes, works on a phone browser)
+**Easy way:** use the [setup helper](https://ginger-hermit.github.io/Roblox-Game-Events-/) for steps 2 and 3.
+
 1. Tap **Use this template** → **Create a new repository**.
 2. In your copy, open `events/settings.json`, tap the pencil, and change:
    - `game`: the number in the game's link (`roblox.com/games/`**`17450551531`**`/Gym-League`)

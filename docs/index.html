@@ -1,0 +1,12 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src https://discord.com">
+<title>Roblox Game Events</title><link rel="stylesheet" href="style.css"></head><body><main>
+<h1>Roblox Game Events</h1><p class="sub">Set up your robot in 3 steps.</p>
+<label for="game">1. Game link</label><input id="game" placeholder="roblox.com/games/17450551531/Gym-League" autocomplete="off">
+<p id="gameMsg" class="msg"></p>
+<label for="hook">2. Discord link</label><div class="row"><input id="hook" type="password" placeholder="discord.com/api/webhooks/..." autocomplete="off"><button id="test">Test</button></div>
+<p id="hookMsg" class="msg"></p>
+<label>3. Settings</label><button id="copy" class="wide">Copy settings</button>
+<p id="copyMsg" class="msg"></p>
+<p class="note">Paste into <b>events/settings.json</b> in your copy. Then add the Discord link as a secret called <b>DISCORD_WEBHOOK</b>. Nothing is saved on this page. <a href="https://github.com/Ginger-Hermit/Roblox-Game-Events-#set-up-5-minutes-works-on-a-phone-browser">Full steps</a></p>
+</main><script src="app.js"></script></body></html>
