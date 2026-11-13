@@ -2,9 +2,20 @@
 
 Newest first. Each update says what it does and what to look for.
 
+## Risks link
+
+13 Nov 2026 (03:33 UTC) · Changed
+
+Risks are linked right under Turn on
+
+> [!NOTE]
+> **What you'll see:** Home, under Turn on
+
+- Added a Read the real risks link under Turn on
+
 ## Real risks
 
-13 Nov 2026 (03:32 UTC) · New
+13 Nov 2026 (03:32 UTC) · New · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/726f3b6)
 
 Plain list of the actual risks of using it
 
