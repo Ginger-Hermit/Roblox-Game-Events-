@@ -2,9 +2,20 @@
 
 Newest first. Each update says what it does and what to look for.
 
+## Colour themes
+
+13 Nov 2026 (03:34 UTC) · New
+
+Pick a colour for buttons and links
+
+> [!TIP]
+> **What you'll see:** Settings, Colour
+
+- Added Navy, Purple, Teal, Forest, Sunset and Rose colours
+
 ## Up-to-date wording
 
-13 Nov 2026 (03:33 UTC) · Changed
+13 Nov 2026 (03:33 UTC) · Changed · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/0b27bda)
 
 Removed old GitHub secret steps
 

@@ -1,5 +1,5 @@
 const root=document.documentElement;
-for(const [id,key] of [["theme","theme"],["size","size"]]){
+for(const [id,key] of [["theme","theme"],["colour","colour"],["size","size"]]){
   const box=document.getElementById(id),cur=root.dataset[key]||"";
   for(const b of box.children){b.classList.toggle("on",b.dataset.v===cur);
     b.onclick=()=>{const v=b.dataset.v;if(v)root.dataset[key]=v;else delete root.dataset[key];

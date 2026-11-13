@@ -1,1 +1,1 @@
-try{const t=localStorage.getItem("theme"),z=localStorage.getItem("size");if(t)document.documentElement.dataset.theme=t;if(z)document.documentElement.dataset.size=z}catch(e){}
+try{const t=localStorage.getItem("theme"),z=localStorage.getItem("size");if(t)document.documentElement.dataset.theme=t;if(z)document.documentElement.dataset.size=z;const c=localStorage.getItem("colour");if(c)document.documentElement.dataset.colour=c}catch(e){}

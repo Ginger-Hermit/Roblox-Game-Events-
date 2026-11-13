@@ -1,6 +1,6 @@
-// Patch note: Removed old GitHub secret steps
+// Patch note: Pick a colour for buttons and links
 // Update check: compares this page's BUILD with version.txt on the same site (nothing about you is sent).
-const BUILD = "1.0.12";
+const BUILD = "1.0.13";
 (async () => {
   try {
     const r = await fetch("version.txt?t=" + Date.now(), { cache: "no-store" });
