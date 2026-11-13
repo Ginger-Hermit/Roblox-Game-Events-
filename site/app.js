@@ -12,7 +12,7 @@ fetch("events.json",{cache:"no-store"}).then(r=>r.json()).then(d=>{
     b.textContent=e.title;
     if(s&&s<=now&&(!en||en>now)){const t=document.createElement("span");t.className="now";t.textContent="On now";sp.append(t,en?"ends "+f(e.end):"")}
     else if(s&&s>now)sp.textContent="Starts "+f(e.start);
-    else sp.textContent=en?"Ended "+f(e.end):"Time not recorded";
+    else{a.classList.add("past");sp.textContent=en?"Ended "+f(e.end):"Time not recorded"}
     div.append(b,sp);a.append(div);list.append(a);
   }
 }).catch(()=>{document.getElementById("list").innerHTML='<p class="sub">Couldn\'t load events.</p>'});
