@@ -11,4 +11,3 @@ Pick any Roblox game and a Discord webhook. A GitHub job checks the game once a 
 
 ## Not tested
 - Big text on a real phone.
-- A real new-event post after the link change.
