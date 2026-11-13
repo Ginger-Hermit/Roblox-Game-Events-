@@ -1,9 +1,0 @@
-@import "home.css";
-.sub{color:var(--muted);margin:0 0 14px;font-size:0.875rem}
-h2.x{font-size:0.9375rem;color:var(--muted);font-weight:600;margin:18px 0 8px}
-a.ev{display:flex;align-items:center;gap:8px;text-decoration:none;border:1px solid var(--line);border-left:5px solid var(--c-setup);border-radius:10px;background:var(--field);padding:12px 14px;margin-bottom:8px;color:var(--text)}
-a.ev.past{border-left-color:var(--muted)}a.ev.game{border-left-color:var(--c-example)}
-a.ev b{display:block;font-size:1rem;color:var(--link)}a.ev span{color:var(--muted);font-size:0.8125rem}
-a.ev:after{content:"\203A";margin-left:auto;font-size:1.3em;color:var(--link)}
-.now{background:var(--accent);color:var(--onAccent);border-radius:6px;padding:0 6px;font-size:0.75rem;font-weight:600;margin-right:4px}
-.back{display:inline-block;margin-top:10px;color:var(--link);font-size:0.875rem}
