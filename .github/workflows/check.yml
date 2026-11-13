@@ -6,6 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: python3 tests/test_site.py
+      - run: python3 tests/test_security.py
       - run: sh tools/find_errors.sh
       - name: Check the GitHub jobs
         run: |
