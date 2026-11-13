@@ -2,9 +2,20 @@
 
 Newest first. Each update says what it does and what to look for.
 
+## Safer Turn off
+
+13 Nov 2026 (04:17 UTC) · Changed
+
+Only the person with the full webhook can turn off or repost alerts.
+
+> [!NOTE]
+> **What you'll see:** Nothing looks different.
+
+- Turn off and Post again now check the whole webhook.
+
 ## Old bot off
 
-13 Nov 2026 (04:04 UTC) · Changed
+13 Nov 2026 (04:04 UTC) · Changed · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/e554920)
 
 Only the website posts now, so no double posts
 

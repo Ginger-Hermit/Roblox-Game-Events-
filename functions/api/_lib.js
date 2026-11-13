@@ -59,3 +59,7 @@ export async function unlock(hook, env) {
   const b = Uint8Array.from(atob(hook.slice(4)), c => c.charCodeAt(0));
   return new TextDecoder().decode(await crypto.subtle.decrypt({ name: "AES-GCM", iv: b.slice(0, 12) }, await aes(env), b.slice(12)));
 }
+// True only if the full webhook (secret part too) matches the saved one.
+export async function owns(s, hook, env) {
+  try { return HOOK.exec(await unlock(s.hook, env))[2] === HOOK.exec(hook)[2]; } catch (e) { return false; }
+}
