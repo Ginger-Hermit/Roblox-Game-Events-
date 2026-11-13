@@ -7,6 +7,8 @@
 
 </div>
 
+**Jump to:** [In plain words](#in-plain-words) · [Short answer](#short-answer) · [Side by side](#side-by-side) · [For the technical crowd](#for-the-technical-crowd) · [Security and safety](#security-and-safety) · [Each tool](#each-tool) · [Where we're weaker](#where-were-weaker) · [Ideas this suggests (not approved)](#ideas-this-suggests-not-approved)
+
 Researched 13 Nov 2026 (three web searches). Facts about other tools come from their own pages or forum posts; anything we couldn't check says **Not recorded**.
 
 ## In plain words
@@ -39,16 +41,83 @@ Researched 13 Nov 2026 (three web searches). Facts about other tools come from t
 >   - two minutes on a phone, just a webhook
 
 ## Side by side
-| | Roblox Game Events | Noti | Roblox webhooks | Series Webhooks | DiscoLink | Quark |
-|---|---|---|---|---|---|---|
-| Any public game | ✓ | ✓ (says so) | ✗ Own only | ✗ Own group | ✗ Own only | ✗ Own only |
-| Posts game events | ✓ | ✓ | ✗ | ✗ | Not recorded | Not recorded |
-| Also posts game updates | ✗ | ✓ | ✗ | ✗ | ✗ | Not recorded |
-| Pings a role | ✗ | ✓ | ✗ | Not recorded | Not recorded | Not recorded |
-| No code | ✓ | ✓ | ✓ | ✓ | ✗ | ✓ |
-| No bot to add to your server | ✓ (webhook only) | ✗ | ✓ | ✗ | ✓ | ✗ |
-| No Roblox login | ✓ | Not recorded | ✗ | ✗ | ✗ | ✗ |
-| Free | ✓ | Says free; not checked | ✓ | Not recorded | Not recorded | Not recorded |
+**Roblox Game Events**
+
+| | |
+|---|---|
+| Any public game | ✓ |
+| Posts game events | ✓ |
+| Also posts game updates | ✗ |
+| Pings a role | ✗ |
+| No code | ✓ |
+| No bot to add to your server | ✓ (webhook only) |
+| No Roblox login | ✓ |
+| Free | ✓ |
+
+**Noti**
+
+| | |
+|---|---|
+| Any public game | ✓ (says so) |
+| Posts game events | ✓ |
+| Also posts game updates | ✓ |
+| Pings a role | ✓ |
+| No code | ✓ |
+| No bot to add to your server | ✗ |
+| No Roblox login | Not recorded |
+| Free | Says free; not checked |
+
+**Roblox webhooks**
+
+| | |
+|---|---|
+| Any public game | ✗ Own only |
+| Posts game events | ✗ |
+| Also posts game updates | ✗ |
+| Pings a role | ✗ |
+| No code | ✓ |
+| No bot to add to your server | ✓ |
+| No Roblox login | ✗ |
+| Free | ✓ |
+
+**Series Webhooks**
+
+| | |
+|---|---|
+| Any public game | ✗ Own group |
+| Posts game events | ✗ |
+| Also posts game updates | ✗ |
+| Pings a role | Not recorded |
+| No code | ✓ |
+| No bot to add to your server | ✗ |
+| No Roblox login | ✗ |
+| Free | Not recorded |
+
+**DiscoLink**
+
+| | |
+|---|---|
+| Any public game | ✗ Own only |
+| Posts game events | Not recorded |
+| Also posts game updates | ✗ |
+| Pings a role | Not recorded |
+| No code | ✗ |
+| No bot to add to your server | ✓ |
+| No Roblox login | ✗ |
+| Free | Not recorded |
+
+**Quark**
+
+| | |
+|---|---|
+| Any public game | ✗ Own only |
+| Posts game events | Not recorded |
+| Also posts game updates | Not recorded |
+| Pings a role | Not recorded |
+| No code | ✓ |
+| No bot to add to your server | ✗ |
+| No Roblox login | ✗ |
+| Free | Not recorded |
 
 ## For the technical crowd
 How Roblox Game Events works (from the code in this repo):
@@ -67,13 +136,55 @@ How Roblox Game Events works (from the code in this repo):
 - **Discord side:** plain incoming webhook (`POST` JSON with embeds). No bot user, no OAuth, no gateway connection, no server permissions.
 
 ### Technical difference from the others
-| | Ours | Noti | Roblox webhooks | Bots (Quark, Series) | In-game scripts (DiscoLink) |
-|---|---|---|---|---|---|
-| Runs where | Serverless helper + GitHub cron | Hosted bot | Roblox | Hosted bot | Inside the game server (`HttpService`) |
-| Discord link | Incoming webhook | Bot account | Incoming webhook | Bot account | Incoming webhook (often via proxy) |
-| Roblox access | Public web APIs | Not recorded | Open Cloud, owner only | Open Cloud / group API, owner | Game's own code |
-| Needs game ownership | No | No | Yes | Yes | Yes |
-| Check speed | Once a day | Not recorded | Push (instant) | Not recorded | Instant |
+**Ours**
+
+| | |
+|---|---|
+| Runs where | Serverless helper + GitHub cron |
+| Discord link | Incoming webhook |
+| Roblox access | Public web APIs |
+| Needs game ownership | No |
+| Check speed | Once a day |
+
+**Noti**
+
+| | |
+|---|---|
+| Runs where | Hosted bot |
+| Discord link | Bot account |
+| Roblox access | Not recorded |
+| Needs game ownership | No |
+| Check speed | Not recorded |
+
+**Roblox webhooks**
+
+| | |
+|---|---|
+| Runs where | Roblox |
+| Discord link | Incoming webhook |
+| Roblox access | Open Cloud, owner only |
+| Needs game ownership | Yes |
+| Check speed | Push (instant) |
+
+**Bots (Quark, Series)**
+
+| | |
+|---|---|
+| Runs where | Hosted bot |
+| Discord link | Bot account |
+| Roblox access | Open Cloud / group API, owner |
+| Needs game ownership | Yes |
+| Check speed | Not recorded |
+
+**In-game scripts (DiscoLink)**
+
+| | |
+|---|---|
+| Runs where | Inside the game server (`HttpService`) |
+| Discord link | Incoming webhook (often via proxy) |
+| Roblox access | Game's own code |
+| Needs game ownership | Yes |
+| Check speed | Instant |
 
 Trade-off: once-a-day polling is cheap and needs no permissions, but an event announced and started on the same day may post late.
 
@@ -85,15 +196,65 @@ Trade-off: once-a-day polling is cheap and needs no permissions, but an event an
 >   - Fix in a minute: delete the webhook in Discord.
 
 ### What each tool can reach
-| | Ours | Noti | Roblox webhooks | Bots (Quark, Series) | In-game scripts (DiscoLink) |
-|---|---|---|---|---|---|
-| Asks for a login or password | ✗ Never | Discord sign-in to add bot | Roblox login (your account) | Discord sign-in, often Roblox link | Roblox Studio |
-| Access to your Discord server | Post in **one** channel only | Bot permissions you grant (can be wide) | Post in one channel | Bot permissions you grant | Post in one channel |
-| Can read your messages or members | ✗ | Depends on permissions; not recorded | ✗ | Depends on permissions | ✗ |
-| Access to your Roblox account | ✗ None | Not recorded | Yes (it's your dashboard) | Often an API key or group link | Your game's code |
-| Account ban risk | None (never logs in) | Low (official bot API) | None | Low | None if used as Roblox allows |
-| What's stored about you | Game + webhook (encrypted); deleted on Turn off | Not recorded | On Roblox | Not recorded | In your game |
-| Open source / checkable | ✓ This repo | Not recorded | ✗ | Not recorded | Varies |
+**Ours**
+
+| | |
+|---|---|
+| Asks for a login or password | ✗ Never |
+| Access to your Discord server | Post in **one** channel only |
+| Can read your messages or members | ✗ |
+| Access to your Roblox account | ✗ None |
+| Account ban risk | None (never logs in) |
+| What's stored about you | Game + webhook (encrypted); deleted on Turn off |
+| Open source / checkable | ✓ This repo |
+
+**Noti**
+
+| | |
+|---|---|
+| Asks for a login or password | Discord sign-in to add bot |
+| Access to your Discord server | Bot permissions you grant (can be wide) |
+| Can read your messages or members | Depends on permissions; not recorded |
+| Access to your Roblox account | Not recorded |
+| Account ban risk | Low (official bot API) |
+| What's stored about you | Not recorded |
+| Open source / checkable | Not recorded |
+
+**Roblox webhooks**
+
+| | |
+|---|---|
+| Asks for a login or password | Roblox login (your account) |
+| Access to your Discord server | Post in one channel |
+| Can read your messages or members | ✗ |
+| Access to your Roblox account | Yes (it's your dashboard) |
+| Account ban risk | None |
+| What's stored about you | On Roblox |
+| Open source / checkable | ✗ |
+
+**Bots (Quark, Series)**
+
+| | |
+|---|---|
+| Asks for a login or password | Discord sign-in, often Roblox link |
+| Access to your Discord server | Bot permissions you grant |
+| Can read your messages or members | Depends on permissions |
+| Access to your Roblox account | Often an API key or group link |
+| Account ban risk | Low |
+| What's stored about you | Not recorded |
+| Open source / checkable | Not recorded |
+
+**In-game scripts (DiscoLink)**
+
+| | |
+|---|---|
+| Asks for a login or password | Roblox Studio |
+| Access to your Discord server | Post in one channel |
+| Can read your messages or members | ✗ |
+| Access to your Roblox account | Your game's code |
+| Account ban risk | None if used as Roblox allows |
+| What's stored about you | In your game |
+| Open source / checkable | Varies |
 
 ### Why a webhook is safer than a bot
 A webhook can only **post** to the one channel it was made for. A bot is a member of your server and can do whatever you allowed when you added it (read channels, manage roles, etc.). If a bot's company is hacked, every server it's in is exposed. If our helper leaked, the worst case is spam in followed channels.
