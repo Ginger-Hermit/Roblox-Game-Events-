@@ -12,6 +12,18 @@
 4. Any event it hasn't seen before, and that hasn't ended, gets posted. Max 3 a day per game.
 5. If Discord says the webhook is gone, the helper deletes that game and webhook by itself.
 
+```mermaid
+flowchart TD
+  A[Turn on: game + webhook] --> B[Helper saves it, webhook locked]
+  B --> C[Daily check, 17:07 UTC]
+  C --> D{New event, not ended?}
+  D -- yes --> E[Post to Discord, max 3 a day]
+  D -- no --> F[Nothing posted]
+  E --> G{Webhook gone?}
+  G -- yes --> H[Helper deletes it]
+  I[Turn off] --> H
+```
+
 No Roblox login is used. Only Roblox's public events list.
 
 ---

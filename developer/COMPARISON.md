@@ -41,7 +41,8 @@ Researched 13 Nov 2026 (three web searches). Facts about other tools come from t
 >   - two minutes on a phone, just a webhook
 
 ## Side by side
-**Roblox Game Events**
+<details>
+<summary><b>Roblox Game Events</b></summary>
 
 | | |
 |---|---|
@@ -54,7 +55,10 @@ Researched 13 Nov 2026 (three web searches). Facts about other tools come from t
 | No Roblox login | ✓ |
 | Free | ✓ |
 
-**Noti**
+</details>
+
+<details>
+<summary><b>Noti</b></summary>
 
 | | |
 |---|---|
@@ -67,7 +71,10 @@ Researched 13 Nov 2026 (three web searches). Facts about other tools come from t
 | No Roblox login | Not recorded |
 | Free | Says free; not checked |
 
-**Roblox webhooks**
+</details>
+
+<details>
+<summary><b>Roblox webhooks</b></summary>
 
 | | |
 |---|---|
@@ -80,7 +87,10 @@ Researched 13 Nov 2026 (three web searches). Facts about other tools come from t
 | No Roblox login | ✗ |
 | Free | ✓ |
 
-**Series Webhooks**
+</details>
+
+<details>
+<summary><b>Series Webhooks</b></summary>
 
 | | |
 |---|---|
@@ -93,7 +103,10 @@ Researched 13 Nov 2026 (three web searches). Facts about other tools come from t
 | No Roblox login | ✗ |
 | Free | Not recorded |
 
-**DiscoLink**
+</details>
+
+<details>
+<summary><b>DiscoLink</b></summary>
 
 | | |
 |---|---|
@@ -106,7 +119,10 @@ Researched 13 Nov 2026 (three web searches). Facts about other tools come from t
 | No Roblox login | ✗ |
 | Free | Not recorded |
 
-**Quark**
+</details>
+
+<details>
+<summary><b>Quark</b></summary>
 
 | | |
 |---|---|
@@ -118,6 +134,10 @@ Researched 13 Nov 2026 (three web searches). Facts about other tools come from t
 | No bot to add to your server | ✗ |
 | No Roblox login | ✗ |
 | Free | Not recorded |
+
+</details>
+
+<sub>[Back to top](#how-roblox-game-events-compares)</sub>
 
 ## For the technical crowd
 How Roblox Game Events works (from the code in this repo):
@@ -136,7 +156,8 @@ How Roblox Game Events works (from the code in this repo):
 - **Discord side:** plain incoming webhook (`POST` JSON with embeds). No bot user, no OAuth, no gateway connection, no server permissions.
 
 ### Technical difference from the others
-**Ours**
+<details>
+<summary><b>Ours</b></summary>
 
 | | |
 |---|---|
@@ -146,7 +167,10 @@ How Roblox Game Events works (from the code in this repo):
 | Needs game ownership | No |
 | Check speed | Once a day |
 
-**Noti**
+</details>
+
+<details>
+<summary><b>Noti</b></summary>
 
 | | |
 |---|---|
@@ -156,7 +180,10 @@ How Roblox Game Events works (from the code in this repo):
 | Needs game ownership | No |
 | Check speed | Not recorded |
 
-**Roblox webhooks**
+</details>
+
+<details>
+<summary><b>Roblox webhooks</b></summary>
 
 | | |
 |---|---|
@@ -166,7 +193,10 @@ How Roblox Game Events works (from the code in this repo):
 | Needs game ownership | Yes |
 | Check speed | Push (instant) |
 
-**Bots (Quark, Series)**
+</details>
+
+<details>
+<summary><b>Bots (Quark, Series)</b></summary>
 
 | | |
 |---|---|
@@ -176,7 +206,10 @@ How Roblox Game Events works (from the code in this repo):
 | Needs game ownership | Yes |
 | Check speed | Not recorded |
 
-**In-game scripts (DiscoLink)**
+</details>
+
+<details>
+<summary><b>In-game scripts (DiscoLink)</b></summary>
 
 | | |
 |---|---|
@@ -186,7 +219,11 @@ How Roblox Game Events works (from the code in this repo):
 | Needs game ownership | Yes |
 | Check speed | Instant |
 
+</details>
+
 Trade-off: once-a-day polling is cheap and needs no permissions, but an event announced and started on the same day may post late.
+
+<sub>[Back to top](#how-roblox-game-events-compares)</sub>
 
 ## Security and safety
 > [!NOTE]
@@ -196,7 +233,8 @@ Trade-off: once-a-day polling is cheap and needs no permissions, but an event an
 >   - Fix in a minute: delete the webhook in Discord.
 
 ### What each tool can reach
-**Ours**
+<details>
+<summary><b>Ours</b></summary>
 
 | | |
 |---|---|
@@ -208,7 +246,10 @@ Trade-off: once-a-day polling is cheap and needs no permissions, but an event an
 | What's stored about you | Game + webhook (encrypted); deleted on Turn off |
 | Open source / checkable | ✓ This repo |
 
-**Noti**
+</details>
+
+<details>
+<summary><b>Noti</b></summary>
 
 | | |
 |---|---|
@@ -220,7 +261,10 @@ Trade-off: once-a-day polling is cheap and needs no permissions, but an event an
 | What's stored about you | Not recorded |
 | Open source / checkable | Not recorded |
 
-**Roblox webhooks**
+</details>
+
+<details>
+<summary><b>Roblox webhooks</b></summary>
 
 | | |
 |---|---|
@@ -232,7 +276,10 @@ Trade-off: once-a-day polling is cheap and needs no permissions, but an event an
 | What's stored about you | On Roblox |
 | Open source / checkable | ✗ |
 
-**Bots (Quark, Series)**
+</details>
+
+<details>
+<summary><b>Bots (Quark, Series)</b></summary>
 
 | | |
 |---|---|
@@ -244,7 +291,10 @@ Trade-off: once-a-day polling is cheap and needs no permissions, but an event an
 | What's stored about you | Not recorded |
 | Open source / checkable | Not recorded |
 
-**In-game scripts (DiscoLink)**
+</details>
+
+<details>
+<summary><b>In-game scripts (DiscoLink)</b></summary>
 
 | | |
 |---|---|
@@ -255,6 +305,8 @@ Trade-off: once-a-day polling is cheap and needs no permissions, but an event an
 | Account ban risk | None if used as Roblox allows |
 | What's stored about you | In your game |
 | Open source / checkable | Varies |
+
+</details>
 
 ### Why a webhook is safer than a bot
 A webhook can only **post** to the one channel it was made for. A bot is a member of your server and can do whatever you allowed when you added it (read channels, manage roles, etc.). If a bot's company is hacked, every server it's in is exposed. If our helper leaked, the worst case is spam in followed channels.
@@ -284,6 +336,8 @@ A webhook can only **post** to the one channel it was made for. A bot is a membe
 
 Full user-facing version: <https://roblox-game-events.pages.dev/safety.html>
 
+<sub>[Back to top](#how-roblox-game-events-compares)</sub>
+
 ## Each tool
 **Roblox Game Events** — <https://roblox-game-events.pages.dev>
 Paste a game link and a Discord webhook, tap Turn on. Reads Roblox's public events list. Each event posts once, at most 3 a day; up to 5 games per channel. Saves the game and webhook on the helper so it can post. If Roblox changes its public list, posts stop.
@@ -309,6 +363,8 @@ Discord bot for developers. Watches experiences you connect: server and player a
 **One-game bots** (e.g. a Prospecting bot) — <https://github.com/farizrifqi/prospecting-discord-bot>
 Built for a single game. This one copies another Discord server using a "selfbot", which breaks Discord's rules. Not a fair comparison.
 
+<sub>[Back to top](#how-roblox-game-events-compares)</sub>
+
 ## Where we're weaker
 > [!CAUTION]
 > - **Missing features** (Noti has both)
@@ -320,6 +376,10 @@ Built for a single game. This one copies another Discord server using a "selfbot
 > - **Depends on Roblox**
 >   - Public events list must stay the same
 
+<sub>[Back to top](#how-roblox-game-events-compares)</sub>
+
 ## Ideas this suggests (not approved)
 - Optional role ping.
 - Optional "game updated" post.
+
+<sub>[Back to top](#how-roblox-game-events-compares)</sub>
