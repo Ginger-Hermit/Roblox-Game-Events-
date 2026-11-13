@@ -2,9 +2,20 @@
 
 Newest first. Each update says what it does and what to look for.
 
+## Shorter disclaimer
+
+13 Nov 2026 (03:22 UTC) · Changed
+
+Disclaimer cut to short lines.
+
+> [!NOTE]
+> **What you'll see:** Legal link at the bottom.
+
+- One short line per point
+
 ## Proper disclaimer
 
-13 Nov 2026 (03:21 UTC) · Changed
+13 Nov 2026 (03:21 UTC) · Changed · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/04bc15a)
 
 The Legal section is now a proper disclaimer.
 

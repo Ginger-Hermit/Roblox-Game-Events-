@@ -1,6 +1,6 @@
-// Patch note: The Legal section is now a proper disclaimer.
+// Patch note: Disclaimer cut to short lines.
 // Update check: compares this page's BUILD with version.txt on the same site (nothing about you is sent).
-const BUILD = "1.0.6";
+const BUILD = "1.0.7";
 (async () => {
   try {
     const r = await fetch("version.txt?t=" + Date.now(), { cache: "no-store" });
