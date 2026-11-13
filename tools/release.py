@@ -7,7 +7,7 @@
 Bumps the version (site/version.txt, BUILD in site/update.js, STATUS.md), adds the CHANGELOG entry,
 replaces the patch notes, fills in the code link of the previous entry, and runs the tests.
 """
-import argparse, datetime, re, subprocess, sys
+import argparse, json, datetime, re, subprocess, sys
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--title", required=True); ap.add_argument("--tag", default="Changed", choices=["New", "Changed"])
@@ -30,6 +30,7 @@ new = f"{x}.{y}.{int(z) + 1}"
 head = subprocess.run(["git", "log", "--format=%h", "-1"], capture_output=True, text=True).stdout.strip()
 
 open("site/version.txt", "w").write(new + "\n")
+rw("site/update.js", lambda s: re.sub(r'^const NOTE = .*', lambda m: "const NOTE = " + json.dumps(a.meaning) + ";", s, count=1, flags=re.M))
 rw("site/update.js", lambda s: re.sub(r'^// Patch note: .*', "// Patch note: " + a.meaning, s.replace(f'const BUILD = "{old}";', f'const BUILD = "{new}";'), count=1))
 rw("site/index.html", lambda s: re.sub(r'<!-- Patch note: .*? -->', "<!-- Patch note: %s -->" % a.meaning.replace("--", "-"), s, count=1))
 

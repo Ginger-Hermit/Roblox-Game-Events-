@@ -2,9 +2,20 @@
 
 Newest first. Each update says what it does and what to look for.
 
+## What's new line
+
+13 Nov 2026 (03:50 UTC) · New
+
+After an update, the top of the page says what changed
+
+> [!TIP]
+> **What you'll see:** Top of Home after an update
+
+- Shows a one-line What's new after the page updates
+
 ## Post again button
 
-13 Nov 2026 (03:48 UTC) · New
+13 Nov 2026 (03:48 UTC) · New · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/fae7000)
 
 Repost the game's current events any time
 
