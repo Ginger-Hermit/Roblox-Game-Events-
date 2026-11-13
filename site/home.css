@@ -23,3 +23,4 @@ label.label{display:block}
 input{box-sizing:border-box;width:100%;font:inherit;padding:10px 12px;margin-top:6px;border:1px solid var(--line);border-radius:8px;background:var(--field);color:var(--text)}
 .row{display:flex;gap:8px;align-items:flex-end}.row .btn{padding:10px 14px}
 .msg.ok{color:var(--link)}.msg.bad{color:#C0392B}.msg{margin:4px 0 0}
+.help{margin:6px 0 0}.help summary{cursor:pointer;color:var(--link);font-size:.875rem}

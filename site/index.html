@@ -10,6 +10,9 @@
 <label class="label" for="hook">2. Discord webhook</label>
 <div class="row"><input id="hook" type="password" placeholder="discord.com/api/webhooks/..." autocomplete="off"><button class="btn" id="test">Test</button></div>
 <p id="hookMsg" class="msg"></p>
+<details class="help"><summary>How do I get a webhook?</summary>
+<ol class="steps"><li>In Discord, open your server and long-press (or right-click) the channel you want.</li><li>Tap <b>Edit Channel</b>, then <b>Integrations</b>, then <b>Webhooks</b>.</li><li>Tap <b>New Webhook</b>, then <b>Copy Webhook URL</b>.</li><li>Paste it above and tap <b>Test</b>. A test post should show in your channel.</li></ol>
+<p class="msg">You need Manage Webhooks permission on the server. Keep the link private: anyone with it can post in your channel.</p></details>
 <p class="label">3. How it auto posts</p>
 <ol class="steps"><li>Once a day, it checks your game for new events.</li><li>Each new event posts to your channel with its start and end time.</li><li>Tap the post to open the event on Roblox. Old events never repost.</li></ol>
 <p class="label">To switch it on</p>
