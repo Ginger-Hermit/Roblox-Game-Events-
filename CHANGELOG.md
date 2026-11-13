@@ -9,9 +9,20 @@
 
 </div>
 
+## Safety fixes
+
+13 Nov 2026 (10:12 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
+
+Older follows aren't wrongly deleted; the daily run needs its key.
+
+> [!NOTE]
+> **What you'll see:** Nothing changes on the page.
+
+- functions/api/run.js: grandfather 30-day clock, require RUN_KEY
+
 ## Webhooks always encrypted
 
-13 Nov 2026 (10:11 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
+13 Nov 2026 (10:11 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/2999e4f)
 
 Turn on is blocked if the encryption key is missing, so webhooks are never saved unencrypted.
 

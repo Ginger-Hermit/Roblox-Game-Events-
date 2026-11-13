@@ -1,7 +1,7 @@
-// Patch note: Turn on is blocked if the encryption key is missing, so webhooks are never saved unencrypted.
+// Patch note: Older follows aren't wrongly deleted; the daily run needs its key.
 // Update check: compares this page's BUILD with version.txt on the same site (nothing about you is sent).
-const BUILD = "1.0.27";
-const NOTE = "Turn on is blocked if the encryption key is missing, so webhooks are never saved unencrypted.";
+const BUILD = "1.0.28";
+const NOTE = "Older follows aren't wrongly deleted; the daily run needs its key.";
 (() => {
   let last = null; try { last = localStorage.getItem("seenver"); localStorage.setItem("seenver", BUILD); } catch (e) { return; }
   if (last && last !== BUILD) { const nv = document.getElementById("newver"); nv.textContent = "Updated: " + NOTE + "."; nv.hidden = false; }
