@@ -1,6 +1,6 @@
-// Patch note: Only GitHub can start the daily run
+// Patch note: Turn on now posts the game's current events too
 // Update check: compares this page's BUILD with version.txt on the same site (nothing about you is sent).
-const BUILD = "1.0.17";
+const BUILD = "1.0.18";
 (async () => {
   try {
     const r = await fetch("version.txt?t=" + Date.now(), { cache: "no-store" });

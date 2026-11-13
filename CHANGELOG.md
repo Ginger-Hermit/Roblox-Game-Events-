@@ -2,9 +2,20 @@
 
 Newest first. Each update says what it does and what to look for.
 
+## Current events on turn on
+
+13 Nov 2026 (03:48 UTC) · Changed
+
+Turn on now posts the game's current events too
+
+> [!NOTE]
+> **What you'll see:** Turn on a game with an event running
+
+- Turn on posts up to 3 current events with full stats
+
 ## Locked daily run
 
-13 Nov 2026 (03:38 UTC) · Changed
+13 Nov 2026 (03:38 UTC) · Changed · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/e53013a)
 
 Only GitHub can start the daily run
 
