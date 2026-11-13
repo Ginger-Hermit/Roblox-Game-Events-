@@ -7,7 +7,8 @@ export async function onRequestPost({ request, env }) {
   const id = HOOK.exec(hook)[1], key = keyFor(hook, game);
   const mine = await env.SUBS.list({ prefix: "sub:" + id + ":" });
   const all = await env.SUBS.list({ prefix: "sub:" });
-  if (!mine.keys.some(k => k.name === key)) {
+  if (mine.keys.some(k => k.name === key)) return json({ msg: "Already on for this channel." });
+  {
     if (mine.keys.length >= MAX_PER_HOOK) return json({ msg: `One channel can follow up to ${MAX_PER_HOOK} games.` }, 400);
     if (all.keys.length >= MAX_SUBS || !all.list_complete) return json({ msg: "It's full right now. Try again later." }, 503);
   }

@@ -2,9 +2,20 @@
 
 Newest first. Each update says what it does and what to look for.
 
+## No repeat posts
+
+13 Nov 2026 (03:38 UTC) · Changed
+
+Tapping Turn on again no longer reposts
+
+> [!NOTE]
+> **What you'll see:** Home, Turn on
+
+- Turn on says Already on instead of posting again
+
 ## Scrambled webhooks
 
-13 Nov 2026 (03:37 UTC) · Changed
+13 Nov 2026 (03:37 UTC) · Changed · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/8d3db4e)
 
 Webhooks are scrambled in storage
 
