@@ -1,6 +1,6 @@
 import { HOOK, MAX_SUBS, MAX_PER_HOOK, json, keyFor, get, universe, events, post, card, icon, POSTS_A_DAY, body, lock } from "./_lib.js";
 export async function onRequestPost({ request, env }) {
-  if (!env.SUBS) return json({ msg: "Not set up yet. Try again later." }, 503);
+  if (!env.SUBS || !env.HOOK_KEY) return json({ msg: "Not set up yet. Try again later." }, 503);
   const { game, name, hook } = await body(request);
   if (!game || !HOOK.test(hook || "")) return json({ msg: "Add a game link and a webhook first." }, 400);
   try { await get(hook); } catch (e) { return json({ msg: "That webhook doesn't work. Make a new one and try again." }, 400); }

@@ -1,7 +1,7 @@
-// Patch note: The page says it turns off after 30 days with no posts.
+// Patch note: Turn on is blocked if the encryption key is missing, so webhooks are never saved unencrypted.
 // Update check: compares this page's BUILD with version.txt on the same site (nothing about you is sent).
-const BUILD = "1.0.26";
-const NOTE = "The page says it turns off after 30 days with no posts.";
+const BUILD = "1.0.27";
+const NOTE = "Turn on is blocked if the encryption key is missing, so webhooks are never saved unencrypted.";
 (() => {
   let last = null; try { last = localStorage.getItem("seenver"); localStorage.setItem("seenver", BUILD); } catch (e) { return; }
   if (last && last !== BUILD) { const nv = document.getElementById("newver"); nv.textContent = "Updated: " + NOTE + "."; nv.hidden = false; }

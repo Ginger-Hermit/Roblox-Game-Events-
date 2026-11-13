@@ -9,9 +9,20 @@
 
 </div>
 
+## Webhooks always encrypted
+
+13 Nov 2026 (10:11 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
+
+Turn on is blocked if the encryption key is missing, so webhooks are never saved unencrypted.
+
+> [!NOTE]
+> **What you'll see:** Nothing changes while the key is set.
+
+- functions/api/turn-on.js: require HOOK_KEY
+
 ## 30-day note
 
-13 Nov 2026 (10:08 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
+13 Nov 2026 (10:08 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/ae17c39)
 
 The page says it turns off after 30 days with no posts.
 
