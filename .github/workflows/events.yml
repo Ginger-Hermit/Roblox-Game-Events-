@@ -21,10 +21,3 @@ jobs:
             [ "$(echo "$R" | jq -r .done)" = "true" ] && break
             C=$(echo "$R" | jq -r .cursor)
           done
-      - run: python3 events/check.py
-        env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-      - run: |
-          git diff --quiet events/seen.json site/events.json && exit 0
-          git config user.name "events-bot"; git config user.email "events-bot@users.noreply.github.com"
-          git add events/seen.json site/events.json; git commit -m "Events: remember posted"; git pull --rebase -q; git push

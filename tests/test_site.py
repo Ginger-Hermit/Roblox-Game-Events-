@@ -3,7 +3,6 @@ import json, os, re, subprocess, sys, py_compile
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(ROOT, "site")
 bad = []
-py_compile.compile(os.path.join(ROOT, "events", "check.py"), doraise=True)
 d = json.load(open(os.path.join(SITE, "events.json")))
 for k in ("game", "game_name", "events"):
     if k not in d: bad.append(f"events.json missing {k}")

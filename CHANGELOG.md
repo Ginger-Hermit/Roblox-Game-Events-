@@ -2,9 +2,20 @@
 
 Newest first. Each update says what it does and what to look for.
 
+## Old bot off
+
+13 Nov 2026 (04:04 UTC) · Changed
+
+Only the website posts now, so no double posts
+
+> [!NOTE]
+> **What you'll see:** Discord, one post per event
+
+- Removed the old GitHub bot that also posted Gym League
+
 ## Guide updated
 
-13 Nov 2026 (03:52 UTC) · Changed
+13 Nov 2026 (03:52 UTC) · Changed · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/fea3558)
 
 The GitHub guide now matches the website setup
 
