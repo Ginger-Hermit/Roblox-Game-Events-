@@ -1,6 +1,23 @@
 # Roblox Game Events
 
+[![Live](https://img.shields.io/badge/live-roblox--game--events.pages.dev-2ea44f)](https://roblox-game-events.pages.dev)
+![Free](https://img.shields.io/badge/price-free-blue)
+![No login](https://img.shields.io/badge/login-none-purple)
+![Works on phone](https://img.shields.io/badge/phone-yes-orange)
+
 Posts events from any Roblox game to your Discord channel. Free. No Roblox login, no account needed.
+
+<img src="images/home.png" alt="The Roblox Game Events home page" width="300">
+
+## How it works
+```mermaid
+flowchart LR
+  A[You paste game link + webhook] --> B[Helper saves it]
+  B --> C[Daily check of Roblox's public events]
+  C --> D{New event?}
+  D -- yes --> E[Post to your Discord]
+  D -- no --> F[Nothing posted]
+```
 
 ## Set up
 > [!TIP]
