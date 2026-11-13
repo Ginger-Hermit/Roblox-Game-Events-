@@ -1,0 +1,18 @@
+name: Report a bug
+description: Something isn't working
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "Never paste a Discord webhook link here. Anyone can see this page."
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: report
+    attributes:
+      label: Bug report
+      description: Tap "Copy bug report" on the site and paste it here.
