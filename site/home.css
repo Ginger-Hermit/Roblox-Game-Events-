@@ -37,3 +37,4 @@ a.gl b{color:var(--link)}.gl .ar{color:var(--muted)}.g1{font-size:.8125rem;color
 .hsec{margin-top:10px}.hsec>summary{cursor:pointer;color:var(--link);border-left:4px solid var(--accent);padding:6px 12px}
 .foot{text-align:center;margin:20px 0 6px}.foot a{color:var(--link);font-weight:600}
 .small{text-align:center;color:var(--muted);font-size:.8rem;margin:0}
+.row .btn+.btn{margin-left:-2px}

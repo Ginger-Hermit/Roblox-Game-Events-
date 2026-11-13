@@ -2,9 +2,21 @@
 
 Newest first. Each update says what it does and what to look for.
 
+## Post button
+
+13 Nov 2026 (03:13 UTC) · New
+
+Post a card for your game to Discord straight from the page.
+
+> [!TIP]
+> **What you'll see:** Post button next to Test on Home.
+
+- Post button sends 'Now following' with the game name and link
+- Daily event posts now show the event's picture
+
 ## Stay safe, Privacy and Legal
 
-13 Nov 2026 (02:36 UTC) · New
+13 Nov 2026 (02:36 UTC) · New · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/93f0732)
 
 Safety, privacy and legal info, like Fishing Cat Data.
 

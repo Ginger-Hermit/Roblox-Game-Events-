@@ -12,6 +12,20 @@ $("game").addEventListener("input", () => {
   if (!$("game").value.trim()) return say("gameMsg", "", true);
   g ? say("gameMsg", "" + g.name + " · number " + g.id, true) : say("gameMsg", "That doesn't look like a Roblox game link.", false);
 });
+const HOOK = /^https:\/\/(?:ptb\.|canary\.)?discord(?:app)?\.com\/api\/webhooks\/\d+\/[\w-]+$/;
+$("post").addEventListener("click", async () => {
+  const g = readGame(), url = $("hook").value.trim();
+  if (!g) return say("hookMsg", "Add the game link first.", false);
+  if (!HOOK.test(url)) return say("hookMsg", "That isn't a Discord webhook link.", false);
+  say("hookMsg", "Posting...", true);
+  const card = { title: "Now following: " + g.name, url: "https://www.roblox.com/games/" + g.id,
+    description: "New events will post here once a day.", color: 0xF28C28, author: { name: "Roblox Game Events" } };
+  try {
+    const r = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ embeds: [card], allowed_mentions: { parse: [] } }) });
+    r.ok ? say("hookMsg", "Posted. Check your channel.", true) : say("hookMsg", "Discord said no (" + r.status + "). Make a new webhook and try again.", false);
+  } catch (e) { say("hookMsg", "Couldn't reach Discord. Check your internet.", false); }
+});
 $("test").addEventListener("click", async () => {
   const url = $("hook").value.trim();
   if (!/^https:\/\/(?:ptb\.|canary\.)?discord(?:app)?\.com\/api\/webhooks\/\d+\/[\w-]+$/.test(url)) return say("hookMsg", "That isn't a Discord webhook link.", false);

@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- Patch note: Safety, privacy and legal info, like Fishing Cat Data. --><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- Patch note: Post a card for your game to Discord straight from the page. --><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://discord.com">
 <title>Roblox Game Events</title><link rel="stylesheet" href="home.css"><script src="prefs.js"></script></head><body><div class="card">
 <h1>Roblox Game Events</h1><div id="newver" class="newver" role="status" hidden>New version ready. <a href="#" id="reloadnow">Refresh now</a></div><nav class="tabs main"><a class="tab on" href="./">Home</a><a class="tab" href="github.html">GitHub</a><a class="tab" href="settings.html">Settings</a></nav>
@@ -9,7 +9,7 @@
 <input id="game" placeholder="Paste the game link" autocomplete="off">
 <p id="gameMsg" class="msg"></p>
 <label class="label" for="hook">2. Discord webhook</label>
-<div class="row"><input id="hook" type="password" placeholder="discord.com/api/webhooks/..." autocomplete="off"><button class="btn" id="test">Test</button></div>
+<div class="row"><input id="hook" type="password" placeholder="discord.com/api/webhooks/..." autocomplete="off"><button class="btn" id="test">Test</button><button class="btn main" id="post">Post</button></div>
 <p id="hookMsg" class="msg"></p>
 <details class="help"><summary>How do I get a webhook?</summary>
 <ol class="steps"><li>In Discord, open your server and long-press (or right-click) the channel you want.</li><li>Tap <b>Edit Channel</b>, then <b>Integrations</b>, then <b>Webhooks</b>.</li><li>Tap <b>New Webhook</b>, then <b>Copy Webhook URL</b>.</li><li>Paste it above and tap <b>Test</b>. A test post should show in your channel.</li></ol>
