@@ -26,7 +26,6 @@ Copy the game's link from Roblox, for example `roblox.com/games/17450551531/Gym-
 > [!TIP]
 > Discord gets a "Now following" post, then up to 3 events that are running now.
 
-Next: [[Buttons]]
 
 ---
 

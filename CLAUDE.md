@@ -2,11 +2,13 @@
 
 > [!IMPORTANT]
 > Read this and the status at the start of every chat. Never ask Ginger for a handoff.
+
 Also at the start: check the latest GitHub Actions results on `main` (Check, Live site). Mention a problem in one line; say nothing if all is fine.
 
 @STATUS.md
 
 Site: `site/` (Home = setup, GitHub, Settings). Helper: `functions/api/` (Cloudflare Pages Functions, KV binding `SUBS`): turn-on, turn-off, run (daily, called by events.yml). Bot: `events/check.py`, run daily by `.github/workflows/events.yml`. Live: roblox-game-events.pages.dev.
+
 > [!WARNING]
 > Pushing to `main` goes live straight away (Cloudflare publishes `main`). Check still runs: red cross = something broke.
 

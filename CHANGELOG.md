@@ -11,7 +11,7 @@
 
 ## Safety page wording
 
-13 Nov 2026 (08:53 UTC) · Changed
+13 Nov 2026 (08:53 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
 
 Safety page no longer names the host.
 
@@ -22,7 +22,7 @@ Safety page no longer names the host.
 
 ## Safer Turn off
 
-13 Nov 2026 (04:17 UTC) · Changed · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/202d2f1)
+13 Nov 2026 (04:17 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/202d2f1)
 
 Only the person with the full webhook can turn off or repost alerts.
 
@@ -33,7 +33,7 @@ Only the person with the full webhook can turn off or repost alerts.
 
 ## Old bot off
 
-13 Nov 2026 (04:04 UTC) · Changed · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/e554920)
+13 Nov 2026 (04:04 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/e554920)
 
 Only the website posts now, so no double posts
 
@@ -44,7 +44,7 @@ Only the website posts now, so no double posts
 
 ## Guide updated
 
-13 Nov 2026 (03:52 UTC) · Changed · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/fea3558)
+13 Nov 2026 (03:52 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/fea3558)
 
 The GitHub guide now matches the website setup
 
@@ -55,7 +55,7 @@ The GitHub guide now matches the website setup
 
 ## What's new line
 
-13 Nov 2026 (03:50 UTC) · New · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/ad048f8)
+13 Nov 2026 (03:50 UTC) · ![New](https://img.shields.io/badge/-New-2ea44f) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/ad048f8)
 
 After an update, the top of the page says what changed
 
@@ -66,7 +66,7 @@ After an update, the top of the page says what changed
 
 ## Post again button
 
-13 Nov 2026 (03:48 UTC) · New · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/fae7000)
+13 Nov 2026 (03:48 UTC) · ![New](https://img.shields.io/badge/-New-2ea44f) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/fae7000)
 
 Repost the game's current events any time
 
@@ -77,7 +77,7 @@ Repost the game's current events any time
 
 ## Current events on turn on
 
-13 Nov 2026 (03:48 UTC) · Changed · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/c022467)
+13 Nov 2026 (03:48 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/c022467)
 
 Turn on now posts the game's current events too
 
@@ -88,7 +88,7 @@ Turn on now posts the game's current events too
 
 ## Locked daily run
 
-13 Nov 2026 (03:38 UTC) · Changed · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/e53013a)
+13 Nov 2026 (03:38 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/e53013a)
 
 Only GitHub can start the daily run
 
@@ -99,7 +99,7 @@ Only GitHub can start the daily run
 
 ## No repeat posts
 
-13 Nov 2026 (03:38 UTC) · Changed · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/6920777)
+13 Nov 2026 (03:38 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/6920777)
 
 Tapping Turn on again no longer reposts
 
@@ -110,7 +110,7 @@ Tapping Turn on again no longer reposts
 
 ## Scrambled webhooks
 
-13 Nov 2026 (03:37 UTC) · Changed · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/8d3db4e)
+13 Nov 2026 (03:37 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/8d3db4e)
 
 Webhooks are scrambled in storage
 
@@ -121,7 +121,7 @@ Webhooks are scrambled in storage
 
 ## Discord-style preview
 
-13 Nov 2026 (03:34 UTC) · Changed · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/3c5073d)
+13 Nov 2026 (03:34 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/3c5073d)
 
 Preview now looks like a real Discord post
 
@@ -132,7 +132,7 @@ Preview now looks like a real Discord post
 
 ## Colour themes
 
-13 Nov 2026 (03:34 UTC) · New · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/728e060)
+13 Nov 2026 (03:34 UTC) · ![New](https://img.shields.io/badge/-New-2ea44f) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/728e060)
 
 Pick a colour for buttons and links
 
@@ -143,7 +143,7 @@ Pick a colour for buttons and links
 
 ## Up-to-date wording
 
-13 Nov 2026 (03:33 UTC) · Changed · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/0b27bda)
+13 Nov 2026 (03:33 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/0b27bda)
 
 Removed old GitHub secret steps
 
@@ -154,7 +154,7 @@ Removed old GitHub secret steps
 
 ## Risks link
 
-13 Nov 2026 (03:33 UTC) · Changed · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/63b3821)
+13 Nov 2026 (03:33 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/63b3821)
 
 Risks are linked right under Turn on
 
@@ -165,7 +165,7 @@ Risks are linked right under Turn on
 
 ## Real risks
 
-13 Nov 2026 (03:32 UTC) · New · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/726f3b6)
+13 Nov 2026 (03:32 UTC) · ![New](https://img.shields.io/badge/-New-2ea44f) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/726f3b6)
 
 Plain list of the actual risks of using it
 
@@ -176,7 +176,7 @@ Plain list of the actual risks of using it
 
 ## Tidier posts
 
-13 Nov 2026 (03:32 UTC) · Changed · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/2cf7989)
+13 Nov 2026 (03:32 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/2cf7989)
 
 Posts now list start, end, countdown, type, interested players and a Play link, with the game icon
 
@@ -187,7 +187,7 @@ Posts now list start, end, countdown, type, interested players and a Play link, 
 
 ## Full disclaimer back
 
-13 Nov 2026 (03:22 UTC) · Changed · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/9743c75)
+13 Nov 2026 (03:22 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/9743c75)
 
 Restored the full professional disclaimer.
 
@@ -198,7 +198,7 @@ Restored the full professional disclaimer.
 
 ## Shorter disclaimer
 
-13 Nov 2026 (03:22 UTC) · Changed · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/a83c605)
+13 Nov 2026 (03:22 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/a83c605)
 
 Disclaimer cut to short lines.
 
@@ -209,7 +209,7 @@ Disclaimer cut to short lines.
 
 ## Proper disclaimer
 
-13 Nov 2026 (03:21 UTC) · Changed · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/04bc15a)
+13 Nov 2026 (03:21 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/04bc15a)
 
 The Legal section is now a proper disclaimer.
 
@@ -220,7 +220,7 @@ The Legal section is now a proper disclaimer.
 
 ## Turn on button
 
-13 Nov 2026 (03:21 UTC) · New · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/81fe5af)
+13 Nov 2026 (03:21 UTC) · ![New](https://img.shields.io/badge/-New-2ea44f) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/81fe5af)
 
 Anyone can switch on daily event posts with one tap, no GitHub needed.
 
@@ -233,7 +233,7 @@ Anyone can switch on daily event posts with one tap, no GitHub needed.
 
 ## Saved channels
 
-13 Nov 2026 (03:18 UTC) · New · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/b2113d6)
+13 Nov 2026 (03:18 UTC) · ![New](https://img.shields.io/badge/-New-2ea44f) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/b2113d6)
 
 Webhooks are saved as their own list, so one channel can be used for many games.
 
@@ -245,7 +245,7 @@ Webhooks are saved as their own list, so one channel can be used for many games.
 
 ## Remember your games
 
-13 Nov 2026 (03:17 UTC) · New · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/96018cf)
+13 Nov 2026 (03:17 UTC) · ![New](https://img.shields.io/badge/-New-2ea44f) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/96018cf)
 
 Save games and webhooks on your phone and pick them from a list.
 
@@ -258,7 +258,7 @@ Save games and webhooks on your phone and pick them from a list.
 
 ## Post button
 
-13 Nov 2026 (03:13 UTC) · New · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/53492f3)
+13 Nov 2026 (03:13 UTC) · ![New](https://img.shields.io/badge/-New-2ea44f) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/53492f3)
 
 Post a card for your game to Discord straight from the page.
 
@@ -270,7 +270,7 @@ Post a card for your game to Discord straight from the page.
 
 ## Stay safe, Privacy and Legal
 
-13 Nov 2026 (02:36 UTC) · New · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/93f0732)
+13 Nov 2026 (02:36 UTC) · ![New](https://img.shields.io/badge/-New-2ea44f) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/93f0732)
 
 Safety, privacy and legal info, like Fishing Cat Data.
 
@@ -283,7 +283,7 @@ Safety, privacy and legal info, like Fishing Cat Data.
 
 ## First numbered version
 
-13 Nov 2026 (16:00 UTC) · New · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/1731e37)
+13 Nov 2026 (16:00 UTC) · ![New](https://img.shields.io/badge/-New-2ea44f) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/1731e37)
 
 The site now has a version number, and tells you when a newer one is ready.
 
@@ -297,7 +297,7 @@ The site now has a version number, and tells you when a newer one is ready.
 
 ## Home, tabs and settings
 
-13 Nov 2026 (15:00 UTC) · New
+13 Nov 2026 (15:00 UTC) · ![New](https://img.shields.io/badge/-New-2ea44f)
 
 A new look matching Fishing Cat Data, with setup on the home page.
 
@@ -311,7 +311,7 @@ A new look matching Fishing Cat Data, with setup on the home page.
 
 ## Discord posts link to the event
 
-13 Nov 2026 (14:00 UTC) · Changed
+13 Nov 2026 (14:00 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
 
 Tapping a Discord post opens that event's own Roblox page.
 
@@ -322,7 +322,7 @@ Tapping a Discord post opens that event's own Roblox page.
 
 ## First release
 
-13 Nov 2026 (12:00 UTC) · New
+13 Nov 2026 (12:00 UTC) · ![New](https://img.shields.io/badge/-New-2ea44f)
 
 The bot checks a Roblox game once a day and posts new events to Discord.
 
