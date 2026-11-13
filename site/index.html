@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- Patch note: Pick a colour for buttons and links --><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- Patch note: Preview now looks like a real Discord post --><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://discord.com">
 <title>Roblox Game Events</title><link rel="stylesheet" href="home.css"><script src="prefs.js"></script></head><body><div class="card">
 <h1>Roblox Game Events</h1><div id="newver" class="newver" role="status" hidden>New version ready. <a href="#" id="reloadnow">Refresh now</a></div><nav class="tabs main"><a class="tab on" href="./">Home</a><a class="tab" href="github.html">GitHub</a><a class="tab" href="settings.html">Settings</a></nav>
@@ -23,9 +23,11 @@
 <p class="label">3. How it auto posts</p>
 <ol class="steps"><li>Once a day, it checks your game for new events.</li><li>Each new event posts to your channel with its times, type and a Play link.</li><li>Tap the post to open the event on Roblox. Old events never repost.</li></ol>
 <p class="label">What it posts</p>
-<div class="pv"><p class="pv-by">New <span id="pvGame">your game</span> event</p><p class="pv-t">Halloween Party</p><p>Spooky pets, candy hunts and a haunted house.</p>
-<ul><li><b>Starts:</b> Fri 31 Oct, 6:00 pm</li><li><b>Ends:</b> Sun 2 Nov, 6:00 pm</li><li><b>Starts in:</b> 2 days</li><li><b>Type:</b> Special event</li><li><b>Interested:</b> 12,480 players</li><li><span class="pv-l">Play now</span></li></ul>
-<p class="small">Example only. Times show in your own time zone.</p></div>
+<div class="dc"><div class="dc-head"><span class="dc-av"></span><b>Roblox Game Events</b><span class="dc-bot">APP</span><span class="dc-time">Today at 6:00 pm</span></div>
+<div class="pv"><span class="pv-icon"></span><p class="pv-by">New <span id="pvGame">your game</span> event</p><p class="pv-t">Halloween Party</p><p>Spooky pets, candy hunts and a haunted house.</p>
+<ul><li><b>Starts:</b> <span class="pv-ts">Fri 31 Oct, 6:00 pm</span></li><li><b>Ends:</b> <span class="pv-ts">Sun 2 Nov, 6:00 pm</span></li><li><b>Starts in:</b> <span class="pv-ts">in 2 days</span></li><li><b>Type:</b> Special event</li><li><b>Interested:</b> 12,480 players</li><li><span class="pv-l">Play now</span></li></ul>
+<div class="pv-pic"></div></div></div>
+<p class="small">Example of how it looks in Discord. Times show in your own time zone.</p>
 <p class="label">4. Turn it on</p>
 <div class="tabs"><button class="btn main" id="on">Turn on</button><button class="btn" id="off">Turn off</button></div>
 <p id="onMsg" class="msg"></p>

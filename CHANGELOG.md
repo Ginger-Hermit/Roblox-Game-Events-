@@ -2,9 +2,20 @@
 
 Newest first. Each update says what it does and what to look for.
 
+## Discord-style preview
+
+13 Nov 2026 (03:34 UTC) · Changed
+
+Preview now looks like a real Discord post
+
+> [!NOTE]
+> **What you'll see:** Home, What it posts
+
+- Restyled the preview to look like Discord
+
 ## Colour themes
 
-13 Nov 2026 (03:34 UTC) · New
+13 Nov 2026 (03:34 UTC) · New · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/728e060)
 
 Pick a colour for buttons and links
 
