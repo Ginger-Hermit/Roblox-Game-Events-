@@ -18,3 +18,4 @@ html[data-size=big]{font-size:19px}html[data-size=bigger]{font-size:22px}html[da
 .tab,.btn{padding:8px 12px;font:inherit;font-size:14px;background:var(--field);color:var(--link);border:1px solid var(--link);border-radius:6px;text-decoration:none;cursor:pointer}
 .tab.on,.btn.main{background:var(--accent);color:var(--onAccent)}
 .label{font-weight:600;margin:14px 0 0}.msg{color:var(--muted);font-size:13px;min-height:1.2em}
+.tabs.main{margin:0 0 16px}.tabs.main .tab{flex:0 0 auto}
