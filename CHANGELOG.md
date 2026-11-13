@@ -2,9 +2,22 @@
 
 Newest first. Each update says what it does and what to look for.
 
+## Turn on button
+
+13 Nov 2026 (03:21 UTC) · New
+
+Anyone can switch on daily event posts with one tap, no GitHub needed.
+
+> [!TIP]
+> **What you'll see:** Step 4 on Home: Turn on and Turn off.
+
+- Turn on / Turn off buttons replace the GitHub steps
+- Small Cloudflare helper does the daily check for everyone
+- Privacy page explains what the helper keeps
+
 ## Saved channels
 
-13 Nov 2026 (03:18 UTC) · New
+13 Nov 2026 (03:18 UTC) · New · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/b2113d6)
 
 Webhooks are saved as their own list, so one channel can be used for many games.
 

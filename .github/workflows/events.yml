@@ -10,6 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Daily check for everyone who tapped Turn on
+        run: |
+          C=""
+          for i in $(seq 1 60); do
+            R=$(curl -fsS -m 60 -X POST "https://roblox-game-events.pages.dev/api/run?cursor=$C") || { echo "helper not reachable"; break; }
+            echo "$R"
+            [ "$(echo "$R" | jq -r .done)" = "true" ] && break
+            C=$(echo "$R" | jq -r .cursor)
+          done
       - run: python3 events/check.py
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}

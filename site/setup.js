@@ -36,13 +36,18 @@ $("test").addEventListener("click", async () => {
     r.ok ? say("hookMsg", "Test post sent. Check your channel.", true) : say("hookMsg", "Discord said no (" + r.status + "). Make a new webhook and try again.", false);
   } catch (e) { say("hookMsg", "Couldn't reach Discord. Check your internet.", false); }
 });
-$("copy").addEventListener("click", async () => {
-  const g = readGame();
-  if (!g) return say("copyMsg", "Add the game link first.", false);
-  const text = JSON.stringify({ game: g.id, game_name: g.name, colour: "#F28C28", max_posts_a_day: 3 }, null, 2) + "\n";
-  try { await navigator.clipboard.writeText(text); say("copyMsg", "Copied. Paste it into settings.json.", true); }
-  catch (e) { say("copyMsg", "Couldn't copy. Long-press to copy:\n" + text, false); }
-});
+async function turn(what) {
+  const g = readGame(), hook = $("hook").value.trim();
+  if (!g || !HOOK.test(hook)) return say("onMsg", "Add a game link and a webhook first.", false);
+  say("onMsg", what === "on" ? "Turning on..." : "Turning off...", true);
+  try {
+    const r = await fetch("api/turn-" + what, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ game: g.id, name: g.name, hook }) });
+    const d = await r.json(); say("onMsg", d.msg || "Something went wrong.", r.ok);
+    if (r.ok && what === "on") remember();
+  } catch (e) { say("onMsg", "Couldn't reach the helper. Try again later.", false); }
+}
+$("on").addEventListener("click", () => turn("on"));
+$("off").addEventListener("click", () => turn("off"));
 
 // Saved games: kept on this phone only (localStorage), only when Remember is on.
 const load = () => { try { return JSON.parse(localStorage.getItem("saved") || "[]"); } catch (e) { return []; } };

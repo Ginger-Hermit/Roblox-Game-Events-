@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- Patch note: Webhooks are saved as their own list, so one channel can be used for many games. --><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- Patch note: Anyone can switch on daily event posts with one tap, no GitHub needed. --><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://discord.com">
 <title>Roblox Game Events</title><link rel="stylesheet" href="home.css"><script src="prefs.js"></script></head><body><div class="card">
 <h1>Roblox Game Events</h1><div id="newver" class="newver" role="status" hidden>New version ready. <a href="#" id="reloadnow">Refresh now</a></div><nav class="tabs main"><a class="tab on" href="./">Home</a><a class="tab" href="github.html">GitHub</a><a class="tab" href="settings.html">Settings</a></nav>
@@ -22,11 +22,10 @@
 <p class="msg">You need Manage Webhooks permission on the server. Keep the link private: anyone with it can post in your channel.</p></details>
 <p class="label">3. How it auto posts</p>
 <ol class="steps"><li>Once a day, it checks your game for new events.</li><li>Each new event posts to your channel with its start and end time.</li><li>Tap the post to open the event on Roblox. Old events never repost.</li></ol>
-<p class="label">To switch it on</p>
-<ol class="steps"><li>Tap Copy settings and paste them into <b>events/settings.json</b> on GitHub.</li><li>Add your webhook as a GitHub secret called <b>DISCORD_WEBHOOK</b>.</li></ol>
-<div class="tabs"><button class="btn main" id="copy">Copy settings</button><a class="btn" href="https://github.com/Ginger-Hermit/Roblox-Game-Events-#readme" target="_blank" rel="noopener">Full steps</a></div>
-<p id="copyMsg" class="msg"></p>
-<p class="msg">Nothing is saved unless you turn on Remember. Test and Post send one message straight to Discord.</p>
+<p class="label">4. Turn it on</p>
+<div class="tabs"><button class="btn main" id="on">Turn on</button><button class="btn" id="off">Turn off</button></div>
+<p id="onMsg" class="msg"></p>
+<p class="msg">Turn on saves the game and webhook on our helper so it can post daily. Turn off deletes them. Use at your own risk.</p>
 <p class="foot"><a href="safety.html#safe">Stay safe</a> &middot; <a href="safety.html#privacy">Privacy</a> &middot; <a href="safety.html#legal">Legal</a> &middot; <a href="https://github.com/Ginger-Hermit/Roblox-Game-Events-" target="_blank" rel="noopener">GitHub</a></p>
 <p class="small">Built by Claude, an AI &middot; Personal use only &middot; Not an official Roblox or Discord product &middot; No guarantees</p>
 </div><script src="setup.js"></script><script src="update.js"></script></body></html>
