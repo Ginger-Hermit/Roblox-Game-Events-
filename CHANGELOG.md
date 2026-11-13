@@ -2,9 +2,20 @@
 
 Newest first. Each update says what it does and what to look for.
 
-## Risks link
+## Up-to-date wording
 
 13 Nov 2026 (03:33 UTC) · Changed
+
+Removed old GitHub secret steps
+
+> [!NOTE]
+> **What you'll see:** Home step 3, Stay safe
+
+- Updated old wording to match Turn on
+
+## Risks link
+
+13 Nov 2026 (03:33 UTC) · Changed · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/63b3821)
 
 Risks are linked right under Turn on
 
