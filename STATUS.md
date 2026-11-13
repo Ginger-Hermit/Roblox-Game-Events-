@@ -7,7 +7,7 @@ Last updated: 13 Nov 2026. Page version 1.0.8 Live at roblox-game-events.pages.d
 Pick any Roblox game and a Discord webhook. A GitHub job checks the game once a day and posts new events to Discord, each linking to its event page.
 
 ## Next
-- Ginger: bind a KV namespace as SUBS in Cloudflare Pages settings (Turn on needs it).
+- Nothing planned. (KV namespace "Events" is bound as SUBS.)
 
 ## Not tested
 - Big text on a real phone.
