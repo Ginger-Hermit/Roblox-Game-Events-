@@ -1,6 +1,6 @@
-// Patch note: Tapping Turn on again no longer reposts
+// Patch note: Only GitHub can start the daily run
 // Update check: compares this page's BUILD with version.txt on the same site (nothing about you is sent).
-const BUILD = "1.0.16";
+const BUILD = "1.0.17";
 (async () => {
   try {
     const r = await fetch("version.txt?t=" + Date.now(), { cache: "no-store" });

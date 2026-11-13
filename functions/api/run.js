@@ -2,6 +2,7 @@
 import { PER_RUN, POSTS_A_DAY, json, universe, events, post, card, icon, lock, unlock } from "./_lib.js";
 export async function onRequestPost({ request, env }) {
   if (!env.SUBS) return json({ msg: "Not set up" }, 503);
+  if (env.RUN_KEY && request.headers.get("X-Run-Key") !== env.RUN_KEY) return json({ msg: "Not allowed" }, 403);
   const cursor = new URL(request.url).searchParams.get("cursor") || undefined;
   if (!cursor) {   // a new round may start at most every 6 hours
     const last = Number(await env.SUBS.get("lastrun") || 0);

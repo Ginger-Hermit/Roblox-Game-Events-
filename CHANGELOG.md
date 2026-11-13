@@ -2,9 +2,20 @@
 
 Newest first. Each update says what it does and what to look for.
 
-## No repeat posts
+## Locked daily run
 
 13 Nov 2026 (03:38 UTC) · Changed
+
+Only GitHub can start the daily run
+
+> [!NOTE]
+> **What you'll see:** Nothing on screen
+
+- Daily run needs the RUN_KEY secret
+
+## No repeat posts
+
+13 Nov 2026 (03:38 UTC) · Changed · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/6920777)
 
 Tapping Turn on again no longer reposts
 
