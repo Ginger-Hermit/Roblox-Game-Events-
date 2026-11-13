@@ -1,7 +1,7 @@
-// Patch note: A webhook with no posts for 30 days is deleted by itself.
+// Patch note: The page says it turns off after 30 days with no posts.
 // Update check: compares this page's BUILD with version.txt on the same site (nothing about you is sent).
-const BUILD = "1.0.25";
-const NOTE = "A webhook with no posts for 30 days is deleted by itself.";
+const BUILD = "1.0.26";
+const NOTE = "The page says it turns off after 30 days with no posts.";
 (() => {
   let last = null; try { last = localStorage.getItem("seenver"); localStorage.setItem("seenver", BUILD); } catch (e) { return; }
   if (last && last !== BUILD) { const nv = document.getElementById("newver"); nv.textContent = "Updated: " + NOTE + "."; nv.hidden = false; }

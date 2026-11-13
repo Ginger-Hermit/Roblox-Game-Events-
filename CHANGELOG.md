@@ -9,9 +9,20 @@
 
 </div>
 
-## Auto-delete quiet webhooks
+## 30-day note
 
 13 Nov 2026 (10:08 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
+
+The page says it turns off after 30 days with no posts.
+
+> [!NOTE]
+> **What you'll see:** Under the Turn on button.
+
+- site/index.html: 30-day note
+
+## Auto-delete quiet webhooks
+
+13 Nov 2026 (10:08 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/3fba908)
 
 A webhook with no posts for 30 days is deleted by itself.
 
