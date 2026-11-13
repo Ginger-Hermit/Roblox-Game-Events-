@@ -19,3 +19,7 @@ html[data-size=big]{font-size:1.1875rem}html[data-size=bigger]{font-size:1.375re
 .tab.on,.btn.main{background:var(--accent);color:var(--onAccent)}
 .label{font-weight:600;margin:14px 0 0}.msg{color:var(--muted);font-size:0.8125rem;min-height:1.2em}
 .tabs.main{margin:0 0 16px}.tabs.main .tab{flex:0 0 auto}
+label.label{display:block}
+input{box-sizing:border-box;width:100%;font:inherit;padding:10px 12px;margin-top:6px;border:1px solid var(--line);border-radius:8px;background:var(--field);color:var(--text)}
+.row{display:flex;gap:8px;align-items:flex-end}.row .btn{padding:10px 14px}
+.msg.ok{color:var(--link)}.msg.bad{color:#C0392B}.msg{margin:4px 0 0}
