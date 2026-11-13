@@ -1,6 +1,6 @@
-:root{--c-setup:#7A4FD0;--c-example:#2F5FB5;--bg:#F0F2F5;--text:#1B1B1B;--muted:#4D5055;--accent:#1F3864;--link:#1F3864;--onAccent:#fff;--line:#898C90;--field:#fff}
-@media (prefers-color-scheme:dark){html:not([data-theme=light]){color-scheme:dark;--c-setup:#9C7FE0;--c-example:#3F66B0;--bg:#14171C;--text:#E8EAED;--muted:#9AA0A6;--accent:#3F66B0;--link:#8FB0F0;--line:#4A5058;--field:#1F242B}}
-html[data-theme=dark]{color-scheme:dark;--c-setup:#9C7FE0;--c-example:#3F66B0;--bg:#14171C;--text:#E8EAED;--muted:#9AA0A6;--accent:#3F66B0;--link:#8FB0F0;--line:#4A5058;--field:#1F242B}
+:root{--c-setup:#7A4FD0;--c-example:#2F5FB5;--bg:#F0F2F5;--text:#1B1B1B;--muted:#4D5055;--accent:#1F3864;--link:#1F3864;--onAccent:#fff;--line:#898C90;--field:#fff;--soft:#D5D8DD}
+@media (prefers-color-scheme:dark){html:not([data-theme=light]){color-scheme:dark;--c-setup:#9C7FE0;--c-example:#3F66B0;--bg:#14171C;--text:#E8EAED;--muted:#9AA0A6;--accent:#3F66B0;--link:#8FB0F0;--line:#4A5058;--field:#1F242B;--soft:#2E343C}}
+html[data-theme=dark]{color-scheme:dark;--c-setup:#9C7FE0;--c-example:#3F66B0;--bg:#14171C;--text:#E8EAED;--muted:#9AA0A6;--accent:#3F66B0;--link:#8FB0F0;--line:#4A5058;--field:#1F242B;--soft:#2E343C}
 body{margin:0;background:var(--bg);color:var(--text);font-family:"Segoe UI",system-ui,sans-serif;font-size:1rem}
 .card{max-width:520px;margin:24px auto;border:1px solid var(--line);border-radius:10px;padding:18px}
 @media (max-width:560px){.card{margin:16px}}
@@ -24,3 +24,7 @@ input{box-sizing:border-box;width:100%;font:inherit;padding:10px 12px;margin-top
 .row{display:flex;gap:8px;align-items:flex-end}.row .btn{padding:10px 14px}
 .msg.ok{color:var(--link)}.msg.bad{color:#C0392B}.msg{margin:4px 0 0}
 .help{margin:6px 0 0}.help summary{cursor:pointer;color:var(--link);font-size:.875rem}
+.hc{background:var(--field);border:1px solid var(--soft);border-radius:10px;padding:12px 14px}
+.hc>b{font-size:1rem}.hc>p{margin:8px 0 0;color:var(--muted)}.hc a{color:var(--link)}
+a.gl{display:block;text-decoration:none;color:inherit;border:1px solid var(--soft);border-radius:10px;padding:10px 12px;margin-top:8px;background:var(--field)}
+a.gl b{color:var(--link)}.gl .ar{color:var(--muted)}.g1{font-size:.8125rem;color:var(--muted);margin-top:2px}.g2{font-size:.8125rem;margin-top:6px}
