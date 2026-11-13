@@ -2,9 +2,20 @@
 
 Newest first. Each update says what it does and what to look for.
 
+## Proper disclaimer
+
+13 Nov 2026 (03:21 UTC) · Changed
+
+The Legal section is now a proper disclaimer.
+
+> [!NOTE]
+> **What you'll see:** Legal link at the bottom of any page.
+
+- As-is, own risk, no liability, not affiliated with Roblox or Discord
+
 ## Turn on button
 
-13 Nov 2026 (03:21 UTC) · New
+13 Nov 2026 (03:21 UTC) · New · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/81fe5af)
 
 Anyone can switch on daily event posts with one tap, no GitHub needed.
 

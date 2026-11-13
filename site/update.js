@@ -1,6 +1,6 @@
-// Patch note: Anyone can switch on daily event posts with one tap, no GitHub needed.
+// Patch note: The Legal section is now a proper disclaimer.
 // Update check: compares this page's BUILD with version.txt on the same site (nothing about you is sent).
-const BUILD = "1.0.5";
+const BUILD = "1.0.6";
 (async () => {
   try {
     const r = await fetch("version.txt?t=" + Date.now(), { cache: "no-store" });
