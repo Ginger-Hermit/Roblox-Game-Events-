@@ -1,6 +1,14 @@
+<div align="center">
+
 # Roblox Game Events
 
-Posts events from any Roblox game into a Discord channel. Free, no Roblox login, no account.
+**Any Roblox game's events, posted to your Discord.**
+
+[![Live](https://img.shields.io/badge/live-roblox--game--events.pages.dev-2ea44f)](https://roblox-game-events.pages.dev)
+![Free](https://img.shields.io/badge/price-free-blue)
+![No login](https://img.shields.io/badge/login-none-purple)
+
+</div>
 
 | | |
 |---|---|

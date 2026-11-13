@@ -11,4 +11,5 @@
 | Posts stopped | Webhook deleted, or Roblox changed its list | Turn on again with a new webhook |
 | "New version ready" | Site updated | Tap Refresh now |
 
-Still stuck: Settings → **Copy bug report**, then [open an issue](https://github.com/Ginger-Hermit/Roblox-Game-Events-/issues/new).
+> [!TIP]
+> **Still stuck?** Settings → **Copy bug report**, then [open an issue](https://github.com/Ginger-Hermit/Roblox-Game-Events-/issues/new).

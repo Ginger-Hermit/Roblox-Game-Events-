@@ -5,7 +5,8 @@ Works on a phone. Takes about 2 minutes.
 ## 1. Make a webhook
 In Discord: channel settings → **Integrations** → **Webhooks** → **New Webhook** → **Copy Webhook URL**.
 
-You need "Manage Webhooks" in that server. Keep the link secret.
+> [!WARNING]
+> You need "Manage Webhooks" in that server. Keep the link secret.
 
 ## 2. Pick the game
 Copy the game's link from Roblox, for example `roblox.com/games/17450551531/Gym-League`.
@@ -16,6 +17,7 @@ Copy the game's link from Roblox, for example `roblox.com/games/17450551531/Gym-
 3. Tap **Test** if you want a test post first.
 4. Tap **Turn on**.
 
-Discord gets a "Now following" post, then up to 3 events that are running now.
+> [!TIP]
+> Discord gets a "Now following" post, then up to 3 events that are running now.
 
 Next: [[Buttons]]

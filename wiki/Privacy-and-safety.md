@@ -6,8 +6,10 @@
 
 **Not saved:** anything else. No accounts, no tracking.
 
-**Risk:** anyone with your webhook link can post in your channel. Don't share it. If it leaks, delete it in Discord and make a new one.
+> [!WARNING]
+> **Risk:** anyone with your webhook link can post in your channel. Don't share it. If it leaks, delete it in Discord and make a new one.
 
-Turn off deletes everything saved about that game and webhook.
+> [!NOTE]
+> Turn off deletes everything saved about that game and webhook.
 
 Full details: [Stay safe](https://roblox-game-events.pages.dev/safety.html).
