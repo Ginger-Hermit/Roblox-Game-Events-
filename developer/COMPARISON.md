@@ -142,7 +142,7 @@ Researched 13 Nov 2026 (three web searches). Facts about other tools come from t
 ## For the technical crowd
 How Roblox Game Events works (from the code in this repo):
 
-- **Hosting:** Static site in `site/`, serverless endpoints in `functions/api/` (`turn-on`, `turn-off`, `turn-again`, `run`).
+- **Hosting:** Static site in `site/`, serverless endpoints in `functions/api/` (`turn-on`, `turn-off`, `run`).
 - **Storage:** A key-value store (binding `SUBS`). One record per follow: game, webhook, posted event IDs.
 - **Webhook at rest:** encrypted with AES-GCM; key is SHA-256 of the `HOOK_KEY` secret. Never stored in plain text when the secret is set.
 - **Schedule:** GitHub Actions (`.github/workflows/events.yml`) calls `/api/run` daily at 17:07 UTC (plus a weekly run Mondays 06:23 UTC), paging through follows with a `cursor`. Protected by an `X-Run-Key` header (`RUN_KEY` secret).

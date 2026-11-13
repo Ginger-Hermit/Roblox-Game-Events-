@@ -1,7 +1,7 @@
-// Patch note: Max 5 Turn ons per visitor a day, and odd game numbers are refused.
+// Patch note: Removed unused code
 // Update check: compares this page's BUILD with version.txt on the same site (nothing about you is sent).
-const BUILD = "1.0.29";
-const NOTE = "Max 5 Turn ons per visitor a day, and odd game numbers are refused.";
+const BUILD = "1.0.30";
+const NOTE = "Removed unused code";
 (() => {
   let last = null; try { last = localStorage.getItem("seenver"); localStorage.setItem("seenver", BUILD); } catch (e) { return; }
   if (last && last !== BUILD) { const nv = document.getElementById("newver"); nv.textContent = "Updated: " + NOTE + "."; nv.hidden = false; }

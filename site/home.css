@@ -1,6 +1,6 @@
 :root{--c-setup:#7A4FD0;--c-example:#2F5FB5;--bg:#F0F2F5;--text:#1B1B1B;--muted:#4D5055;--accent:#1F3864;--link:#1F3864;--onAccent:#fff;--line:#898C90;--field:#fff;--soft:#D5D8DD}
 @media (prefers-color-scheme:dark){html:not([data-theme=light]){color-scheme:dark;--c-setup:#9C7FE0;--c-example:#3F66B0;--bg:#14171C;--text:#E8EAED;--muted:#9AA0A6;--accent:#3F66B0;--link:#8FB0F0;--line:#4A5058;--field:#1F242B;--soft:#2E343C}}
-html[data-theme=dark]{color-scheme:dark;--c-setup:#9C7FE0;--c-example:#3F66B0;--bg:#14171C;--text:#E8EAED;--muted:#9AA0A6;--accent:#3F66B0;--link:#8FB0F0;--line:#4A5058;--field:#1F242B;--soft:#2E343C}
+html[data-theme=dark]{color-scheme:dark;--bg:#14171C;--text:#E8EAED;--muted:#9AA0A6;--accent:#3F66B0;--link:#8FB0F0;--line:#4A5058;--field:#1F242B;--soft:#2E343C}
 body{margin:0;background:var(--bg);color:var(--text);font-family:"Segoe UI",system-ui,sans-serif;font-size:1rem}
 .card{max-width:520px;margin:24px auto;border:1px solid var(--line);border-radius:10px;padding:18px}
 @media (max-width:560px){.card{margin:16px}}
@@ -9,10 +9,6 @@ h2{font-size:1.125rem;margin:0 0 6px}p{margin:0;line-height:1.5}
 .steps{list-style:none;padding:0;margin:10px 0 0;counter-reset:s}
 .steps li{position:relative;padding-left:32px;margin:10px 0;counter-increment:s}
 .steps li:before{content:counter(s);position:absolute;left:0;top:1px;background:var(--accent);color:var(--onAccent);border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:600}
-.dir{display:grid;gap:8px;margin:14px 0 0}
-.dcard{display:block;text-decoration:none;border:1px solid var(--line);border-left:5px solid var(--cx);border-radius:10px;background:var(--field);padding:12px 14px;color:var(--text)}
-.dcard b{display:block;font-size:1rem;color:var(--link)}.dcard span{display:block;font-size:0.8125rem;color:var(--muted)}
-.cx-setup{--cx:var(--c-setup)}.cx-example{--cx:var(--c-example)}.cx-grey{--cx:var(--muted)}
 html[data-size=big]{font-size:1.1875rem}html[data-size=bigger]{font-size:1.375rem}
 .tabs{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 14px}
 .tab,.btn{padding:8px 12px;font:inherit;font-size:0.875rem;background:var(--field);color:var(--link);border:1px solid var(--link);border-radius:6px;text-decoration:none;cursor:pointer}

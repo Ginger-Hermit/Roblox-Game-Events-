@@ -9,9 +9,20 @@
 
 </div>
 
+## Tidy up
+
+13 Nov 2026 (11:58 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
+
+Removed unused code
+
+> [!NOTE]
+> **What you'll see:** Nothing changes on the page
+
+- Removed an unused helper and unused styles
+
 ## Spam limit
 
-13 Nov 2026 (10:16 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
+13 Nov 2026 (10:16 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/2dd2cac)
 
 Max 5 Turn ons per visitor a day, and odd game numbers are refused.
 
