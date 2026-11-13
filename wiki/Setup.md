@@ -1,4 +1,10 @@
+<div align="center">
+
 # Setup
+
+![Start](https://img.shields.io/badge/section-Start-2ea44f)
+
+</div>
 
 Works on a phone. Takes about 2 minutes.
 
@@ -21,3 +27,11 @@ Copy the game's link from Roblox, for example `roblox.com/games/17450551531/Gym-
 > Discord gets a "Now following" post, then up to 3 events that are running now.
 
 Next: [[Buttons]]
+
+---
+
+<div align="center">
+
+[← Home](Home) · [Home](Home) · [Buttons →](Buttons)
+
+</div>

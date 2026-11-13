@@ -37,8 +37,8 @@ rw("site/index.html", lambda s: re.sub(r'<!-- Patch note: .*? -->', "<!-- Patch 
 def log(c):
     k = c.index("\n## "); end = c.index("\n", c.index("\n\n", k + 1) + 2)
     if head and "[code]" not in c[k:end]: c = c[:end] + f" · [code]({REPO}{head})" + c[end:]
-    block = "\n## %s\n\n%s (%s UTC) · %s\n\n%s\n\n> [!%s]\n> **What you'll see:** %s\n\n%s\n" % (
-        a.title, shown, now.strftime("%H:%M"), a.tag, a.meaning, "TIP" if a.tag == "New" else "NOTE", a.see, "\n".join("- " + i for i in a.change))
+    block = "\n## %s\n\n%s (%s UTC) · ![%s](https://img.shields.io/badge/-%s-%s)\n\n%s\n\n> [!%s]\n> **What you'll see:** %s\n\n%s\n" % (
+        a.title, shown, now.strftime("%H:%M"), a.tag, a.tag, "2ea44f" if a.tag == "New" else "blue", a.meaning, "TIP" if a.tag == "New" else "NOTE", a.see, "\n".join("- " + i for i in a.change))
     return c[:k] + block + c[k:]
 rw("CHANGELOG.md", log)
 rw("STATUS.md", lambda s: re.sub(r"Last updated: [^.]*\.", f"Last updated: {shown}.", re.sub(r"Page version [\w.-]+", "Page version " + new, s, count=1), count=1))

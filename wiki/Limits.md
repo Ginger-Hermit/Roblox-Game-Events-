@@ -1,4 +1,10 @@
+<div align="center">
+
 # Limits
+
+![Learn](https://img.shields.io/badge/section-Learn-blue)
+
+</div>
 
 | What | Limit |
 |---|---|
@@ -10,3 +16,11 @@
 | Events checked per game | Latest 25 |
 
 When the helper is full, Turn on says "It's full right now".
+
+---
+
+<div align="center">
+
+[← How it works](How-it-works) · [Home](Home) · [Troubleshooting →](Troubleshooting)
+
+</div>

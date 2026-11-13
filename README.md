@@ -15,6 +15,8 @@
 
 </div>
 
+**Jump to:** [Set up](#set-up) · [Buttons](#buttons) · [How it works](#how-it-works) · [Good to know](#good-to-know)
+
 ## Set up
 > [!TIP]
 > **2 minutes, works on a phone**

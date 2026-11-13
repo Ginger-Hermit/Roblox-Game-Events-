@@ -27,3 +27,11 @@
 - [[Troubleshooting]]: when it doesn't post
 - [[Privacy and safety]]: what's saved and the risks
 - [[Glossary]]: words used here
+
+---
+
+<div align="center">
+
+[Setup →](Setup)
+
+</div>

@@ -1,4 +1,11 @@
+<div align="center">
+
 # How Roblox Game Events compares
+
+[![Live](https://img.shields.io/badge/live-roblox--game--events.pages.dev-2ea44f)](https://roblox-game-events.pages.dev)
+![Researched](https://img.shields.io/badge/researched-13%20Nov%202026-lightgrey)
+
+</div>
 
 Researched 13 Nov 2026 (three web searches). Facts about other tools come from their own pages or forum posts; anything we couldn't check says **Not recorded**.
 

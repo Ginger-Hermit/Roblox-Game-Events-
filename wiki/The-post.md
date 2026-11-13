@@ -1,4 +1,10 @@
+<div align="center">
+
 # The post
+
+![Learn](https://img.shields.io/badge/section-Learn-blue)
+
+</div>
 
 Each event shows up in Discord as one card.
 
@@ -16,3 +22,11 @@ Each event shows up in Discord as one card.
 | **Small picture** | The game's icon |
 
 Fields show "not recorded" style gaps when Roblox doesn't give them.
+
+---
+
+<div align="center">
+
+[← Buttons](Buttons) · [Home](Home) · [How it works →](How-it-works)
+
+</div>

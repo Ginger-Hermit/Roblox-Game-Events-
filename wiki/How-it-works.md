@@ -1,4 +1,10 @@
+<div align="center">
+
 # How it works
+
+![Learn](https://img.shields.io/badge/section-Learn-blue)
+
+</div>
 
 1. **Turn on** saves the game and webhook on the helper (a small Cloudflare service). The webhook is stored locked (encrypted). Events the game already has are noted.
 2. **Once a day** (17:07 UTC) a GitHub job asks the helper to check every followed game.
@@ -7,3 +13,11 @@
 5. If Discord says the webhook is gone, the helper deletes that game and webhook by itself.
 
 No Roblox login is used. Only Roblox's public events list.
+
+---
+
+<div align="center">
+
+[← The post](The-post) · [Home](Home) · [Limits →](Limits)
+
+</div>

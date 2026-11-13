@@ -1,4 +1,10 @@
+<div align="center">
+
 # Buttons
+
+![Start](https://img.shields.io/badge/section-Start-2ea44f)
+
+</div>
 
 | Button | What it does |
 |---|---|
@@ -9,3 +15,11 @@
 | **Post again** | Reposts current events. Once every 10 minutes. Only works after Turn on. |
 
 All buttons need the game link and webhook filled in. Turn off and Post again need the same pair you turned on.
+
+---
+
+<div align="center">
+
+[← Setup](Setup) · [Home](Home) · [The post →](The-post)
+
+</div>

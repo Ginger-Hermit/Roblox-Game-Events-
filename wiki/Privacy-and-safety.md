@@ -1,4 +1,10 @@
+<div align="center">
+
 # Privacy and safety
+
+![Help](https://img.shields.io/badge/section-Help-orange)
+
+</div>
 
 **Saved on the helper (after Turn on):** game number, game name, webhook (locked), list of seen events, the date you turned it on.
 
@@ -13,3 +19,11 @@
 > Turn off deletes everything saved about that game and webhook.
 
 Full details: [Stay safe](https://roblox-game-events.pages.dev/safety.html).
+
+---
+
+<div align="center">
+
+[← Troubleshooting](Troubleshooting) · [Home](Home) · [Glossary →](Glossary)
+
+</div>

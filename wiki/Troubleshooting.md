@@ -1,4 +1,10 @@
+<div align="center">
+
 # Troubleshooting
+
+![Help](https://img.shields.io/badge/section-Help-orange)
+
+</div>
 
 | What you see | Why | Fix |
 |---|---|---|
@@ -13,3 +19,11 @@
 
 > [!TIP]
 > **Still stuck?** Settings → **Copy bug report**, then [open an issue](https://github.com/Ginger-Hermit/Roblox-Game-Events-/issues/new).
+
+---
+
+<div align="center">
+
+[← Limits](Limits) · [Home](Home) · [Privacy and safety →](Privacy-and-safety)
+
+</div>
