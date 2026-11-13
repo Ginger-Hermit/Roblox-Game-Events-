@@ -2,9 +2,20 @@
 
 Newest first. Each update says what it does and what to look for.
 
+## Post again button
+
+13 Nov 2026 (03:48 UTC) · New
+
+Repost the game's current events any time
+
+> [!TIP]
+> **What you'll see:** Step 4, Post again
+
+- New Post again button reposts up to 3 current events (once per 10 minutes)
+
 ## Current events on turn on
 
-13 Nov 2026 (03:48 UTC) · Changed
+13 Nov 2026 (03:48 UTC) · Changed · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/c022467)
 
 Turn on now posts the game's current events too
 

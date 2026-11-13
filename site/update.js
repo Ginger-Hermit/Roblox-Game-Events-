@@ -1,6 +1,6 @@
-// Patch note: Turn on now posts the game's current events too
+// Patch note: Repost the game's current events any time
 // Update check: compares this page's BUILD with version.txt on the same site (nothing about you is sent).
-const BUILD = "1.0.18";
+const BUILD = "1.0.19";
 (async () => {
   try {
     const r = await fetch("version.txt?t=" + Date.now(), { cache: "no-store" });

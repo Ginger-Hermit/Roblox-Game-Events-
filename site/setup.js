@@ -40,7 +40,7 @@ $("test").addEventListener("click", async () => {
 async function turn(what) {
   const g = readGame(), hook = $("hook").value.trim();
   if (!g || !HOOK.test(hook)) return say("onMsg", "Add a game link and a webhook first.", false);
-  say("onMsg", what === "on" ? "Turning on..." : "Turning off...", true);
+  say("onMsg", what === "on" ? "Turning on..." : what === "off" ? "Turning off..." : "Posting...", true);
   try {
     const r = await fetch("api/turn-" + what, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ game: g.id, name: g.name, hook }) });
     const d = await r.json(); say("onMsg", d.msg || "Something went wrong.", r.ok);
@@ -49,6 +49,7 @@ async function turn(what) {
 }
 $("on").addEventListener("click", () => turn("on"));
 $("off").addEventListener("click", () => turn("off"));
+$("again").addEventListener("click", () => turn("again"));
 
 // Saved games: kept on this phone only (localStorage), only when Remember is on.
 const load = () => { try { return JSON.parse(localStorage.getItem("saved") || "[]"); } catch (e) { return []; } };
