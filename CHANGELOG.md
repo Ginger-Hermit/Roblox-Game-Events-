@@ -9,9 +9,20 @@
 
 </div>
 
+## Spam limit
+
+13 Nov 2026 (10:16 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
+
+Max 5 Turn ons per visitor a day, and odd game numbers are refused.
+
+> [!NOTE]
+> **What you'll see:** Only shows after 5 tries in a day.
+
+- functions/api/turn-on.js: per-visitor limit, game number check
+
 ## Safety fixes
 
-13 Nov 2026 (10:12 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
+13 Nov 2026 (10:12 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/63eab5f)
 
 Older follows aren't wrongly deleted; the daily run needs its key.
 

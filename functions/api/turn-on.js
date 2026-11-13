@@ -3,6 +3,10 @@ export async function onRequestPost({ request, env }) {
   if (!env.SUBS || !env.HOOK_KEY) return json({ msg: "Not set up yet. Try again later." }, 503);
   const { game, name, hook } = await body(request);
   if (!game || !HOOK.test(hook || "")) return json({ msg: "Add a game link and a webhook first." }, 400);
+  if (!Number.isSafeInteger(game) || game < 1) return json({ msg: "That game link doesn't look right." }, 400);
+  const ip = "ip:" + (request.headers.get("CF-Connecting-IP") || "x"), tries = Number(await env.SUBS.get(ip) || 0);
+  if (tries >= 5) return json({ msg: "Too many tries today. Try again tomorrow." }, 429);
+  await env.SUBS.put(ip, String(tries + 1), { expirationTtl: 86400 });
   try { await get(hook); } catch (e) { return json({ msg: "That webhook doesn't work. Make a new one and try again." }, 400); }
   const id = HOOK.exec(hook)[1], key = keyFor(hook, game);
   const mine = await env.SUBS.list({ prefix: "sub:" + id + ":" });
