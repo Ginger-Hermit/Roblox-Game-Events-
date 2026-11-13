@@ -15,5 +15,5 @@ document.getElementById("copybug").onclick=async()=>{
 };
 
 const sm=document.getElementById("savedmsg");
-const cnt=()=>{let n=0;try{n=JSON.parse(localStorage.getItem("saved")||"[]").length}catch(e){}sm.textContent=n?n+" saved on this phone.":"Nothing saved.";};cnt();
-document.getElementById("forgetall").onclick=()=>{try{localStorage.removeItem("saved")}catch(e){}cnt();};
+const cnt=()=>{let n=0;try{n=JSON.parse(localStorage.getItem("saved")||"[]").length+JSON.parse(localStorage.getItem("hooks")||"[]").length}catch(e){}sm.textContent=n?n+" saved on this phone.":"Nothing saved.";};cnt();
+document.getElementById("forgetall").onclick=()=>{try{localStorage.removeItem("saved");localStorage.removeItem("hooks")}catch(e){}cnt();};

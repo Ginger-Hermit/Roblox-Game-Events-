@@ -49,3 +49,4 @@ a.gl b{color:var(--link)}.gl .ar{color:var(--muted)}.g1{font-size:.8125rem;color
 .sw .k:after{content:"";position:absolute;left:3px;top:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:left .15s}
 .sw input:checked+.k{background:var(--accent)}.sw input:checked+.k:after{left:21px}.sw input:focus-visible+.k{outline:2px solid var(--link)}
 #nameRow input{margin-top:8px}
+.sv a.ch{border-left-color:var(--c-example)}

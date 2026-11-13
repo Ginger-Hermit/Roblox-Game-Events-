@@ -2,9 +2,21 @@
 
 Newest first. Each update says what it does and what to look for.
 
+## Saved channels
+
+13 Nov 2026 (03:18 UTC) · New
+
+Webhooks are saved as their own list, so one channel can be used for many games.
+
+> [!TIP]
+> **What you'll see:** Your channels, under the Discord webhook box.
+
+- Your channels: collapsible list of saved webhooks, tap to fill, x to forget
+- Forget all clears channels too
+
 ## Remember your games
 
-13 Nov 2026 (03:17 UTC) · New
+13 Nov 2026 (03:17 UTC) · New · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/96018cf)
 
 Save games and webhooks on your phone and pick them from a list.
 

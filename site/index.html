@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- Patch note: Save games and webhooks on your phone and pick them from a list. --><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- Patch note: Webhooks are saved as their own list, so one channel can be used for many games. --><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://discord.com">
 <title>Roblox Game Events</title><link rel="stylesheet" href="home.css"><script src="prefs.js"></script></head><body><div class="card">
 <h1>Roblox Game Events</h1><div id="newver" class="newver" role="status" hidden>New version ready. <a href="#" id="reloadnow">Refresh now</a></div><nav class="tabs main"><a class="tab on" href="./">Home</a><a class="tab" href="github.html">GitHub</a><a class="tab" href="settings.html">Settings</a></nav>
@@ -11,6 +11,8 @@
 <input id="game" placeholder="Paste the game link" autocomplete="off">
 <p id="gameMsg" class="msg"></p>
 <label class="label" for="hook">2. Discord webhook</label>
+<details class="saved" id="hooksBox" hidden><summary>Your channels (<span id="hooksN">0</span>)</summary>
+<div class="sv" id="hv"></div></details>
 <div class="row"><input id="hook" type="password" placeholder="discord.com/api/webhooks/..." autocomplete="off"><button class="btn" id="test">Test</button><button class="btn main" id="post">Post</button></div>
 <label class="sw"><input type="checkbox" id="remember"><span class="k"></span>Remember on this phone</label>
 <div id="nameRow" hidden><input id="label" placeholder="Name it, like #events" maxlength="30" autocomplete="off"></div>

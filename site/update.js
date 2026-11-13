@@ -1,6 +1,6 @@
-// Patch note: Save games and webhooks on your phone and pick them from a list.
+// Patch note: Webhooks are saved as their own list, so one channel can be used for many games.
 // Update check: compares this page's BUILD with version.txt on the same site (nothing about you is sent).
-const BUILD = "1.0.3";
+const BUILD = "1.0.4";
 (async () => {
   try {
     const r = await fetch("version.txt?t=" + Date.now(), { cache: "no-store" });

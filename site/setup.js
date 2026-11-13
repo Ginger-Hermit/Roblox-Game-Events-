@@ -47,7 +47,22 @@ $("copy").addEventListener("click", async () => {
 // Saved games: kept on this phone only (localStorage), only when Remember is on.
 const load = () => { try { return JSON.parse(localStorage.getItem("saved") || "[]"); } catch (e) { return []; } };
 const store = list => { try { localStorage.setItem("saved", JSON.stringify(list)); } catch (e) {} };
+const loadH = () => { try { return JSON.parse(localStorage.getItem("hooks") || "[]"); } catch (e) { return []; } };
+const storeH = list => { try { localStorage.setItem("hooks", JSON.stringify(list)); } catch (e) {} };
+function drawHooks() {
+  const list = loadH(), hv = $("hv");
+  $("hooksBox").hidden = !list.length; $("hooksN").textContent = list.length; hv.textContent = "";
+  list.forEach((s, i) => {
+    const a = document.createElement("a"), b = document.createElement("b"), x = document.createElement("button");
+    a.href = "#"; a.className = "ch"; b.textContent = s.label; x.textContent = "\u00d7"; x.className = "x"; x.title = "Forget";
+    a.onclick = e => { e.preventDefault(); $("hook").value = s.hook; $("label").value = s.label === "Discord" ? "" : s.label;
+      for (const o of hv.children) o.classList.toggle("on", o === a); };
+    x.onclick = e => { e.preventDefault(); e.stopPropagation(); const l = loadH(); l.splice(i, 1); storeH(l); drawHooks(); };
+    a.append(b, x); hv.append(a);
+  });
+}
 function draw() {
+  drawHooks();
   const list = load(), sv = $("sv");
   $("savedBox").hidden = !list.length; $("savedN").textContent = list.length; sv.textContent = "";
   list.forEach((s, i) => {
@@ -69,7 +84,9 @@ function remember() {
   if (!g || !HOOK.test(hook)) return say("hookMsg", "Add a game and a webhook to remember them.", false);
   const l = load().filter(s => !(s.id === g.id && s.hook === hook));
   l.unshift({ id: g.id, name: g.name, link: $("game").value.trim(), hook, label: $("label").value.trim().slice(0, 30) });
-  store(l.slice(0, 20)); draw();
+  store(l.slice(0, 20));
+  const label = $("label").value.trim().slice(0, 30), h = loadH().filter(s => s.hook !== hook);
+  h.unshift({ hook, label: label || "Discord" }); storeH(h.slice(0, 20)); draw();
 }
 $("remember").addEventListener("change", () => { $("nameRow").hidden = !$("remember").checked; remember(); });
 $("label").addEventListener("change", remember);
