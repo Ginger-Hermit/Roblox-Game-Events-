@@ -52,6 +52,40 @@ How Roblox Game Events works (from the code in this repo):
 
 Trade-off: once-a-day polling is cheap and needs no permissions, but an event announced and started on the same day may post late.
 
+## Security and safety
+**Plain words:** ours can't touch your Roblox or Discord account. The worst case is someone spamming one channel if your webhook leaks, and you can fix that in a minute by deleting the webhook.
+
+### What each tool can reach
+| | Ours | Noti | Roblox webhooks | Bots (Quark, Series) | In-game scripts (DiscoLink) |
+|---|---|---|---|---|---|
+| Asks for a login or password | ✗ Never | Discord sign-in to add bot | Roblox login (your account) | Discord sign-in, often Roblox link | Roblox Studio |
+| Access to your Discord server | Post in **one** channel only | Bot permissions you grant (can be wide) | Post in one channel | Bot permissions you grant | Post in one channel |
+| Can read your messages or members | ✗ | Depends on permissions; not recorded | ✗ | Depends on permissions | ✗ |
+| Access to your Roblox account | ✗ None | Not recorded | Yes (it's your dashboard) | Often an API key or group link | Your game's code |
+| Account ban risk | None (never logs in) | Low (official bot API) | None | Low | None if used as Roblox allows |
+| What's stored about you | Game + webhook (encrypted); deleted on Turn off | Not recorded | On Roblox | Not recorded | In your game |
+| Open source / checkable | ✓ This repo | Not recorded | ✗ | Not recorded | Varies |
+
+### Why a webhook is safer than a bot
+A webhook can only **post** to the one channel it was made for. A bot is a member of your server and can do whatever you allowed when you added it (read channels, manage roles, etc.). If a bot's company is hacked, every server it's in is exposed. If our helper leaked, the worst case is spam in followed channels.
+
+### Ours in detail
+- Webhook encrypted at rest (AES-GCM, key from the `HOOK_KEY` secret), never shown back on the page.
+- The daily run endpoint needs a secret header (`X-Run-Key`); outsiders can't trigger posts.
+- At most 3 posts a day per game; old events never repost, so a bug can't flood a channel.
+- Test and Post go straight from the browser to Discord; no other site is contacted.
+- No ads, no tracking, no accounts. The host (Cloudflare) keeps normal visit logs.
+- Reads only Roblox's **public** event data; never logs in, so no Roblox or Discord rules about automated logins are broken.
+
+### Risks we can't remove
+- **Webhook leak** (low): anyone with it can post in that channel. Fix: delete it in Discord and make a new one.
+- **Fake copies** of the site could steal webhooks. Only use `roblox-game-events.pages.dev`.
+- **Roblox changes its public data:** posts stop or go wrong; nothing else is affected.
+- **Free hosting:** if Cloudflare or GitHub limits change, posts stop.
+- **Trust in the operator:** the helper holds your webhook. The code is public here, but you can't see what's actually running.
+
+Full user-facing version: <https://roblox-game-events.pages.dev/safety.html>
+
 ## Each tool
 **Roblox Game Events** — <https://roblox-game-events.pages.dev>
 Paste a game link and a Discord webhook, tap Turn on. Reads Roblox's public events list. Each event posts once, at most 3 a day; up to 5 games per channel. Saves the game and webhook on the helper so it can post. If Roblox changes its public list, posts stop.
