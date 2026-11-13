@@ -1,6 +1,13 @@
+<div align="center">
+
 # Update history
 
-Newest first. Each update says what it does and what to look for.
+**Newest first. Each update says what it does and what to look for.**
+
+[![Live](https://img.shields.io/badge/live-roblox--game--events.pages.dev-2ea44f)](https://roblox-game-events.pages.dev)
+![Tags](https://img.shields.io/badge/tags-New%20%C2%B7%20Changed-blue)
+
+</div>
 
 ## Safety page wording
 
