@@ -15,7 +15,7 @@ jobs:
           RUN_KEY: ${{ secrets.RUN_KEY }}
         run: |
           C=""
-          for i in $(seq 1 60); do
+          for _ in $(seq 1 60); do
             R=$(curl -fsS -m 60 -X POST -H "X-Run-Key: $RUN_KEY" "https://roblox-game-events.pages.dev/api/run?cursor=$C") || { echo "helper not reachable"; break; }
             echo "$R"
             [ "$(echo "$R" | jq -r .done)" = "true" ] && break
