@@ -9,9 +9,20 @@
 
 </div>
 
+## New heading
+
+14 Nov 2026 (00:53 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
+
+Clearer heading on Home
+
+> [!NOTE]
+> **What you'll see:** Top of Home
+
+- Heading now says Event alerts (Discord webhooks)
+
 ## TDLR box
 
-14 Nov 2026 (00:52 UTC) · ![New](https://img.shields.io/badge/-New-2ea44f)
+14 Nov 2026 (00:52 UTC) · ![New](https://img.shields.io/badge/-New-2ea44f) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/a883791)
 
 A short TDLR box at the top
 
