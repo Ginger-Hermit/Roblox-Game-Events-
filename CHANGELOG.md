@@ -9,9 +9,20 @@
 
 </div>
 
+## Safer key check
+
+14 Nov 2026 (00:09 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
+
+Tighter security
+
+> [!NOTE]
+> **What you'll see:** Nothing changes on the page
+
+- Safer daily-run key check and tighter job permissions
+
 ## Tidy up
 
-13 Nov 2026 (11:58 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
+13 Nov 2026 (11:58 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/8a36904)
 
 Removed unused code
 

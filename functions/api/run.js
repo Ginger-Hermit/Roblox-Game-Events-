@@ -1,8 +1,10 @@
 // Daily check, called by .github/workflows/events.yml in parts: POST /api/run?cursor=... until done is true.
 import { PER_RUN, POSTS_A_DAY, json, universe, events, post, card, icon, lock, unlock } from "./_lib.js";
+// Compare keys without stopping at the first wrong letter.
+const same = (a, b) => { let d = a.length ^ b.length; for (let i = 0; i < b.length; i++) d |= (a.charCodeAt(i) || 0) ^ b.charCodeAt(i); return d === 0; };
 export async function onRequestPost({ request, env }) {
   if (!env.SUBS) return json({ msg: "Not set up" }, 503);
-  if (!env.RUN_KEY || request.headers.get("X-Run-Key") !== env.RUN_KEY) return json({ msg: "Not allowed" }, 403);
+  if (!env.RUN_KEY || !same(request.headers.get("X-Run-Key") || "", env.RUN_KEY)) return json({ msg: "Not allowed" }, 403);
   const cursor = new URL(request.url).searchParams.get("cursor") || undefined;
   if (!cursor) {   // a new round may start at most every 6 hours
     const last = Number(await env.SUBS.get("lastrun") || 0);
