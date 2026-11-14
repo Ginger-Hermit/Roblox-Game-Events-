@@ -15,7 +15,7 @@
 | Post again | Once every 10 minutes |
 | Events checked per game | Latest 25 |
 
-When the helper is full, Turn on says "It's full right now".
+When the helper is full, Start says "It's full right now".
 
 ---
 

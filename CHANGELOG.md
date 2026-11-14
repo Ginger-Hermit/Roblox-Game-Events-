@@ -9,9 +9,20 @@
 
 </div>
 
+## Help link to guide
+
+14 Nov 2026 (01:21 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
+
+Need help opens the setup guide
+
+> [!NOTE]
+> **What you'll see:** Home page
+
+- Help link goes to the guide
+
 ## Clearer risks
 
-14 Nov 2026 (01:19 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
+14 Nov 2026 (01:19 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/9061ba7)
 
 Shorter risks plus links to the rules
 

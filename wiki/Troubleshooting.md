@@ -12,9 +12,9 @@
 | "That isn't a Discord webhook link" | Wrong link pasted | Copy the webhook again (see [[Setup]]) |
 | "That webhook doesn't work" | Webhook was deleted | Make a new one |
 | "Couldn't find that game on Roblox" | Wrong game link | Copy the link from the game's page |
-| "Turn it on first" | Post again before Turn on | Tap Turn on |
+| "Turn it on first" | Post again before Start | Tap Start |
 | "Wait 10 minutes" | Post again used recently | Wait |
-| Posts stopped | Webhook deleted, or Roblox changed its list | Turn on again with a new webhook |
+| Posts stopped | Webhook deleted, or Roblox changed its list | Start again with a new webhook |
 | "New version ready" | Site updated | Tap Refresh now |
 
 > [!TIP]

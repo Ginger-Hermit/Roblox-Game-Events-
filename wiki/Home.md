@@ -2,36 +2,29 @@
 
 # Roblox Game Events
 
-**Any Roblox game's events, posted to your Discord.**
+**Your favourite Roblox game's events, posted to your Discord.**
 
-[![Live](https://img.shields.io/badge/live-roblox--game--events.pages.dev-2ea44f)](https://roblox-game-events.pages.dev)
-![Free](https://img.shields.io/badge/price-free-blue)
-![No login](https://img.shields.io/badge/login-none-purple)
+[![Open the website](https://img.shields.io/badge/open-the%20website-1F3864?style=for-the-badge)](https://roblox-game-events.pages.dev)
+[![Step-by-step guide](https://img.shields.io/badge/start-step--by--step%20guide-F28C28?style=for-the-badge)](Setup)
 
 </div>
+
+> [!TIP]
+> New here? Go straight to the **[[Setup]]** guide. It takes about 2 minutes.
 
 | | |
 |---|---|
-| **Website** | [roblox-game-events.pages.dev](https://roblox-game-events.pages.dev) |
-| **Checks** | Once a day, 17:07 UTC |
+| **Checks** | Once a day |
 | **Posts** | Up to 3 a day per game |
 | **Games** | Up to 5 per channel |
-| **Cost** | Free |
+| **Cost** | Free, no login |
 
-## Pages
-- [[Setup]]: get it posting in 2 minutes
-- [[Buttons]]: what Turn on, Turn off and Post again do
-- [[The post]]: what each line in a Discord post means
-- [[How it works]]: what happens behind the scenes
-- [[Limits]]: the numbers
-- [[Troubleshooting]]: when it doesn't post
-- [[Privacy and safety]]: what's saved and the risks
-- [[Glossary]]: words used here
-
----
-
-<div align="center">
-
-[Setup →](Setup)
-
-</div>
+## Help pages
+| Page | What's in it |
+|---|---|
+| [[Setup]] | Step-by-step guide |
+| [[Buttons]] | What each button does |
+| [[The post]] | What each line in a post means |
+| [[Troubleshooting]] | When it doesn't post |
+| [[Privacy and safety]] | What's saved and the risks |
+| [[How it works]] · [[Limits]] · [[Glossary]] | The details |

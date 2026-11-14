@@ -8,13 +8,12 @@
 
 | Button | What it does |
 |---|---|
-| **Test** | Sends one test post. Nothing is saved. |
-| **Post** | Posts a "Now following" card once. Nothing is saved, nothing follows. |
-| **Turn on** | Follows the game. Posts "Now following" and current events, then new events once a day. |
-| **Turn off** | Stops posts. Deletes the game and webhook from the helper. |
-| **Post again** | Reposts current events. Once every 10 minutes. Only works after Turn on. |
+| **Start** | Follows the game. Posts "Now following" and current events, then new events once a day. |
+| **Send a test** | Posts one "Now following" card so you know the link works. Nothing is saved. |
+| **Stop** | Stops posts and deletes the game and channel link from our helper. |
 
-All buttons need the game link and webhook filled in. Turn off and Post again need the same pair you turned on.
+> [!NOTE]
+> All buttons need the game link and channel link filled in. Stop needs the same pair you started with.
 
 ---
 
