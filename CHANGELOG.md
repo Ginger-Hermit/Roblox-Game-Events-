@@ -9,9 +9,20 @@
 
 </div>
 
+## Simpler home page
+
+14 Nov 2026 (01:03 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
+
+Fewer boxes, plain steps and one Start button
+
+> [!NOTE]
+> **What you'll see:** Home page
+
+- Cleaner, easier setup for new people
+
 ## No Updated banner
 
-14 Nov 2026 (00:54 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
+14 Nov 2026 (00:54 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/3545c7d)
 
 The Updated banner is gone
 

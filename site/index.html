@@ -1,37 +1,36 @@
 <!doctype html>
-<!-- Patch note: The Updated banner is gone --><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- Patch note: Fewer boxes, plain steps and one Start button --><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://discord.com">
 <title>Roblox Game Events</title><link rel="stylesheet" href="home.css"><script src="prefs.js"></script></head><body><div class="card">
 <h1>Roblox Game Events</h1><div id="newver" class="newver" role="status" hidden>New version ready. <a href="#" id="reloadnow">Refresh now</a></div><nav class="tabs main"><a class="tab on" href="./">Home</a><a class="tab" href="github.html">GitHub</a><a class="tab" href="settings.html">Settings</a></nav>
-<h2>Event alerts (Discord webhooks)</h2>
-<div class="tldr"><b>TDLR:</b> Pick a Roblox game and a Discord channel. Once a day, new events post there.</div>
-<details class="saved" id="savedBox" hidden><summary>Your games (<span id="savedN">0</span>)</summary>
-<div class="sv" id="sv"></div></details>
-<label class="label" for="game">1. Roblox game</label>
+<p class="lead">Get a Discord message when your favourite Roblox game starts an event. Takes 2 minutes.</p>
+<label class="label" for="game">1. Choose a game</label>
+<p class="hint">Open the game on Roblox, tap share, then copy link.</p>
 <input id="game" placeholder="Paste the game link" autocomplete="off">
 <p id="gameMsg" class="msg"></p>
-<label class="label" for="hook">2. Discord webhook</label>
-<details class="saved" id="hooksBox" hidden><summary>Your channels (<span id="hooksN">0</span>)</summary>
-<div class="sv" id="hv"></div></details>
-<div class="row"><input id="hook" type="password" placeholder="discord.com/api/webhooks/..." autocomplete="off"><button class="btn" id="test">Test</button><button class="btn main" id="post">Post</button></div>
+<details class="saved" id="savedBox" hidden><summary>Your games (<span id="savedN">0</span>)</summary>
+<div class="sv" id="sv"></div></details>
+<label class="label" for="hook">2. Choose where to post</label>
+<p class="hint">You need a Discord channel link (called a webhook). Only server admins can make one.</p>
+<div class="row"><input id="hook" type="password" placeholder="discord.com/api/webhooks/..." autocomplete="off"><button class="btn" id="test" hidden>Test</button></div>
 <label class="sw"><input type="checkbox" id="remember"><span class="k"></span>Remember on this phone</label>
 <div id="nameRow" hidden><input id="label" placeholder="Name it, like #events" maxlength="30" autocomplete="off"></div>
 <p id="hookMsg" class="msg"></p>
-<details class="help"><summary>How do I get a webhook?</summary>
-<ol class="steps"><li>In Discord, open your server and long-press (or right-click) the channel you want.</li><li>Tap <b>Edit Channel</b>, then <b>Integrations</b>, then <b>Webhooks</b>.</li><li>Tap <b>New Webhook</b>, then <b>Copy Webhook URL</b>.</li><li>Paste it above and tap <b>Test</b>. A test post should show in your channel.</li></ol>
+<details class="help"><summary>How do I get this link?</summary>
+<ol class="steps"><li>In Discord, open your server and long-press (or right-click) the channel you want.</li><li>Tap <b>Edit Channel</b>, then <b>Integrations</b>, then <b>Webhooks</b>.</li><li>Tap <b>New Webhook</b>, then <b>Copy Webhook URL</b>.</li><li>Paste it above.</li></ol>
 <p class="msg">You need Manage Webhooks permission on the server. Keep the link private: anyone with it can post in your channel.</p></details>
-<p class="label">3. How it auto posts</p>
-<ol class="steps"><li>Once a day, it checks your game for new events.</li><li>Each new event posts to your channel with its times, type and a Play link.</li><li>Tap the post to open the event on Roblox. Old events never repost.</li></ol>
-<p class="label">What it posts</p>
+<details class="saved" id="hooksBox" hidden><summary>Your channels (<span id="hooksN">0</span>)</summary>
+<div class="sv" id="hv"></div></details>
 <div class="dc"><div class="dc-head"><span class="dc-av"></span><b>Roblox Game Events</b><span class="dc-bot">APP</span><span class="dc-time">Today at 6:00 pm</span></div>
 <div class="pv"><span class="pv-icon"></span><p class="pv-by">New <span id="pvGame">your game</span> event</p><p class="pv-t">Halloween Party</p><p>Spooky pets, candy hunts and a haunted house.</p>
 <ul><li><b>Starts:</b> <span class="pv-ts">Fri 31 Oct, 6:00 pm</span></li><li><b>Ends:</b> <span class="pv-ts">Sun 2 Nov, 6:00 pm</span></li><li><b>Starts in:</b> <span class="pv-ts">in 2 days</span></li><li><b>Type:</b> Special event</li><li><b>Interested:</b> 12,480 players</li><li><span class="pv-l">Play now</span></li></ul>
 <div class="pv-pic"></div></div></div>
-<p class="small">Example of how it looks in Discord. Times show in your own time zone.</p>
-<p class="label">4. Turn it on</p>
-<div class="tabs"><button class="btn main" id="on">Turn on</button><button class="btn" id="off">Turn off</button><button class="btn" id="again">Post again</button></div>
+<p class="small">Example of what posts in Discord.</p>
+<p class="label">3. Start posting</p>
+<button class="btn main big" id="on">Start</button>
+<p class="small"><button class="linkbtn" id="post">Post one now</button> &middot; <button class="linkbtn" id="off">Turn off</button><button id="again" hidden>Post again</button></p>
 <p id="onMsg" class="msg"></p>
-<p class="msg">Turn on saves the game and webhook on our helper so it can post daily. Turn off deletes them. No posts for 30 days also turns it off. <a href="safety.html#risk">Read the real risks</a> first.</p>
+<p class="msg">We check your game once a day and post new events. Turn off deletes your details. <a href="safety.html#risk">Risks</a></p>
 <p class="foot"><a href="safety.html#safe">Stay safe</a> &middot; <a href="safety.html#privacy">Privacy</a> &middot; <a href="safety.html#risk">Risks</a> &middot; <a href="safety.html#legal">Legal</a> &middot; <a href="https://github.com/Ginger-Hermit/Roblox-Game-Events-" target="_blank" rel="noopener">GitHub</a></p>
 <p class="small">Built by Claude, an AI &middot; Personal use only &middot; Not an official Roblox or Discord product &middot; No guarantees</p>
 </div><script src="setup.js"></script><script src="update.js"></script></body></html>

@@ -1,7 +1,7 @@
-// Patch note: The Updated banner is gone
+// Patch note: Fewer boxes, plain steps and one Start button
 // Update check: compares this page's BUILD with version.txt on the same site (nothing about you is sent).
-const BUILD = "1.0.35";
-const NOTE = "";
+const BUILD = "1.0.36";
+const NOTE = "Fewer boxes, plain steps and one Start button";
 (async () => {
   try {
     const r = await fetch("version.txt?t=" + Date.now(), { cache: "no-store" });
