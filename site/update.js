@@ -1,7 +1,7 @@
-// Patch note: Send a test and Stop
+// Patch note: Shorter risks plus links to the rules
 // Update check: compares this page's BUILD with version.txt on the same site (nothing about you is sent).
 const BUILD = "1.0.37";
-const NOTE = "";
+const NOTE = "Shorter risks plus links to the rules";
 (async () => {
   try {
     const r = await fetch("version.txt?t=" + Date.now(), { cache: "no-store" });

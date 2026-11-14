@@ -9,9 +9,20 @@
 
 </div>
 
+## Clearer risks
+
+14 Nov 2026 (01:19 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
+
+Shorter risks plus links to the rules
+
+> [!NOTE]
+> **What you'll see:** Risks page
+
+- Simpler risks, links to Roblox and Discord terms
+
 ## Clearer buttons
 
-14 Nov 2026 (01:07 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
+14 Nov 2026 (01:07 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/ff1cb35)
 
 Send a test and Stop
 
