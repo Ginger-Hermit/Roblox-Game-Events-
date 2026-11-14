@@ -14,7 +14,7 @@ Pick any Roblox game and a Discord webhook. A GitHub job checks the game once a 
 
 ## Next
 > [!NOTE]
-> Nothing planned. (KV namespace "Events" is bound as SUBS. RUN_KEY secret set in GitHub and Cloudflare.)
+> Nothing planned. (KV namespace "Events" is bound as SUBS. RUN_KEY secret set in GitHub and Cloudflare. HOOK_KEY secret set in Cloudflare only.)
 
 ## Not tested
 > [!WARNING]
