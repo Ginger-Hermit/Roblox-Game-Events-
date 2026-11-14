@@ -9,9 +9,20 @@
 
 </div>
 
+## Quiet updates
+
+14 Nov 2026 (00:48 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
+
+Small fixes no longer show an Updated banner
+
+> [!NOTE]
+> **What you'll see:** Nothing, the banner only shows for real changes
+
+- Added a quiet option for invisible changes
+
 ## Safer key check
 
-14 Nov 2026 (00:09 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
+14 Nov 2026 (00:09 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/d16b382)
 
 Tighter security
 

@@ -11,7 +11,7 @@ import argparse, json, datetime, re, subprocess, sys
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--title", required=True); ap.add_argument("--tag", default="Changed", choices=["New", "Changed"])
-ap.add_argument("--meaning", required=True); ap.add_argument("--see", required=True)
+ap.add_argument("--quiet", action="store_true", help="no Updated banner on the page");ap.add_argument("--meaning", required=True); ap.add_argument("--see", required=True)
 ap.add_argument("--change", action="append", required=True)
 a = ap.parse_args()
 REPO = "https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/"
@@ -30,7 +30,7 @@ new = f"{x}.{y}.{int(z) + 1}"
 head = subprocess.run(["git", "log", "--format=%h", "-1"], capture_output=True, text=True).stdout.strip()
 
 open("site/version.txt", "w").write(new + "\n")
-rw("site/update.js", lambda s: re.sub(r'^const NOTE = .*', lambda m: "const NOTE = " + json.dumps(a.meaning) + ";", s, count=1, flags=re.M))
+rw("site/update.js", lambda s: re.sub(r'^const NOTE = .*', lambda m: "const NOTE = " + json.dumps("" if a.quiet else a.meaning) + ";", s, count=1, flags=re.M))
 rw("site/update.js", lambda s: re.sub(r'^// Patch note: .*', "// Patch note: " + a.meaning, s.replace(f'const BUILD = "{old}";', f'const BUILD = "{new}";'), count=1))
 rw("site/index.html", lambda s: re.sub(r'<!-- Patch note: .*? -->', "<!-- Patch note: %s -->" % a.meaning.replace("--", "-"), s, count=1))
 

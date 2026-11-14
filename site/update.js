@@ -1,10 +1,10 @@
-// Patch note: Tighter security
+// Patch note: Small fixes no longer show an Updated banner
 // Update check: compares this page's BUILD with version.txt on the same site (nothing about you is sent).
-const BUILD = "1.0.31";
-const NOTE = "Tighter security";
+const BUILD = "1.0.32";
+const NOTE = "";
 (() => {
   let last = null; try { last = localStorage.getItem("seenver"); localStorage.setItem("seenver", BUILD); } catch (e) { return; }
-  if (last && last !== BUILD) { const nv = document.getElementById("newver"); nv.textContent = "Updated: " + NOTE + "."; nv.hidden = false; }
+  if (NOTE && last && last !== BUILD) { const nv = document.getElementById("newver"); nv.textContent = "Updated: " + NOTE + "."; nv.hidden = false; }
 })();
 (async () => {
   try {
