@@ -49,7 +49,6 @@ async function turn(what) {
 }
 $("on").addEventListener("click", () => turn("on"));
 $("off").addEventListener("click", () => turn("off"));
-$("again").addEventListener("click", () => turn("again"));
 
 // Saved games: kept on this phone only (localStorage), only when Remember is on.
 const load = () => { try { return JSON.parse(localStorage.getItem("saved") || "[]"); } catch (e) { return []; } };

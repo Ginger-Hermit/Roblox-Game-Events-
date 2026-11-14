@@ -19,5 +19,5 @@ jobs:
             R=$(curl -fsS -m 60 -X POST -H "X-Run-Key: $RUN_KEY" "https://roblox-game-events.pages.dev/api/run?cursor=$C") || { echo "helper not reachable"; break; }
             echo "$R"
             [ "$(echo "$R" | jq -r .done)" = "true" ] && break
-            C=$(echo "$R" | jq -r .cursor)
+            C=$(echo "$R" | jq -r '.cursor | @uri')
           done

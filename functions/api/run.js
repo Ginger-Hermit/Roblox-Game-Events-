@@ -21,18 +21,20 @@ export async function onRequestPost({ request, env }) {
       const now = Date.now(); let n = 0, logo; s.last = s.last || new Date(now).toISOString();
       for (const e of await events(s.uni)) {
         const id = String(e.id); if (s.seen.includes(id)) continue;
-        s.seen.push(id);
         const t = e.eventTime || {};
-        if ((t.endUtc && Date.parse(t.endUtc) < now) || n >= POSTS_A_DAY) continue;
+        if (t.endUtc && Date.parse(t.endUtc) < now) { s.seen.push(id); continue; }
+        if (n >= POSTS_A_DAY) continue;   // left for tomorrow
         if (logo === undefined) logo = await icon(s.uni);
         const c = await card(e, s, logo);
         const r = await post(hook, c);
         if (r.status === 404 || r.status === 401) { await env.SUBS.delete(k.name); removed++; s.gone = true; break; }
+        if (!r.ok) continue;              // Discord busy: try again tomorrow
+        s.seen.push(id);
         n++; posted++; s.last = new Date().toISOString();
       }
-      // Auto-delete: nothing posted for 30 days (counts from turn on / post again).
-      const quiet = Math.max(...[s.last, s.on, s.again].map(d => Date.parse(d || 0) || 0));
-      if (!s.gone && now - quiet > 30 * 864e5) { await env.SUBS.delete(k.name); removed++; s.gone = true; }
+      // Auto-delete: nothing posted for 30 days (counts from turn on); tells the channel first.
+      const quiet = Math.max(...[s.last, s.on].map(d => Date.parse(d || 0) || 0));
+      if (!s.gone && now - quiet > 30 * 864e5) { await post(hook, { title: "Stopped following: " + s.name, color: 0xF28C28, author: { name: "Roblox Game Events" }, description: "No new events for 30 days. Tap Start on the site to follow it again." }); await env.SUBS.delete(k.name); removed++; s.gone = true; }
       if (!s.gone) { s.seen = s.seen.slice(-200); await env.SUBS.put(k.name, JSON.stringify(s)); }
     } catch (e) { /* skip this one today */ }
   }
