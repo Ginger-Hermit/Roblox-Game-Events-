@@ -1,6 +1,6 @@
 // Patch note: Shorter risks plus links to the rules
 // Update check: compares this page's BUILD with version.txt on the same site (nothing about you is sent).
-const BUILD = "1.0.37";
+const BUILD = "1.0.39";
 const NOTE = "Shorter risks plus links to the rules";
 (async () => {
   try {
