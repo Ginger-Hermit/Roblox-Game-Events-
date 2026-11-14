@@ -5,13 +5,11 @@
 <h1>Roblox Game Events</h1><div id="newver" class="newver" role="status" hidden>New version ready. <a href="#" id="reloadnow">Refresh now</a></div><nav class="tabs main"><a class="tab on" href="./">Home</a><a class="tab" href="github.html">GitHub</a><a class="tab" href="settings.html">Settings</a></nav>
 <p class="lead">Get a Discord message when your favourite Roblox game starts an event. Takes 2 minutes.</p>
 <label class="label" for="game">1. Choose a game</label>
-<p class="hint">Open the game on Roblox, tap share, then copy link.</p>
 <input id="game" placeholder="Paste the game link" autocomplete="off">
 <p id="gameMsg" class="msg"></p>
 <details class="saved" id="savedBox" hidden><summary>Your games (<span id="savedN">0</span>)</summary>
 <div class="sv" id="sv"></div></details>
 <label class="label" for="hook">2. Choose where to post</label>
-<p class="hint">You need a Discord channel link (called a webhook). Only server admins can make one.</p>
 <div class="row"><input id="hook" type="password" placeholder="discord.com/api/webhooks/..." autocomplete="off"><button class="btn" id="test" hidden>Test</button></div>
 <label class="sw"><input type="checkbox" id="remember"><span class="k"></span>Remember on this phone</label>
 <div id="nameRow" hidden><input id="label" placeholder="Name it, like #events" maxlength="30" autocomplete="off"></div>
@@ -25,12 +23,12 @@
 <div class="pv"><span class="pv-icon"></span><p class="pv-by">New <span id="pvGame">your game</span> event</p><p class="pv-t">Halloween Party</p><p>Spooky pets, candy hunts and a haunted house.</p>
 <ul><li><b>Starts:</b> <span class="pv-ts">Fri 31 Oct, 6:00 pm</span></li><li><b>Ends:</b> <span class="pv-ts">Sun 2 Nov, 6:00 pm</span></li><li><b>Starts in:</b> <span class="pv-ts">in 2 days</span></li><li><b>Type:</b> Special event</li><li><b>Interested:</b> 12,480 players</li><li><span class="pv-l">Play now</span></li></ul>
 <div class="pv-pic"></div></div></div>
-<p class="small">Example of what posts in Discord.</p>
 <p class="label">3. Start posting</p>
 <button class="btn main big" id="on">Start</button>
 <p class="small"><button class="linkbtn" id="post">Send a test</button> &middot; <button class="linkbtn" id="off">Stop</button><button id="again" hidden>Post again</button></p>
 <p id="onMsg" class="msg"></p>
-<p class="msg">We check your game once a day and post new events. Stop deletes your details.</p>
+<p class="msg">Checks once a day. Stop deletes your details.</p>
+<p class="small">Need help? <a href="https://github.com/Ginger-Hermit/Roblox-Game-Events-/wiki" target="_blank" rel="noopener">Read the step-by-step guide</a></p>
 <p class="foot"><a href="safety.html#safe">Stay safe</a> &middot; <a href="safety.html#privacy">Privacy</a> &middot; <a href="safety.html#risk">Risks</a> &middot; <a href="safety.html#legal">Legal</a> &middot; <a href="https://github.com/Ginger-Hermit/Roblox-Game-Events-" target="_blank" rel="noopener">GitHub</a></p>
 <p class="small">Built by Claude, an AI &middot; Personal use only &middot; Not an official Roblox or Discord product &middot; No guarantees</p>
 </div><script src="setup.js"></script><script src="update.js"></script></body></html>
