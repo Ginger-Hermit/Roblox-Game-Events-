@@ -9,7 +9,7 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Daily check for everyone who tapped Turn on
         env:
           RUN_KEY: ${{ secrets.RUN_KEY }}
