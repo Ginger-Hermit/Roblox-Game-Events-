@@ -10,9 +10,9 @@ replaces the patch notes, fills in the code link of the previous entry, and runs
 import argparse, json, datetime, re, subprocess, sys
 
 ap = argparse.ArgumentParser()
-ap.add_argument("--title", required=True); ap.add_argument("--tag", default="Changed", choices=["New", "Changed"])
+ap.add_argument("--title", required=True); ap.add_argument("--tag", default="Changed", choices=["New", "Changed", "Fixed", "Removed"])
 ap.add_argument("--quiet", action="store_true", help="no Updated banner on the page");ap.add_argument("--meaning", required=True); ap.add_argument("--see", required=True)
-ap.add_argument("--change", action="append", required=True)
+ap.add_argument("--change", action="append")
 a = ap.parse_args()
 REPO = "https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/"
 
@@ -34,17 +34,9 @@ rw("site/update.js", lambda s: re.sub(r'^const NOTE = .*', lambda m: "const NOTE
 rw("site/update.js", lambda s: re.sub(r'^// Patch note: .*', "// Patch note: " + a.meaning, s.replace(f'const BUILD = "{old}";', f'const BUILD = "{new}";'), count=1))
 rw("site/index.html", lambda s: re.sub(r'<!-- Patch note: .*? -->', "<!-- Patch note: %s -->" % a.meaning.replace("--", "-"), s, count=1))
 
-def log(c):
-    k = c.index("\n## "); end = c.index("\n", c.index("\n\n", k + 1) + 2)
-    if head and "[code]" not in c[k:end]: c = c[:end] + f" · [code]({REPO}{head})" + c[end:]
-    block = "\n## %s\n\n%s (%s UTC) · ![%s](https://img.shields.io/badge/-%s-%s)\n\n%s\n\n> [!%s]\n> **What you'll see:** %s\n\n%s\n" % (
-        a.title, shown, now.strftime("%H:%M"), a.tag, a.tag, "2ea44f" if a.tag == "New" else "blue", a.meaning, "TIP" if a.tag == "New" else "NOTE", a.see, "\n".join("- " + i for i in a.change))
-    d0 = c.find("<details open>")
-    if d0 >= 0 and "<b>%s</b>" % shown not in c[d0:k]:      # new day: fold the last one, open a new tab
-        c = c[:d0] + "<details>" + c[d0 + len("<details open>"):]
-        k = d0 - 1
-        block = "\n<details open>\n<summary><b>%s</b> · today</summary>\n%s\n</details>\n" % (shown, block)
-    return c[:k] + block + c[k:]
+def log(c):  # Keep a Changelog: one "## [version] - date" heading per version; .github/workflows/release.yml makes the tag and Release
+    k = c.index("\n## "); kind = {"New": "Added"}.get(a.tag, a.tag)
+    return c[:k] + "\n## [%s] - %s · [code](%s/compare/v%s...v%s)\n\n### %s\n\n- %s: %s\n" % (new, day, REPO.rsplit("/commit/", 1)[0], old, new, kind, a.title, a.meaning) + c[k:]
 rw("CHANGELOG.md", log)
 rw("STATUS.md", lambda s: re.sub(r"Last updated: [^.]*\.", f"Last updated: {shown}.", re.sub(r"Page version [\w.-]+", "Page version " + new, s, count=1), count=1))
 print("Version", old, "->", new)

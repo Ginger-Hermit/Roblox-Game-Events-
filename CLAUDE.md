@@ -14,7 +14,7 @@ A failed Check opens an issue called "Check failed". Only look when Ginger says,
 
 ## Every change to the site
 1. `git pull`. grep the exact spot, read only those lines. All edits in one script.
-2. Add `--quiet` to release.py when nothing visible changes (no Updated banner). Run `python3 tools/release.py --title ... --tag New|Changed --meaning ... --see ... --change ...` once. It does version, CHANGELOG, patch note, STATUS and tests. Never by hand.
+2. Add `--quiet` to release.py when nothing visible changes (no Updated banner). Run `python3 tools/release.py --title ... --tag New|Changed|Fixed|Removed --meaning ... --see ... --change ...` once. It does version, CHANGELOG, patch note, STATUS and tests. Never by hand. Tag and GitHub Release are automatic (`release.yml`).
 3. Commit, push. Don't wait for tests.
 
 ## Rules
