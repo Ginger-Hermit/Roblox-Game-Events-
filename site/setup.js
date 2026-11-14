@@ -24,7 +24,7 @@ $("post").addEventListener("click", async () => {
   try {
     const r = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ embeds: [card], allowed_mentions: { parse: [] } }) });
-    r.ok ? say("onMsg", "Posted. Check your channel.", true) : say("onMsg", "Discord said no (" + r.status + "). Make a new webhook and try again.", false);
+    r.ok ? say("onMsg", "Test sent. Events only post after you tap Start.", true) : say("onMsg", "Discord said no (" + r.status + "). Make a new webhook and try again.", false);
   } catch (e) { say("onMsg", "Couldn't reach Discord. Check your internet.", false); }
 });
 $("test").addEventListener("click", async () => {
