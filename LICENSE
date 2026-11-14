@@ -26,7 +26,7 @@ GitHub's own terms let other GitHub users view and fork public repositories on G
 
 3. Copies are not safe to use
 -----------------------------
-The only official address is https://roblox-game-events.pages.dev. The owner has nothing to do with any other copy. A copy could be changed to steal AI keys. Never paste a key into a copy.
+The only official address is https://roblox-game-events.pages.dev. The owner has nothing to do with any other copy. A copy could be changed to steal webhooks. Never paste a webhook into a copy.
 
 4. Contributions
 ----------------
@@ -36,7 +36,7 @@ If you send a suggestion, fix or pull request, you agree that the owner may use 
 --------------
 The project is provided "as is", with no guarantee of any kind. It depends on Roblox\'s public events list and on Discord, and may stop working or post wrong or late events.
 
-To the fullest extent the law allows, the owner is not liable for any loss or damage that comes from using it, including wrong data, lost data, charges from an AI company, or a leaked AI key.
+To the fullest extent the law allows, the owner is not liable for any loss or damage that comes from using it, including wrong data, lost data, charges from Roblox or Discord, or a leaked webhook.
 
 Your Discord webhook is your responsibility. Keep it secret.
 
