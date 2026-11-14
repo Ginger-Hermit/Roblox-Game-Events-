@@ -1,7 +1,7 @@
-// Patch note: Need help opens the setup guide
+// Patch note: Security hardening behind the scenes.
 // Update check: compares this page's BUILD with version.txt on the same site (nothing about you is sent).
-const BUILD = "1.0.41";
-const NOTE = "";
+const BUILD = "1.0.42";
+const NOTE = "Security hardening behind the scenes.";
 (async () => {
   try {
     const r = await fetch("version.txt?t=" + Date.now(), { cache: "no-store" });

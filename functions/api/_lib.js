@@ -27,6 +27,8 @@ async function interested(id) {
   try { return (await get(`https://apis.roblox.com/virtual-events/v1/virtual-events/${id}/rsvps/counters`)).counters.going; } catch (x) { return null; }
 }
 const ts = (s, f) => s ? `<t:${Math.floor(Date.parse(s) / 1000)}:${f}>` : "not recorded";
+// Game-supplied text: stop [masked](link) markdown from rendering in Discord.
+const safe = s => String(s || "").replace(/[\[\]]/g, "\\$&");
 // The Discord card for one new event: text, then a tidy bullet list.
 export async function card(e, s, logo) {
   const t = e.eventTime || {}, going = await interested(e.id);
@@ -36,8 +38,8 @@ export async function card(e, s, logo) {
   if (cats.length) l.push("- **Type:** " + cats.map(c => { const w = c.replace(/(?!^)([A-Z])/g, " $1").toLowerCase(); return w[0].toUpperCase() + w.slice(1); }).join(", "));
   if (going != null) l.push("- **Interested:** " + going.toLocaleString("en-US") + " players");
   l.push(`- [Play now](https://www.roblox.com/games/${s.game})`);
-  const text = (e.displayDescription || "").slice(0, 400);
-  const c = { title: e.displayTitle || e.title || "New event", description: (text ? text + "\n\n" : "") + l.join("\n"),
+  const text = safe((e.displayDescription || "").slice(0, 400));
+  const c = { title: safe(e.displayTitle || e.title || "New event"), description: (text ? text + "\n\n" : "") + l.join("\n"),
     url: "https://www.roblox.com/events/" + e.id, color: 0xF28C28, author: { name: "New " + s.name + " event" } };
   if (logo) c.thumbnail = { url: logo };
   const pic = await picture(e); if (pic) c.image = { url: pic };

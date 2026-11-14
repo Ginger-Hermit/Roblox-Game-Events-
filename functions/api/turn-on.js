@@ -7,15 +7,13 @@ export async function onRequestPost({ request, env }) {
   const ip = "ip:" + (request.headers.get("CF-Connecting-IP") || "x"), tries = Number(await env.SUBS.get(ip) || 0);
   if (tries >= 5) return json({ msg: "Too many tries today. Try again tomorrow." }, 429);
   await env.SUBS.put(ip, String(tries + 1), { expirationTtl: 86400 });
-  try { await get(hook); } catch (e) { return json({ msg: "That webhook doesn't work. Make a new one and try again." }, 400); }
   const id = HOOK.exec(hook)[1], key = keyFor(hook, game);
   const mine = await env.SUBS.list({ prefix: "sub:" + id + ":" });
   const all = await env.SUBS.list({ prefix: "sub:" });
   if (mine.keys.some(k => k.name === key)) return json({ msg: "Already on for this channel." });
-  {
-    if (mine.keys.length >= MAX_PER_HOOK) return json({ msg: `One channel can follow up to ${MAX_PER_HOOK} games.` }, 400);
-    if (all.keys.length >= MAX_SUBS || !all.list_complete) return json({ msg: "It's full right now. Try again later." }, 503);
-  }
+  if (mine.keys.length >= MAX_PER_HOOK) return json({ msg: `One channel can follow up to ${MAX_PER_HOOK} games.` }, 400);
+  if (all.keys.length >= MAX_SUBS || !all.list_complete) return json({ msg: "It's full right now. Try again later." }, 503);
+  try { await get(hook); } catch (e) { return json({ msg: "That webhook doesn't work. Make a new one and try again." }, 400); }
   let uni, seen, list;
   try { uni = await universe(game); list = await events(uni); seen = list.map(e => String(e.id)); }
   catch (e) { return json({ msg: "Couldn't find that game on Roblox." }, 400); }

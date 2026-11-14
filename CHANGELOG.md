@@ -9,9 +9,21 @@
 
 </div>
 
+## Safer Discord posts
+
+14 Nov 2026 (02:22 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
+
+Security hardening behind the scenes.
+
+> [!NOTE]
+> **What you'll see:** Nothing changes for you.
+
+- Game-supplied event text can no longer sneak clickable links into Discord posts.
+- Turning on a game checks the limits before contacting Discord and Roblox, so a flood can't run up work.
+
 ## Help link to guide
 
-14 Nov 2026 (01:21 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
+14 Nov 2026 (01:21 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/8029b20)
 
 Need help opens the setup guide
 

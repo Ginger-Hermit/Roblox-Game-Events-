@@ -6,7 +6,7 @@
 
 </div>
 
-Last updated: 14 Nov 2026. Page version 1.0.40 · Live at roblox-game-events.pages.dev.
+Last updated: 14 Nov 2026. Page version 1.0.42 · Live at roblox-game-events.pages.dev.
 `tools/release.py` keeps the version and date up to date. Keep this file under 50 lines.
 
 ## What it is
