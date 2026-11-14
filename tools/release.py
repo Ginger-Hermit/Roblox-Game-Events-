@@ -36,7 +36,7 @@ rw("site/index.html", lambda s: re.sub(r'<!-- Patch note: .*? -->', "<!-- Patch 
 
 def log(c):  # Keep a Changelog: one "## [version] - date" heading per version; .github/workflows/release.yml makes the tag and Release
     k = c.index("\n## "); kind = {"New": "Added"}.get(a.tag, a.tag)
-    return c[:k] + "\n## [%s] - %s · [code](%s/compare/v%s...v%s)\n\n### %s\n\n- %s: %s\n" % (new, day, REPO.rsplit("/commit/", 1)[0], old, new, kind, a.title, a.meaning) + c[k:]
+    return c[:k] + "\n## [%s] - %s · [code](%s/compare/v%s...v%s)\n\n### %s\n\n- **%s** · %s\n" % (new, day, REPO.rsplit("/commit/", 1)[0], old, new, kind, a.title, a.meaning) + c[k:]
 rw("CHANGELOG.md", log)
 rw("STATUS.md", lambda s: re.sub(r"Last updated: [^.]*\.", f"Last updated: {shown}.", re.sub(r"Page version [\w.-]+", "Page version " + new, s, count=1), count=1))
 print("Version", old, "->", new)
