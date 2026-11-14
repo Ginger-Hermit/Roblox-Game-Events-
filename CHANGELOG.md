@@ -9,9 +9,20 @@
 
 </div>
 
+## TDLR box
+
+14 Nov 2026 (00:52 UTC) · ![New](https://img.shields.io/badge/-New-2ea44f)
+
+A short TDLR box at the top
+
+> [!TIP]
+> **What you'll see:** Top of Home, under the title
+
+- Replaced the intro line with a TDLR box
+
 ## Quiet updates
 
-14 Nov 2026 (00:48 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
+14 Nov 2026 (00:48 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/946de87)
 
 Small fixes no longer show an Updated banner
 

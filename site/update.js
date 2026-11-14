@@ -1,7 +1,7 @@
-// Patch note: Small fixes no longer show an Updated banner
+// Patch note: A short TDLR box at the top
 // Update check: compares this page's BUILD with version.txt on the same site (nothing about you is sent).
-const BUILD = "1.0.32";
-const NOTE = "";
+const BUILD = "1.0.33";
+const NOTE = "A short TDLR box at the top";
 (() => {
   let last = null; try { last = localStorage.getItem("seenver"); localStorage.setItem("seenver", BUILD); } catch (e) { return; }
   if (NOTE && last && last !== BUILD) { const nv = document.getElementById("newver"); nv.textContent = "Updated: " + NOTE + "."; nv.hidden = false; }
