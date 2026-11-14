@@ -9,9 +9,20 @@
 
 </div>
 
+## No Updated banner
+
+14 Nov 2026 (00:54 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
+
+The Updated banner is gone
+
+> [!NOTE]
+> **What you'll see:** Nothing, it no longer shows
+
+- Removed the Updated banner (New version ready stays)
+
 ## New heading
 
-14 Nov 2026 (00:53 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
+14 Nov 2026 (00:53 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/f71e9f3)
 
 Clearer heading on Home
 

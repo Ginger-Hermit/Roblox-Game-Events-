@@ -1,11 +1,7 @@
-// Patch note: Clearer heading on Home
+// Patch note: The Updated banner is gone
 // Update check: compares this page's BUILD with version.txt on the same site (nothing about you is sent).
-const BUILD = "1.0.34";
-const NOTE = "Clearer heading on Home";
-(() => {
-  let last = null; try { last = localStorage.getItem("seenver"); localStorage.setItem("seenver", BUILD); } catch (e) { return; }
-  if (NOTE && last && last !== BUILD) { const nv = document.getElementById("newver"); nv.textContent = "Updated: " + NOTE + "."; nv.hidden = false; }
-})();
+const BUILD = "1.0.35";
+const NOTE = "";
 (async () => {
   try {
     const r = await fetch("version.txt?t=" + Date.now(), { cache: "no-store" });
