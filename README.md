@@ -15,7 +15,7 @@
 
 </div>
 
-**Jump to:** [Set up](#set-up) · [Buttons](#buttons) · [How it works](#how-it-works) · [Good to know](#good-to-know)
+**Jump to:** [Set up](#set-up) · [Buttons](#buttons) · [How it works](#how-it-works) · [Good to know](#good-to-know) · [Privacy](#privacy)
 
 ## Set up
 > [!TIP]
@@ -51,3 +51,12 @@ flowchart LR
 > [!WARNING]
 > - **Keep your webhook secret.** Anyone with it can post in your channel.
 > - **Turn on saves your game and webhook** on the helper so it can post. [Read the risks](https://roblox-game-events.pages.dev/safety.html#risk).
+
+## Privacy
+> [!NOTE]
+> - **Saved on the helper (only after Turn on):** the game and your webhook, so it can post. **Turn off** deletes them. Webhooks idle for 30 days are deleted automatically.
+> - **Saved on your device only:** theme, text size, and any games and webhooks you choose to remember. Delete them in Settings.
+> - Nothing else is collected. More on the [Stay safe](https://roblox-game-events.pages.dev/safety.html) page.
+
+## Licence
+All rights reserved. See [LICENSE](LICENSE).

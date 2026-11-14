@@ -9,9 +9,12 @@
 
 </div>
 
+<details open>
+<summary><b>14 Nov 2026</b> · 9 updates</summary>
+
 ## Help link to guide
 
-14 Nov 2026 (01:21 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
+14 Nov 2026 (01:21 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/d5dcc6f)
 
 Need help opens the setup guide
 
@@ -107,6 +110,11 @@ Tighter security
 > **What you'll see:** Nothing changes on the page
 
 - Safer daily-run key check and tighter job permissions
+
+</details>
+
+<details>
+<summary><b>13 Nov 2026</b> · 34 updates</summary>
 
 ## Tidy up
 
@@ -462,7 +470,7 @@ The site now has a version number, and tells you when a newer one is ready.
 
 ## Home, tabs and settings
 
-13 Nov 2026 (15:00 UTC) · ![New](https://img.shields.io/badge/-New-2ea44f)
+13 Nov 2026 (15:00 UTC) · ![New](https://img.shields.io/badge/-New-2ea44f) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/8cd9b67)
 
 A new look matching Fishing Cat Data, with setup on the home page.
 
@@ -476,7 +484,7 @@ A new look matching Fishing Cat Data, with setup on the home page.
 
 ## Discord posts link to the event
 
-13 Nov 2026 (14:00 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
+13 Nov 2026 (14:00 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue) · code not recorded
 
 Tapping a Discord post opens that event's own Roblox page.
 
@@ -487,7 +495,7 @@ Tapping a Discord post opens that event's own Roblox page.
 
 ## First release
 
-13 Nov 2026 (12:00 UTC) · ![New](https://img.shields.io/badge/-New-2ea44f)
+13 Nov 2026 (12:00 UTC) · ![New](https://img.shields.io/badge/-New-2ea44f) · code not recorded
 
 The bot checks a Roblox game once a day and posts new events to Discord.
 
@@ -495,3 +503,5 @@ The bot checks a Roblox game once a day and posts new events to Discord.
 > **What you'll see:** up to 3 posts a day; old events never repost.
 
 - Daily check and Discord posts
+
+</details>

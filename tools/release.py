@@ -39,6 +39,11 @@ def log(c):
     if head and "[code]" not in c[k:end]: c = c[:end] + f" · [code]({REPO}{head})" + c[end:]
     block = "\n## %s\n\n%s (%s UTC) · ![%s](https://img.shields.io/badge/-%s-%s)\n\n%s\n\n> [!%s]\n> **What you'll see:** %s\n\n%s\n" % (
         a.title, shown, now.strftime("%H:%M"), a.tag, a.tag, "2ea44f" if a.tag == "New" else "blue", a.meaning, "TIP" if a.tag == "New" else "NOTE", a.see, "\n".join("- " + i for i in a.change))
+    d0 = c.find("<details open>")
+    if d0 >= 0 and "<b>%s</b>" % shown not in c[d0:k]:      # new day: fold the last one, open a new tab
+        c = c[:d0] + "<details>" + c[d0 + len("<details open>"):]
+        k = d0 - 1
+        block = "\n<details open>\n<summary><b>%s</b> · today</summary>\n%s\n</details>\n" % (shown, block)
     return c[:k] + block + c[k:]
 rw("CHANGELOG.md", log)
 rw("STATUS.md", lambda s: re.sub(r"Last updated: [^.]*\.", f"Last updated: {shown}.", re.sub(r"Page version [\w.-]+", "Page version " + new, s, count=1), count=1))
