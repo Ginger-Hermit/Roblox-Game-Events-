@@ -9,9 +9,20 @@
 
 </div>
 
+## Clearer buttons
+
+14 Nov 2026 (01:07 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
+
+Send a test and Stop
+
+> [!NOTE]
+> **What you'll see:** Home page
+
+- Clearer button names
+
 ## Simpler home page
 
-14 Nov 2026 (01:03 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue)
+14 Nov 2026 (01:03 UTC) · ![Changed](https://img.shields.io/badge/-Changed-blue) · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/49a6577)
 
 Fewer boxes, plain steps and one Start button
 

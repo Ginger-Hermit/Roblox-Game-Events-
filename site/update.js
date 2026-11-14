@@ -1,7 +1,7 @@
-// Patch note: Fewer boxes, plain steps and one Start button
+// Patch note: Send a test and Stop
 // Update check: compares this page's BUILD with version.txt on the same site (nothing about you is sent).
-const BUILD = "1.0.36";
-const NOTE = "Fewer boxes, plain steps and one Start button";
+const BUILD = "1.0.37";
+const NOTE = "";
 (async () => {
   try {
     const r = await fetch("version.txt?t=" + Date.now(), { cache: "no-store" });
