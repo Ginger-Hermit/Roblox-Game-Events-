@@ -1,16 +1,18 @@
 # Changelog
 
-Every change, newest first. Layout: [Keep a Changelog](https://keepachangelog.com). Each version is also on the [Releases](https://github.com/Ginger-Hermit/Roblox-Game-Events-/releases) page.
+Every change, newest first. 🟢 Added · 🔵 Changed · 🟠 Fixed · 🔴 Removed
+
+Layout: [Keep a Changelog](https://keepachangelog.com). Each version is also on the [Releases](https://github.com/Ginger-Hermit/Roblox-Game-Events-/releases) page.
 
 Updates up to 1.0.42 have no version number, so they are grouped by day.
 
-## 2026-11-14
+## 📅 2026-11-14
 
-### Added
+### 🟢 Added
 
 - **TDLR box** · A short TDLR box at the top
 
-### Changed
+### 🔵 Changed
 
 - **Help link to guide** · Need help opens the setup guide
 - **Clearer risks** · Shorter risks plus links to the rules
@@ -22,9 +24,9 @@ Updates up to 1.0.42 have no version number, so they are grouped by day.
 - **Safer key check** · Tighter security
 
 <details>
-<summary><b>2026-11-13</b> · 34 updates</summary>
+<summary><b>📅 2026-11-13</b> · 34 updates</summary>
 
-### Added
+### 🟢 Added
 
 - **What's new line** · After an update, the top of the page says what changed
 - **Post again button** · Repost the game's current events any time
@@ -39,7 +41,7 @@ Updates up to 1.0.42 have no version number, so they are grouped by day.
 - **Home, tabs and settings** · A new look matching Fishing Cat Data, with setup on the home page.
 - **First release** · The bot checks a Roblox game once a day and posts new events to Discord.
 
-### Changed
+### 🔵 Changed
 
 - **Tidy up** · Removed unused code
 - **Spam limit** · Max 5 Turn ons per visitor a day, and odd game numbers are refused.
@@ -63,7 +65,7 @@ Updates up to 1.0.42 have no version number, so they are grouped by day.
 - **Proper disclaimer** · The Legal section is now a proper disclaimer.
 - **Discord posts link to the event** · Tapping a Discord post opens that event's own Roblox page.
 
-### Fixed
+### 🟠 Fixed
 
 - **Safety fixes** · Older follows aren't wrongly deleted; the daily run needs its key.
 
