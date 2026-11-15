@@ -1,6 +1,6 @@
-// Patch note: Events post again when their photo changes
+// Patch note: Event posts show the full description and players online
 // Update check: compares this page's BUILD with version.txt on the same site (nothing about you is sent).
-const BUILD = "1.0.44";
+const BUILD = "1.0.45";
 const NOTE = "";
 (async () => {
   try {

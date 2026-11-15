@@ -16,9 +16,9 @@ ap.add_argument("--change", action="append")
 a = ap.parse_args()
 REPO = "https://github.com/Ginger-Hermit/Roblox-Game-Events-/commit/"
 
-def rw(path, fn):
+def rw(path, fn, same_ok=False):
     s = open(path, encoding="utf-8").read(); t = fn(s)
-    if t == s: sys.exit("release.py: nothing changed in " + path)
+    if t == s and not same_ok: sys.exit("release.py: nothing changed in " + path)
     open(path, "w", encoding="utf-8").write(t)
 
 now = datetime.datetime.now(datetime.timezone.utc)
@@ -30,7 +30,7 @@ new = f"{x}.{y}.{int(z) + 1}"
 head = subprocess.run(["git", "log", "--format=%h", "-1"], capture_output=True, text=True).stdout.strip()
 
 open("site/version.txt", "w").write(new + "\n")
-rw("site/update.js", lambda s: re.sub(r'^const NOTE = .*', lambda m: "const NOTE = " + json.dumps("" if a.quiet else a.meaning) + ";", s, count=1, flags=re.M))
+rw("site/update.js", lambda s: re.sub(r'^const NOTE = .*', lambda m: "const NOTE = " + json.dumps("" if a.quiet else a.meaning) + ";", s, count=1, flags=re.M), same_ok=True)
 rw("site/update.js", lambda s: re.sub(r'^// Patch note: .*', "// Patch note: " + a.meaning, s.replace(f'const BUILD = "{old}";', f'const BUILD = "{new}";'), count=1))
 rw("site/index.html", lambda s: re.sub(r'<!-- Patch note: .*? -->', "<!-- Patch note: %s -->" % a.meaning.replace("--", "-"), s, count=1))
 
