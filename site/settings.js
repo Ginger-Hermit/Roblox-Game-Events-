@@ -7,10 +7,9 @@ for(const [id,key] of [["theme","theme"],["colour","colour"],["size","size"]]){
       for(const o of box.children)o.classList.toggle("on",o===b)}}
 }
 document.getElementById("copybug").onclick=async()=>{
-  const msg=document.getElementById("bugmsg");let ev="not recorded";
-  try{const d=await (await fetch("events.json",{cache:"no-store"})).json();ev=d.game_name+", "+d.events.length+" events"}catch(e){ev="couldn't load"}
+  const msg=document.getElementById("bugmsg");
   const txt=["Roblox Game Events bug report","Time: "+new Date().toISOString(),"Page: "+location.href,"Browser: "+navigator.userAgent,
-    "Screen: "+innerWidth+"x"+innerHeight,"Theme: "+(root.dataset.theme||"auto")+", text: "+(root.dataset.size||"normal"),"Events: "+ev,"What went wrong: "].join("\n");
+    "Screen: "+innerWidth+"x"+innerHeight,"Theme: "+(root.dataset.theme||"auto")+", text: "+(root.dataset.size||"normal"),"What went wrong: "].join("\n");
   try{await navigator.clipboard.writeText(txt);msg.textContent="Copied. Paste it with a short note."}catch(e){msg.textContent="Couldn't copy. Take a screenshot instead."}
 };
 

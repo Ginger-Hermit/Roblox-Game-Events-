@@ -1,7 +1,7 @@
-// Patch note: Event posts show the full description and players online
+// Patch note: Send a test now works with ptb, canary and discordapp webhook links. The bug report no longer names the wrong game.
 // Update check: compares this page's BUILD with version.txt on the same site (nothing about you is sent).
-const BUILD = "1.0.45";
-const NOTE = "";
+const BUILD = "1.0.46";
+const NOTE = "Send a test now works with ptb, canary and discordapp webhook links. The bug report no longer names the wrong game.";
 (async () => {
   try {
     const r = await fetch("version.txt?t=" + Date.now(), { cache: "no-store" });

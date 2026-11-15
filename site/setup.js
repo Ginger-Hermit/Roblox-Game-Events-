@@ -27,16 +27,6 @@ $("post").addEventListener("click", async () => {
     r.ok ? say("onMsg", "Test sent. Events only post after you tap Start.", true) : say("onMsg", "Discord said no (" + r.status + "). Make a new webhook and try again.", false);
   } catch (e) { say("onMsg", "Couldn't reach Discord. Check your internet.", false); }
 });
-$("test").addEventListener("click", async () => {
-  const url = $("hook").value.trim();
-  if (!/^https:\/\/(?:ptb\.|canary\.)?discord(?:app)?\.com\/api\/webhooks\/\d+\/[\w-]+$/.test(url)) return say("hookMsg", "That isn't a Discord webhook link.", false);
-  say("hookMsg", "Sending…", true);
-  try {
-    const r = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ content: "Test from Roblox Game Events. It works!", allowed_mentions: { parse: [] } }) });
-    r.ok ? say("hookMsg", "Test post sent. Check your channel.", true) : say("hookMsg", "Discord said no (" + r.status + "). Make a new webhook and try again.", false);
-  } catch (e) { say("hookMsg", "Couldn't reach Discord. Check your internet.", false); }
-});
 async function turn(what) {
   const g = readGame(), hook = $("hook").value.trim();
   if (!g || !HOOK.test(hook)) return say("onMsg", "Add a game link and a webhook first.", false);
@@ -97,5 +87,5 @@ function remember() {
 }
 $("remember").addEventListener("change", () => { $("nameRow").hidden = !$("remember").checked; remember(); });
 $("label").addEventListener("change", remember);
-$("test").addEventListener("click", remember); $("post").addEventListener("click", remember);
+$("post").addEventListener("click", remember);
 draw();

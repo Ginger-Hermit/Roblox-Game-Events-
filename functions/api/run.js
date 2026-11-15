@@ -25,7 +25,7 @@ export async function onRequestPost({ request, env }) {
         const id = String(e.id), pk = picKey(e), old = s.seen.includes(id); s.pics = s.pics || {};
         if (old && (!(id in s.pics) || s.pics[id] === pk)) { s.pics[id] = pk; continue; }   // seen, same photo
         const t = e.eventTime || {};
-        if (t.endUtc && Date.parse(t.endUtc) < now) { s.seen.push(id); continue; }
+        if (t.endUtc && Date.parse(t.endUtc) < now) { if (!old) s.seen.push(id); s.pics[id] = pk; continue; }
         if (n >= POSTS_A_DAY) continue;   // left for tomorrow
         if (logo === undefined) logo = await icon(s.uni);
         const c = await card(e, s, logo); if (old) c.author.name = "New photo: " + s.name + " event";

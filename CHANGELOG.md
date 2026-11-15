@@ -4,6 +4,12 @@ Every change, newest first. Layout: [Keep a Changelog](https://keepachangelog.co
 
 Updates up to 1.0.42 have no version number, so they are grouped by day.
 
+## [1.0.46] - 2026-11-15 · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/compare/v1.0.45...v1.0.46)
+
+### Fixed
+
+- **Test posts work with every Discord link** · Send a test now works with ptb, canary and discordapp webhook links. The bug report no longer names the wrong game.
+
 ## [1.0.45] - 2026-11-15 · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/compare/v1.0.44...v1.0.45)
 
 ### Changed
