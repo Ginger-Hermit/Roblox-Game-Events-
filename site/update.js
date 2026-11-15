@@ -1,7 +1,7 @@
-// Patch note: Need help opens the setup guide
+// Patch note: Re-send the game's current events to your channel
 // Update check: compares this page's BUILD with version.txt on the same site (nothing about you is sent).
-const BUILD = "1.0.41";
-const NOTE = "";
+const BUILD = "1.0.43";
+const NOTE = "Re-send the game's current events to your channel";
 (async () => {
   try {
     const r = await fetch("version.txt?t=" + Date.now(), { cache: "no-store" });

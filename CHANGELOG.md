@@ -4,6 +4,12 @@ Every change, newest first. Layout: [Keep a Changelog](https://keepachangelog.co
 
 Updates up to 1.0.42 have no version number, so they are grouped by day.
 
+## [1.0.43] - 2026-11-15 · [code](https://github.com/Ginger-Hermit/Roblox-Game-Events-/compare/v1.0.42...v1.0.43)
+
+### Added
+
+- **Post again** · Re-send the game's current events to your channel
+
 ## 2026-11-14
 
 ### Added
