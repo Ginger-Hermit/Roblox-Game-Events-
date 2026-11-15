@@ -23,6 +23,6 @@ export async function onRequestPost({ request, env }) {
   await post(hook, { title: "Now following: " + name, url: `https://www.roblox.com/games/${game}`, color: 0xF28C28,
     author: { name: "Roblox Game Events" }, description: "New events will post here once a day." });
   const now = Date.now(), live = list.filter(e => !(e.eventTime?.endUtc && Date.parse(e.eventTime.endUtc) < now)).slice(0, POSTS_A_DAY);
-  if (live.length) { const logo = await icon(uni); for (const e of live) await post(hook, await card(e, { game, name }, logo)); }
+  if (live.length) { const logo = await icon(uni); for (const e of live) await post(hook, await card(e, { game, name, uni }, logo)); }
   return json({ msg: "On. New " + name + " events will post here once a day." });
 }

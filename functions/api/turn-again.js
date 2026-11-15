@@ -14,7 +14,7 @@ export async function onRequestPost({ request, env }) {
   const now = Date.now(), live = list.filter(e => !(e.eventTime?.endUtc && Date.parse(e.eventTime.endUtc) < now)).slice(0, POSTS_A_DAY);
   if (!live.length) return json({ msg: "No events on right now." });
   const logo = await icon(uni);
-  for (const e of live) { const r = await post(hook, await card(e, { game, name }, logo));
+  for (const e of live) { const r = await post(hook, await card(e, { game, name, uni }, logo));
     if (!r.ok) return json({ msg: "Discord said no (" + r.status + "). Make a new webhook and try again." }, 400); }
   return json({ msg: "Posted " + live.length + " event" + (live.length > 1 ? "s" : "") + " again." });
 }
