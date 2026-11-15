@@ -1,6 +1,8 @@
 // Daily check, called by .github/workflows/events.yml in parts: POST /api/run?cursor=... until done is true.
 import { PER_RUN, POSTS_A_DAY, json, universe, events, post, card, icon, lock, unlock } from "./_lib.js";
 // Compare keys without stopping at the first wrong letter.
+// The event's main photo id, so a new photo can be spotted.
+const picKey = e => String((e.thumbnails || []).slice().sort((a, b) => (a.rank || 0) - (b.rank || 0)).map(t => t.mediaId).find(Boolean) || "");
 const same = (a, b) => { let d = a.length ^ b.length; for (let i = 0; i < b.length; i++) d |= (a.charCodeAt(i) || 0) ^ b.charCodeAt(i); return d === 0; };
 export async function onRequestPost({ request, env }) {
   if (!env.SUBS) return json({ msg: "Not set up" }, 503);
@@ -20,22 +22,23 @@ export async function onRequestPost({ request, env }) {
       const hook = await unlock(s.hook, env); s.hook = await lock(hook, env);
       const now = Date.now(); let n = 0, logo; s.last = s.last || new Date(now).toISOString();
       for (const e of await events(s.uni)) {
-        const id = String(e.id); if (s.seen.includes(id)) continue;
+        const id = String(e.id), pk = picKey(e), old = s.seen.includes(id); s.pics = s.pics || {};
+        if (old && (!(id in s.pics) || s.pics[id] === pk)) { s.pics[id] = pk; continue; }   // seen, same photo
         const t = e.eventTime || {};
         if (t.endUtc && Date.parse(t.endUtc) < now) { s.seen.push(id); continue; }
         if (n >= POSTS_A_DAY) continue;   // left for tomorrow
         if (logo === undefined) logo = await icon(s.uni);
-        const c = await card(e, s, logo);
+        const c = await card(e, s, logo); if (old) c.author.name = "New photo: " + s.name + " event";
         const r = await post(hook, c);
         if (r.status === 404 || r.status === 401) { await env.SUBS.delete(k.name); removed++; s.gone = true; break; }
         if (!r.ok) continue;              // Discord busy: try again tomorrow
-        s.seen.push(id);
+        if (!old) s.seen.push(id); s.pics[id] = pk;
         n++; posted++; s.last = new Date().toISOString();
       }
       // Auto-delete: nothing posted for 30 days (counts from turn on); tells the channel first.
       const quiet = Math.max(...[s.last, s.on].map(d => Date.parse(d || 0) || 0));
       if (!s.gone && now - quiet > 30 * 864e5) { await post(hook, { title: "Stopped following: " + s.name, color: 0xF28C28, author: { name: "Roblox Game Events" }, description: "No new events for 30 days. Tap Start on the site to follow it again." }); await env.SUBS.delete(k.name); removed++; s.gone = true; }
-      if (!s.gone) { s.seen = s.seen.slice(-200); await env.SUBS.put(k.name, JSON.stringify(s)); }
+      if (!s.gone) { s.seen = s.seen.slice(-200); s.pics = Object.fromEntries(Object.entries(s.pics || {}).filter(([i]) => s.seen.includes(i))); await env.SUBS.put(k.name, JSON.stringify(s)); }
     } catch (e) { /* skip this one today */ }
   }
   return json({ done: page.list_complete, cursor: page.list_complete ? null : page.cursor, checked: page.keys.length, posted, removed });
