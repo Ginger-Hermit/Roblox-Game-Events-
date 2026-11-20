@@ -1,0 +1,1 @@
+const {chromium}=require('playwright');(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1300,height:900},deviceScaleFactor:2});await p.goto('file://'+process.cwd()+'/index.html');await p.waitForTimeout(500);await p.screenshot({path:'/home/user/Roblox-Game-Events-/mockup/settings-mockup.png',fullPage:true});await b.close()})()
