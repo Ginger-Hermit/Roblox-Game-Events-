@@ -1,0 +1,5 @@
+.hc summary{cursor:pointer;font-weight:600;color:var(--link);list-style:none;display:flex;flex-wrap:wrap;align-items:center;gap:0 8px}.hc summary::-webkit-details-marker{display:none}
+.hc summary:before{content:"\25B8"}.hc[open]>summary:before{content:"\25BE"}
+.hc summary small{flex-basis:100%;font-weight:400;font-size:.875rem;color:var(--muted);padding-left:18px;margin-top:2px}
+.hc+.hc{margin-top:10px}.hc .l{font-size:.8125rem;color:var(--muted);margin:12px 0 6px;font-weight:600}.hc .l:first-of-type{margin-top:10px}
+.hc .tabs{margin:0 0 4px}.hc .n{font-size:.8125rem;color:var(--muted);margin:6px 0 0}
